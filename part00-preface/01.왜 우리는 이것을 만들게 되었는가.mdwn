@@ -1,3 +1,11 @@
+<div align="center">
+
+[목차 바로가기](https://github.com/dhslrl321/cqrs-journey-korean-ver/#목차)
+
+</div>
+
+---
+
 # 왜 우리는 이 책을 만들었는가? Why we created this guidance now
 
 CQRS 패턴과 Event-Sourcing 은 최근 들어서 분산 시스템이나 대용량 아키텍처를 설계하는 사람들에게 많은 관심을 받고 있다.
