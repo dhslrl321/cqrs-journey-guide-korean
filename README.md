@@ -8,6 +8,17 @@
 
 - 이 repository 는 Microsoft 의 [CQRS Journey](https://github.com/microsoftarchive/cqrs-journey) 를 한국어로 번역한 repository 입니다.
 
+## 목차
+
+- **Journey 0**. 서문
+- **Journey 1**. 우리의 도메인 : Conference Management System
+- **Journey 2**. 도메인 분석
+- **Journey 3**. Order 와 Registration 의 Bounded Context
+- **Journey 4**. Order 와 Registration 의 Bounded Context 확장 및 향상하기
+- **Journey 5**. 버전 1 배포 준비하기
+- **Journey 6**. 우리의 시스템을 버저닝 하기
+- **Journey 7**. 회복성과 성능 최적화 적용하기
+
 # CQRS Journey
 
 - This Repository a repository that translates Microsoft's [CQRS Journey](https://github.com/microsoftarchive/cqrs-journey) into Korean.
