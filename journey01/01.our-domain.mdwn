@@ -2,9 +2,9 @@
 
 이번 장은 Contoso 라는 이름을 가진 허구의 회사에 대해서 소개한다.
 
-<br/>
+Contoso 는 각각의 회사가 주관하는 컨퍼런스나 각종 이벤트에 대해서 조직하고 관리할 수 있는 Conference Management System 을 출시할 계획이다.
 
-Contoso 는 각각의 회사가 관리하는 컨퍼런스나 각종 이벤트에 대해서 관리할 수 있는 Conference Management System 을 개발하는 회사이다
+<br/>
 
 ---
 
