@@ -1,7 +1,7 @@
 <div align="center">
 
-<a>home 으로 돌아가기</a>
-<a>뒤로가기</a>
+<a href="https://github.com/dhslrl321/cqrs-journey-korean-ver">목차</a>
+<a href="https://github.com/dhslrl321/cqrs-journey-korean-ver">뒤로가기</a>
 
 </div>
 
