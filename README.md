@@ -1,5 +1,7 @@
 <div align="center">
+
 ![image](https://user-images.githubusercontent.com/48385288/179483319-96ee3095-1b2c-4de9-83a4-b2780e7e193f.png)
+
 </div>
 
 # CQRS Journey (korean version)
