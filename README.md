@@ -10,6 +10,7 @@
 
 ## 목차
 
+- [목차](https://github.com/dhslrl321/cqrs-journey-korean-ver/blob/master/00.%20목차.mdwn)
 - **Journey 0**. 서문
 - **Journey 1**. 우리의 도메인 : Conference Management System
 - **Journey 2**. 도메인 분석
