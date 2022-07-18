@@ -29,43 +29,43 @@
 3. CQRS References
 4. Tale from the Trenches
 
-# 0. preface
+# 0. Preface
 
-#### [Preface](https://github.com/dhslrl321/cqrs-journey-korean-ver/tree/master/part00-preface)
+### **00** [Preface](https://github.com/dhslrl321/cqrs-journey-korean-ver/tree/master/part00-preface)
 
 # 1. CQRS Journey
 
-### **Chapter 1.** [Conference Management System](#)
+### **Journey 1.** [Conference Management System](#)
 
-### **Chapter 2.** [도메인 분석](#)
+### **Journey 2.** [도메인 분석](#)
 
-### **Chapter 3.** [Orders 와 Registration 의 Bounded Context](#)
+### **Journey 3.** [Orders 와 Registration 의 Bounded Context](#)
 
-### **Chapter 4.** [Orders 와 Registrations 에 대한 개념 확장과 성능 향상](#)
+### **Journey 4.** [Orders 와 Registrations 에 대한 개념 확장과 성능 향상](#)
 
-### **Chapter 5.** [V1 릴리즈 준비](#)
+### **Journey 5.** [V1 릴리즈 준비](#)
 
-### **Chapter 6.** [Versioning 하기](#)
+### **Journey 6.** [Versioning 하기](#)
 
-### **Chapter 7.** [Resilience한 시스템에 성능을 최적화하기](#)
+### **Journey 7.** [Resilience한 시스템에 성능을 최적화하기](#)
 
-### **Chapter 8,** [“Lessons Learned”](#)
+### **Journey 8,** [“Lessons Learned”](#)
 
 # 2. CQRS Reference
 
-### **Chapter 1.** [CQRS in Context](#)
+### **Reference 1.** [CQRS in Context](#)
 
-### **Chapter 2.** [CQRS 패턴에 대한 소개](#)
+### **Reference 2.** [CQRS 패턴에 대한 소개](#)
 
-### **Chapter 3.** [Event Sourcing 에 대한 소개](#)
+### **Reference 3.** [Event Sourcing 에 대한 소개](#)
 
-### **Chapter 4.** [CQRS 와 Event Sourcing 의 Deep Dive](#)
+### **Reference 4.** [CQRS 와 Event Sourcing 의 Deep Dive](#)
 
-### **Chapter 5.** [Bounded Context 사이의 통신](#)
+### **Reference 5.** [Bounded Context 사이의 통신](#)
 
-### **Chapter 6.** [Saga](#)
+### **Reference 6.** [Saga](#)
 
-### **Chapter 7.** [RI 에 사용된 기술들](#)
+### **Reference 7.** [RI 에 사용된 기술들](#)
 
 ### **부록 1.** [Release Note](#)
 
