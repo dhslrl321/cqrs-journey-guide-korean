@@ -1,0 +1,101 @@
+# Index Overview
+
+CQRS Journey 는 크게 3가지 섹션으로 이루어져 있다.
+
+1. CQRS Journey
+2. CQRS Reference
+3. Tales from the trenches
+
+# A CQRS Journey
+
+앞으로 보게 될 자료들은 [\*RI](https://github.com/dhslrl321/cqrs-journey-korean-ver/blob/master/terms/Reference%20Implementation.mdwn) 를 통해서 설명을 할 것이고 점점 발전시켜 나갈 것이다.
+
+또한 각 챕터에서는 챕터에서 이야기 하고자 하는 것을 도메인이나 infrastructure 혹은 UI, architecture 를 통해서 설명할 것이다.
+
+이를 통해서 각 챕터에 맞는 특정 CQRS 패턴이나 개념이 등장할 것이며 이를 실제로 적용시키는데 필요한 방법이나 개념들을 함께 설명한다
+
+<br/>
+
+시스템의 Big Picture 에 대해서 다루는 다른 챕터도 있을 것이다.
+어떤 챕터에서는 RI 를 [\*Bounded Context](https://github.com/dhslrl321/cqrs-journey-korean-ver/blob/master/terms/Bounded%20Context.mdwn) 로 나누는 근거를 설명할 수도 있고 RI를 Bounded Context 로 나누고 이들 끼리 서로 통신하는 방법을 설명하는 챕터도 있을 것이다.
+
+<br/>
+
+이 섹션은 CQRS 에 대한 전반적인 내용와 개념을 RI 를 통해서 학습할 수 있는 섹션이다.
+
+# CQRS Reference
+
+이 섹션은 다양한 출처에서 참고해온 일종의 참고 자료의 모음집이다.
+'CQRS 는 이거야!' 라는 명확한 정의는 아닐 수 있지만 CQRS 에 대한 핵심 패턴과 개념 및 언어를 이해하는 데 도움이 될 것이다
+
+# Tales from the trenches
+
+이 섹션은 실제 운영 환경에서 CQRS 패턴과 Event Sourcing 을 적용한 경험을 설명하는 섹션이다.
+Journey 섹션만큼 구체적이지 않지만 프로젝트의 전반적인 오버뷰를 제공하고 교훈을 주기 위한 섹션이라 생각해도좋다
+
+# 목차
+
+앞서 목차가 나왔지만 조금 더 상세한 목차를 알아보자
+
+## CQRS Journey
+
+- **Chapter 1. Conference Management System**
+  - 가상 기업 Contoso 에서 Conference Management System 를 만든다 (샘플 애플리케이션임)
+- **Chapter 2. 도메인 분석**
+  - 높은 수준의 view 를 제공하고 해당 Application 의 Bounded Context 를 설명함
+- **Chapter 3. Orders 와 Registration 의 Bounded Context**
+  - 첫 Bounded Context 에 대해서 설명하고 몇가지 CQRS 의 개념에 대해서 탐구한다.
+  - infrastructure 의 몇몇 요소에 대해서도 설명한다
+- **Chapter 4. Orders 와 Registrations 에 대한 개념 확장과 향상**
+  - 해당 Bounded Context 에 새로운 기능을 추가하고 테스트 접근법을 설명한다
+- **Chapter 5. V1 릴리즈 준비**
+  - 두 개의 새로운 Bounded Context 을 추가하고 integration 에 대한 문제를 처리해본다
+  - Event-Sourcing 에 대한 implemenation 을 소개한다
+  - 우리의 첫번째 배포
+- **Chapter 6. Versioning 하기**
+  - 다운타임을 최소화 하면서 시스템을 versioning 하고 upgrade 하는 방법에 대해서 알아본다
+- **Chapter 7. Resilience 하게 만들고 성능을 최적화**
+  - 장애 시나리오에 대한 시스템 복원력을 높이기 위해 필요한 작업을 알아본다
+  - 시스템 성능을 어떻게 최적화 하였는지에 대해서 설명한다
+- **Chapter 8, “Lessons Learned,”**
+  - 위의 사례를 통해서 배운 CQRS 를 토대로 계속해서 여행(continue the Journey)을 떠날 수 있는 방법을 알아본다.
+
+## CQRS Reference
+
+- **Chapter 1. CQRS in Context**
+  - CQRS 에 대한 간단한 배경 지식 및 정보(context for CQRS)들에 대해서 설명한다.
+  - 특히 DDD 의 관점에서 설명한다
+- **Chapter 2. CQRS 패턴에 대한 소개**
+  - CQRS 패턴에 대한 개념적 설명을 한다
+  - Overview of CQRS
+- **Chapter 3. Event Sourcing 에 대한 소개**
+  - Event-Sourcing 에 대한 Conceptual 한 Overview 를 설명한다
+- **Chapter 4. CQRS 와 Event Sourcing 의 Deep Dive**
+  - 앞의 챕터들보다 조금 더 깊게 CQRS 와 Event Sourcing 에 대해 설명한다
+- **Chapter 5. Bounded Context 사이의 통신**
+  - Bounded Context 간 통신을 위한 여러 옵션을 제공한다
+- **Chapter 6. Saga**
+  - explains our choice of terminology: process manager instead of saga. It also describes the role of process managers.
+- **Chapter 7. RI 에 사용된 기술들**
+  - RI 에서 사용된 MS Azure Service Bus 와 같은 기술의 간단한 overview 를 제공한다
+- **부록 1. Release Note**
+  - 다운로드, 빌드, 설치에 대한 간단한 팁을 제공한다
+- **부록 2. Migration**
+  - 데이터 마이그레이션에 대한 간단한 팁을 제공한다
+
+### Tales from the trenches
+
+- **Chapter 1. "Twilio"**
+  - 고가용성의 클라우드 통신 서비스인 트윌리오에서는 CQRS 를 사용했다고 발표하지는 않았지만 Twilio 가 채택한 여러 아키텍처가 CQRS 와 많이 닮아있다. 이에 대해 알아본다
+- **Chapter 2. "Lokad Hub"**
+  - 여러 클라우드 플랫폼에서 실행될 수 있는 애플리케이션에 대해서 설명한다
+  - 역시 DDD 와 CQRS 및 Event Sourcing 을 활용한 경험이다
+- **Chapter 3. "금융 회사에서 사용하는 DDD/CQRS"**
+  - CQRS 와 DDD 를 활용하여 대규모의 금융 솔루션을 개발한 후기를 알아본다
+- **Chapter 4. "Digital Marketing"**
+  - 새로운 기능을 사용자에게 제공함과 동시에 어떻게 CQRS 로 시스템을 진화시켰는지 알아본다
+- **Chapter 5. "TOPAZ"**
+  - CQRS 패턴과 Event Sourcing 을 사용해서 개발을 단순화한 경험을 설명한다
+- **Chapter 6. "eMoney Nexus"**
+  - 전통적인 레거시 3 tier 아키텍처로 구성된 애플리케이션에서 CQRS 와 Event Sourcing 기반으로 마이그레이션 한 과정을 설명한다
+  - 이 프로젝트에서 많은 부분이 CQRS Journey 에 대한 영감을 주었다
