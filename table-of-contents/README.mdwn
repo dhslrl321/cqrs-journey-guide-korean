@@ -1,24 +1,15 @@
 # 목차
 
-### **Journey 0**. [서문](https://github.com/dhslrl321/cqrs-journey-korean-ver/blob/master/journey00/01.왜%20우리는%20guideance%20를%20만드는가.mdwn)
+총 4개의 파트로 나뉘어져 있다.
 
-### **Journey 1**. [우리의 도메인 : Conference Management System](https://github.com/dhslrl321/cqrs-journey-korean-ver/tree/master/journey01)
+1. preface
+2. CQRS Journey
+3. CQRS References
+4. Tale from the Trenches
 
-### **Journey 2**. 도메인 분석
+# 0. preface
 
-### **Journey 3**. Order 와 Registration 의 Bounded Context
-
-### **Journey 4**. Order 와 Registration 의 Bounded Context 확장 및 향상하기
-
-### **Journey 5**. 버전 1 배포 준비하기
-
-### **Journey 6**. 우리의 시스템을 버저닝 하기
-
-### **Journey 7**. 회복성과 성능 최적화 적용하기
-
-# 목차
-
-3개의 파트로 나뉘어져 있다.
+### [Preface](https://github.com/dhslrl321/cqrs-journey-korean-ver/tree/master/journey00)
 
 # 1. CQRS Journey
 
