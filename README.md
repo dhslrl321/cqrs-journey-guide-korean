@@ -31,7 +31,7 @@
 
 # 0. Preface
 
-### **00** [Preface](https://github.com/dhslrl321/cqrs-journey-korean-ver/tree/master/part00-preface)
+### **Part 0** [Preface](https://github.com/dhslrl321/cqrs-journey-korean-ver/tree/master/part00-preface)
 
 # 1. CQRS Journey
 
