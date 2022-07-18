@@ -1,4 +1,4 @@
-<div style="display: flex;">
+<div align="center" style="display:flex;">
 
 #### [Home 으로 돌아가기](#)
 
