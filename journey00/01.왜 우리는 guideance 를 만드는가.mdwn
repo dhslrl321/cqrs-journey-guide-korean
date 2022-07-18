@@ -43,3 +43,13 @@ CQRS 패턴과 Event Sourcing 은 대규모 분산 시스템과 관련된 것들
 즉, CQRS 에 대해서 탐험할 수 있는 여러 stopping point 를 보여주는 것이다
 
 ![image](https://user-images.githubusercontent.com/48385288/179496263-a6a8d3fc-ff1c-41f2-8f01-f49d025e9570.png)
+
+1. our domain
+2. Decomposing the domain
+3. Orders and Registrations
+4. Extending and enhancing the orders and registrations bounded context
+5. Preparing for the v1 releases
+6. Versioning our system
+7. Adding resilience and optimizing performance
+
+_이들이 곧 목차가 될 것이다_
