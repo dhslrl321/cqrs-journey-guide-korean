@@ -7,6 +7,15 @@
 # CQRS Journey (korean version)
 
 - 이 repository 는 Microsoft 의 [CQRS Journey](https://github.com/microsoftarchive/cqrs-journey) 를 한국어로 번역한 repository 입니다.
+- 애매한 용어들에 대해서는 개인의 경험과 해석이 들어가 있기 때문에 오역이 존재할 수 있습니다. 하지만 글쓴이의 의도를 정확하게 전달하기 위해 노력하였음을 밝힙니다.
+
+## 읽는법
+
+- 목차
+  - 크게 7가지 챕터가 존재합니다.
+  - 아래 목차 섹션을 통해서 해당 목차로 이동할 수 있습니다
+- 참조 용어
+  - 각 파트별로 자세한 설명이 필요한 개념 혹은 용어들에 대해서는 `*terms` 형태로 참조를 걸어놓았습니다. 들어가서 확인하시면 읽는데 도움이 될 것입니다.
 
 ## 목차
 

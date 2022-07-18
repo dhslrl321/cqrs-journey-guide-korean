@@ -25,6 +25,21 @@ CQRS 패턴과 Event Sourcing 은 대규모 분산 시스템과 관련된 것들
 
 # 이 책은 어떻게 구성되었을까? How is this guidance structured?
 
-이 책에는 두 가지 핵심 챕터가 있다
+이 책에는 두 가지 밀접하게 관련된 부분이 있다.
 
-1.
+- [\*Reference Implementation, RI](https://github.com/dhslrl321/cqrs-journey-korean-ver/blob/master/terms/Reference%20Implementation.mdwn)
+  - 복잡한 애플리케이션을 개발하기 위한 CQRS 패턴 및 Event-Sourcing 접근 방법과 관련된 개념을 RI(참조 구현)으로 구성하였다
+- 또한 서면의 글은 RI 의 동작 방식과 RI 가 어떻게 동작하는 지에 대해서 보완하고 있다.
+
+<br/>
+
+또한 서면의 글은 3가지 섹션으로 구분될 수 있다. 이들은 각각 따로 읽어도 무방한데,
+
+1. CQRS 를 학습할 때 수행한 것들
+2. CQRS 참고 자료 모음
+3. 팀이 CQRS 패턴을 적용하고 경험한 사례 모음
+
+아래의 그림은 1번과 2번 섹션 사이의 관계를 보여준다.
+즉, CQRS 에 대해서 탐험할 수 있는 여러 stopping point 를 보여주는 것이다
+
+![image](https://user-images.githubusercontent.com/48385288/179496263-a6a8d3fc-ff1c-41f2-8f01-f49d025e9570.png)
