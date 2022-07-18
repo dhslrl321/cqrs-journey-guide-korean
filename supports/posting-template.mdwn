@@ -1,8 +1,7 @@
-<div align="center" style="display:flex;">
+<div align="center">
 
-#### [Home 으로 돌아가기](#)
-
-#### [Home 으로 돌아가기](#)
+<a>home 으로 돌아가기</a>
+<a>뒤로가기</a>
 
 </div>
 
