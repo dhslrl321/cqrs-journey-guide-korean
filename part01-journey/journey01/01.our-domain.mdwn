@@ -14,8 +14,22 @@ Contoso 는 각각의 회사가 주관하는 컨퍼런스나 각종 이벤트에
 
 <br/>
 
+이번 챕터에서는 높은 수준에서 몇몇의 기능 요구사항과 비기능 요구사항을 이야기해보려 한다.
+
+그리고 왜 Contoso 가 CQRS와 Event Sourcing 을 이용해서 구현하려 하는지도 이야기 해보겠다.
+
+특히 Contoso 가 CQRS 와 Event Sourcing 을 모두 사용하는 것에 대한 경험이 없기에 고려해야할 많은 문제들과 해결할 과제들이 존재하는데, 이어지는 장에서 어떻게 Conference Management System 을 설계하고 구현했는지 단계별로 보여줄 예정이다.
+
+# The Contoso Corporation
+
+Contoso 는 Microsoft 기술을 사용하는 20명의 개발자로 구성된 신생 ISV 회사이다
+
 ---
 
 ### page
 
 - 1 ~ n
+
+```
+
+```
