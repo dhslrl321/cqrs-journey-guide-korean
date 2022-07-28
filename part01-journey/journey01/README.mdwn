@@ -5,5 +5,3 @@
 #### 2. [누가 우리와 함께 하는가](https://github.com/dhslrl321/cqrs-journey-korean-ver/blob/master/part01-journey/journey01/02.누가%20우리와%20함께%20여정을%20떠날%20것인가.mdwn)
 
 #### 3. [The Contoso Conference Management System](https://github.com/dhslrl321/cqrs-journey-korean-ver/blob/master/part01-journey/journey01/03.The%20Contoso%20Conference%20Management%20System.mdwn)
-
-#### 4. [s](#)

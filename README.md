@@ -35,7 +35,7 @@
 
 # 1. CQRS Journey
 
-### **Journey 1.** [Conference Management System](#)
+### **Journey 1.** [Conference Management System](https://github.com/dhslrl321/cqrs-journey-korean-ver/tree/master/part01-journey/journey01)
 
 ### **Journey 2.** [도메인 분석](#)
 
