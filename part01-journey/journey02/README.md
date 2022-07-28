@@ -8,4 +8,4 @@
 
 # Journey 2. Decomposing the Domain
 
-#### 1. [시작하며](https://github.com/dhslrl321/cqrs-journey-korean-ver/blob/master/part01-journey/journey01/01.우리의%20도메인.mdwn)
+#### 1. [시작하며](https://github.com/dhslrl321/cqrs-journey-korean-ver/blob/master/part01-journey/journey02/00.%20시작하며.mdwn)

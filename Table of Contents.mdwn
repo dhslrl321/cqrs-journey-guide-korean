@@ -24,52 +24,52 @@
 
 ### **Journey 2.** [도메인 분석](https://github.com/dhslrl321/cqrs-journey-korean-ver/tree/master/part01-journey/journey02)
 
-### **Journey 3.** [Orders 와 Registration 의 Bounded Context](#)
+### **Journey 3.** Orders 와 Registration 의 Bounded Context
 
-### **Journey 4.** [Orders 와 Registrations 에 대한 개념 확장과 성능 향상](#)
+### **Journey 4.** Orders 와 Registrations 에 대한 개념 확장과 성능 향상
 
-### **Journey 5.** [V1 릴리즈 준비](#)
+### **Journey 5.** V1 릴리즈 준비
 
-### **Journey 6.** [Versioning 하기](#)
+### **Journey 6.** Versioning 하기
 
-### **Journey 7.** [Resilience한 시스템에 성능을 최적화하기](#)
+### **Journey 7.** Resilience한 시스템에 성능을 최적화하기
 
-### **Journey 8,** [“Lessons Learned”](#)
+### **Journey 8,** “Lessons Learned”
 
 <br />
 
 # 2. CQRS Reference
 
-### **Reference 1.** [CQRS in Context](#)
+### **Reference 1.** CQRS in Context
 
-### **Reference 2.** [CQRS 패턴에 대한 소개](#)
+### **Reference 2.** CQRS 패턴에 대한 소개
 
-### **Reference 3.** [Event Sourcing 에 대한 소개](#)
+### **Reference 3.** Event Sourcing 에 대한 소개
 
-### **Reference 4.** [CQRS 와 Event Sourcing 의 Deep Dive](#)
+### **Reference 4.** CQRS 와 Event Sourcing 의 Deep Dive
 
-### **Reference 5.** [Bounded Context 사이의 통신](#)
+### **Reference 5.** Bounded Context 사이의 통신
 
-### **Reference 6.** [Saga](#)
+### **Reference 6.** Saga
 
-### **Reference 7.** [RI 에 사용된 기술들](#)
+### **Reference 7.** RI 에 사용된 기술들
 
-### **부록 1.** [Release Note](#)
+### **부록 1.** Release Note
 
-### **부록 2.** [Migration](#)
+### **부록 2.** Migration
 
 <br />
 
 # 3. Tales from the trenches
 
-### **Chapter 1.** ["Twilio"](#)
+### **Chapter 1.** "Twilio"
 
-### **Chapter 2.** ["Lokad Hub"](#)
+### **Chapter 2.** "Lokad Hub"
 
-### **Chapter 3.** ["금융 회사에서 사용하는 DDD/CQRS"](#)
+### **Chapter 3.** "금융 회사에서 사용하는 DDD/CQRS"
 
-### **Chapter 4.** ["Digital Marketing"](#)
+### **Chapter 4.** "Digital Marketing"
 
-### **Chapter 5.** ["TOPAZ"](#)
+### **Chapter 5.** "TOPAZ"
 
-### **Chapter 6.** ["eMoney Nexus"](#)
+### **Chapter 6.** "eMoney Nexus"
