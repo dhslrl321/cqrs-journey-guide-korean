@@ -28,12 +28,14 @@
 
 # 목차
 
-총 4개의 파트로 나뉘어져 있다.
+총 4개의 파트로 나뉘어져 있습니다.
 
-1. preface
-2. CQRS Journey
-3. CQRS References
-4. Tale from the Trenches
+1. **preface**
+2. **CQRS Journey**
+3. **CQRS References**
+4. **Tale from the Trenches**
+
+자세한 내용은 [목차](https://github.com/dhslrl321/cqrs-journey-korean-ver/blob/master/Table%20of%20Contents.mdwn) 에서 확인할 수 있습니다.
 
 # CQRS Journey
 

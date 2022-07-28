@@ -6,9 +6,13 @@
 
 # 목차
 
+<br />
+
 # 0. Preface
 
 ### **Part 0** [Preface](https://github.com/dhslrl321/cqrs-journey-korean-ver/tree/master/part00-preface)
+
+<br />
 
 # 1. CQRS Journey
 
@@ -32,6 +36,8 @@
 
 ### **Journey 8,** [“Lessons Learned”](#)
 
+<br />
+
 # 2. CQRS Reference
 
 ### **Reference 1.** [CQRS in Context](#)
@@ -51,6 +57,8 @@
 ### **부록 1.** [Release Note](#)
 
 ### **부록 2.** [Migration](#)
+
+<br />
 
 # 3. Tales from the trenches
 
