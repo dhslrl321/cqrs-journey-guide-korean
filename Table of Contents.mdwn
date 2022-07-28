@@ -19,7 +19,7 @@ CQRS Journey 의 목차입니다.
 
 # 0. 서론
 
-### **Preface** [gPreface](https://github.com/dhslrl321/cqrs-journey-korean-ver/tree/master/part00-preface)
+### **Preface** [Preface](https://github.com/dhslrl321/cqrs-journey-korean-ver/tree/master/part00-preface)
 
 1. [왜 우리가 이것을 만드는가](https://github.com/dhslrl321/cqrs-journey-korean-ver/blob/master/part00-preface/01.왜%20우리는%20이것을%20만들게%20되었는가.mdwn)
 2. [Index Overview](https://github.com/dhslrl321/cqrs-journey-korean-ver/blob/master/part00-preface/02.Index%20Overview.mdwn)
@@ -35,6 +35,8 @@ CQRS Journey 의 목차입니다.
 3. [The Contoso Conference Management System](https://github.com/dhslrl321/cqrs-journey-korean-ver/blob/master/part01-journey/journey01/03.The%20Contoso%20Conference%20Management%20System.mdwn)
 
 ### **Journey 2.** [도메인 분석](https://github.com/dhslrl321/cqrs-journey-korean-ver/tree/master/part01-journey/journey02)
+
+1. [시작하며](https://github.com/dhslrl321/cqrs-journey-korean-ver/blob/master/part01-journey/journey02/00.%20시작하며.mdwn)
 
 ### **Journey 3.** Orders 와 Registration 의 Bounded Context
 
