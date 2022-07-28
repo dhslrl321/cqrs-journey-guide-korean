@@ -1,0 +1,19 @@
+<div align="center">
+
+#### [목차 바로가기](https://github.com/dhslrl321/cqrs-journey-korean-ver/#목차)
+
+</div>
+
+---
+
+# Contoso Conference Management System
+
+이번 장에서는 Contoso 에 대해서 설명한다
+
+팀은 이전에 CQRS 를 사용해본 적이 없으므로 최종 버전은 시스템이 처음 설계한 대로 정확히 일치할 수 없을 것이다.
+
+우리가 진행하면서 하는 많은 결정사항들과 배움들이 궁극적으로 우리가 제공하는 Contoso 에 많은 영향을 미칠 것이다.
+
+<br />
+
+---
