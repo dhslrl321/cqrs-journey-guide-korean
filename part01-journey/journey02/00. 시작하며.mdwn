@@ -1,0 +1,21 @@
+<div align="center">
+
+#### [목차 바로가기](https://github.com/dhslrl321/cqrs-journey-korean-ver/blob/master/Table%20of%20Contents.mdwn)
+
+</div>
+
+---
+
+# 시작하며
+
+이번 챕터에서는 Contoso 의 더 상세한 오버뷰를 제공한다.
+
+이번 챕터에서 나오는 논의들은 각각의 애플리케이션의 구성요소들이 서로 어떤 연관을 가지고 있는지에 대해서 이해하는데 도움이 될 것이다.
+
+우리는 Eric Eveans 의 `Domain-Driven Design: Tackling Complexity in the Heart of Software (Addison-Wesley Professional, 2003)` 에 나오는 DDD 접근법의 용어들을 빌려서 설명할 것이다.
+
+DDD 가 CQRS 패턴을 구현하기 위해서 꼭 필요한 것은 아니지만 우리 팀은 Domain, Bounded Context, Aggregate 와 같은 DDD 접근 방식의 많은 개념을 다른 CQRS 커뮤니티 관례에 따라서 사용하기로 했다.
+
+이는 Reference Guide 1장에서 DDD 와 CQRS 사이 간극에 대해서 더 자세히 설명한다.
+
+---
