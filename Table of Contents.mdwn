@@ -6,11 +6,20 @@
 
 # 목차
 
+CQRS Journey 의 목차입니다.
+
+크게 3파트로 나뉘어져 있습니다.
+
+- **Part0** : preface
+- **Part1** : CQRS Journey
+- **Part2** : CQRS References
+- **Part3** : Tales from the trenches
+
 <br />
 
-# 0. Preface
+# 0. 서론
 
-### **Preface** [Preface](https://github.com/dhslrl321/cqrs-journey-korean-ver/tree/master/part00-preface)
+### **Preface** [gPreface](https://github.com/dhslrl321/cqrs-journey-korean-ver/tree/master/part00-preface)
 
 1. [왜 우리가 이것을 만드는가](https://github.com/dhslrl321/cqrs-journey-korean-ver/blob/master/part00-preface/01.왜%20우리는%20이것을%20만들게%20되었는가.mdwn)
 2. [Index Overview](https://github.com/dhslrl321/cqrs-journey-korean-ver/blob/master/part00-preface/02.Index%20Overview.mdwn)
