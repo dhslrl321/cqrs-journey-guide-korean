@@ -16,12 +16,27 @@
 
 도메인, domain 은 Contoso 컨퍼런스 관리 시스템의 비즈니스 도메인을 의미한다.
 
+> **번역자의 말** : 여기서 말하는 Domain 은 DDD 에서 사용되는 도메인의 용어와 사용이 같다. DDD 에서는 도메인을 **문제 해결 영역**이라고 포현하곤 한다
+
 ## Bounded Context
 
 [\*Bounded Context](https://github.com/dhslrl321/cqrs-journey-korean-ver/blob/master/terms/Bounded%20Context.mdwn) 는 에릭 에반스의 책에서 소개된 용어이다.
 
 쉽게 말해서 에반스는 거대하고 복잡한 시스템을 관리하기 쉽도록 나누록 나누었고 거대한 시스템은 Bounded Context 들의 조합으로 구성된다.
 
-각각의 Bounded Context 는 각각의 domain 모델을 포함하고 있는 일종의 문맥이기도 하면서 [\*ubiquitous language]() 를 포함한다
+각각의 Bounded Context 는 각각의 domain 모델을 포함하고 있는 일종의 문맥이기도 하면서 [\*ubiquitous language](https://github.com/dhslrl321/cqrs-journey-korean-ver/blob/master/terms/Ubiquitous%20Language.mdwn) 를 포함한다.
+
+또한 Bounded Context 는 일관성을 보장해야 하는 하나의 개념적 단위, 컴포넌트로 볼 수 있다.
+이런 BoundedContext 는 보통 Event 를 일으켜서 다른 BoundedContext 와 통신한다
+
+> Gray : CQRS 패턴을 사용할 때, 종종 Event 를 사용하여 Bounded Context 간에 통신을 합니다. 데이터베이스 수준에서 데이터를 공유하는 것과 같이 데이터 integration 대한 대안적인 접근 방식이 있습니다.
+
+## Context Map
+
+에릭 에반스에 따르면 Context Map 은 "Bounded Context 간의 관계를 그리는 것으로 접점을 설명하고, 의사소통의 수단으로서 사용된다.
+
+각각의 서로 다른 Bounded Context 가 어떠한 관계를 가졌는지, 어떤 상호작용을 하는지 알 수 있도록 하는 것이 목적이다.
+
+_컨텍스트 맵은 상호 교류하는 시스템의 목록을 제공하고, 팀 내 의사소통의 촉매 역할을 한다._
 
 ---

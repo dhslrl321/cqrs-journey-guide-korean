@@ -1,0 +1,43 @@
+<div align="center">
+
+#### [목차 바로가기](https://github.com/dhslrl321/cqrs-journey-korean-ver/blob/master/Table%20of%20Contents.mdwn)
+
+</div>
+
+---
+
+# Contoso 컨퍼런스 관리 시스템에서 사용되는 Bounded Context
+
+## Order 과 Registration Bounded Context
+
+### Order
+
+orders 와 registraions 간의 Bounded Context 는 reservation, payment, registration items 로 구성된다.
+
+예약자가 우리의 시스템을 사용할 때, 예약과 결제 그리고 등록을을 관리하기 위한 주문 하나가 생성이된다.
+
+하나의 order 은 하나 혹은 n 개의 order item 를 소유할 수 있다. (_order(1) : orderItems(n)_)
+
+### Reservation
+
+예약(reservation) 은 가끔 하나 혹은 여러 개의 컨퍼런스의 seat (좌석) 예약을 포함한다.
+
+좌석을 예약하려는 사람이 컨퍼런스의 좌적을 구매하기 위해 주문 프로세스 (ordering process) 를 진행할 때, 시스템은 여러 좌석 (seat) 를 포함하는 Reservation 하나를 생성한다. (_reservation(1) : seat(n)_)
+
+이렇게 Reservation 에 포함된 좌석은 다른 예약자들이 예약할 수 없는 상태로 약 15분 동안 지속된다.
+
+한 번 좌석이 예약되면 15분동안 unavailable 상태이며 예약이 성공적으로 끝나지 않았다면, 즉 payment 가 이뤄지지 않았다면 15분 이후에 다시 available 상태로 돌아간다.
+
+## Conference Management Bounded Context
+
+Conference Management Bounded Context 에서는 기업 고객이 컨퍼런스를 만들고 관리할 수 있도록 하는 Bounded Context 이다.
+
+기업 고객이 새로운 컨퍼런스를 만들게 되면 특정 인증 절차를 거쳐 (email 주소와 access code 코드를 통해) 해당 컨퍼런스에 대한 detail 에 접근할 수 있게 된다.
+
+이 말은 즉, 시스템은 기업 고객이 컨퍼런스 하나를 생성하면 access code 하나를 생성해줘야 한다.
+
+## Payment Bounded Context
+
+## Discount Bounded Context
+
+---
