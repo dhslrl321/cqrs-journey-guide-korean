@@ -36,6 +36,16 @@ Conference Management Bounded Context 에서는 기업 고객이 컨퍼런스를
 
 이 말은 즉, 시스템은 기업 고객이 컨퍼런스 하나를 생성하면 access code 하나를 생성해줘야 한다.
 
+기업 고객은 컨퍼런스에 대해서 다음 정보들을 명세할 수 있다
+
+- 컨퍼런스의 이름, 설명 그리고 slug (part of the URL used to access the conference).
+- 컨퍼런스의 시작일과 종료일
+- 컨퍼런스에서 사용되는 서로 다른 타입의 좌석들
+
+추가적으로 기업 고객은 콘토소 홈페이지에 본인들의 컨퍼런스를 보이게 할 것인지 보이지 않게 할 것인지에 대한 visibility 설정을 할 수 있다.
+
+기업 고객은 참석자(attendence) 와 주문(orders) 들을 확인할 수 있다.
+
 ## Payment Bounded Context
 
 ## Discount Bounded Context

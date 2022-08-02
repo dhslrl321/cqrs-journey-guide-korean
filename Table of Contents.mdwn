@@ -37,6 +37,8 @@ CQRS Journey 의 목차입니다.
 ### **Journey 2.** [도메인 분석](https://github.com/dhslrl321/cqrs-journey-korean-ver/tree/master/part01-journey/journey02)
 
 1. [시작하며](https://github.com/dhslrl321/cqrs-journey-korean-ver/blob/master/part01-journey/journey02/00.%20시작하며.mdwn)
+2. [이번 챕터에서 사용되는 용어들](https://github.com/dhslrl321/cqrs-journey-korean-ver/blob/master/part01-journey/journey02/01.%20이번%20챕터에서%20사용되는%20정의들.mdwn)
+3. [Contoso Management System 에서 사용되는 Bounded Context](https://github.com/dhslrl321/cqrs-journey-korean-ver/blob/master/part01-journey/journey02/02.%20Contoso%20에서%20사용되는%20Bounded%20Context.mdwn)
 
 ### **Journey 3.** Orders 와 Registration 의 Bounded Context
 
