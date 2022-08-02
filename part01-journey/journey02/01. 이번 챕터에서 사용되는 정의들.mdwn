@@ -1,0 +1,27 @@
+<div align="center">
+
+#### [목차 바로가기](https://github.com/dhslrl321/cqrs-journey-korean-ver/blob/master/Table%20of%20Contents.mdwn)
+
+</div>
+
+---
+
+# 이번 챕터에서 사용되는 정의 및 용어들
+
+이번 챕터에서는 계속해서 새로운 용어를 사용할 것이고 그 용어들에 대해서 잠시 설명하는 시간을 가져보도록 하자.
+
+더 자세히는 Reference Guide 의 CQRS in Context 챕터를 확인할 수 있다.
+
+## Domain
+
+도메인, domain 은 Contoso 컨퍼런스 관리 시스템의 비즈니스 도메인을 의미한다.
+
+## Bounded Context
+
+[\*Bounded Context](https://github.com/dhslrl321/cqrs-journey-korean-ver/blob/master/terms/Bounded%20Context.mdwn) 는 에릭 에반스의 책에서 소개된 용어이다.
+
+쉽게 말해서 에반스는 거대하고 복잡한 시스템을 관리하기 쉽도록 나누록 나누었고 거대한 시스템은 Bounded Context 들의 조합으로 구성된다.
+
+각각의 Bounded Context 는 각각의 domain 모델을 포함하고 있는 일종의 문맥이기도 하면서 [\*ubiquitous language]() 를 포함한다
+
+---
