@@ -48,6 +48,32 @@ Conference Management Bounded Context 에서는 기업 고객이 컨퍼런스를
 
 ## Payment Bounded Context
 
-## Discount Bounded Context
+payment bounded context 는 컨퍼런스 관리 시스템과 외부 결제 모듈간의 상호작용에 대한 책임이 있다.
+
+외부로 결제에 대한 정보를 전달하고 결제 성공과 실패에 대한 결과들을 처리할 수 있어야 한다
+
+_Initially, the payments bounded context will assume that the business customer has an account with the third-party payment system (although not necessarily a merchant account), or that the busi- ness customer will accept payment by invoice._
+
+---
+
+# 포함되지 않은 Bounded Context
+
+이번 CQRS Journey 에서 다루지는 않겠지만, 콘토소 시스템에 최종 릴리즈에 포함되지 않을 수 있는 Bounded Context 가 존재한다
+
+## Discount Bounded Context, 할인 Bounded Context
+
+앞서 존재하는 세가지 Bounded Context 와 더불어서 좌석 구매에 할인을 관리하고 적용하는 Bounded Context 이다
+
+## Occasionally Disconnected Conferernce Management client
+
+해당 Bounded Context 는 현장에서 회의를 관리할 수 있도록 한다.
+
+회의 관련 라벨 인쇄, 참석자 관리 및 기록 혹은 현장 결제나 추가 좌석 구매에 대한 Bounded Context 이다.
+
+## The Submissions And Schedule Management bounded context, 제출과 일정 관리 Bounded Context
+
+해당 Bounded Context 는 Node.js 를 사용해서 구현될 것이며 서면 제출 및 컨퍼런스 스케줄 관리에 대한 Bounded Context 이다
+
+> 위 세가지 Bounded Context 는 이번 책에서 이야기하지 않지만 CQRS Journey 홈페이지에서 계속해서 추가될 예정이므로 참고하길 바란다
 
 ---

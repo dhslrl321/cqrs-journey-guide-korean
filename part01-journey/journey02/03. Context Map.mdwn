@@ -1,0 +1,40 @@
+<div align="center">
+
+#### [목차 바로가기](https://github.com/dhslrl321/cqrs-journey-korean-ver/blob/master/Table%20of%20Contents.mdwn)
+
+</div>
+
+---
+
+# 콘토소 컨퍼런스 관리 시스템의 Context Map
+
+아래에 나오는 표와 그림은 전체 콘토소 시스템에 존재하는 Bounded Context 간의 관계를 나타낸다.
+
+비록 아래에 나올 Context map 이 간단해 보여도 이들을 구현하는 것과 각각의 Bounded Context 의 상호작용은 꽤나 복잡할 것이다.
+
+이러한 복잡한 시스템을 통해서 우리는 다양한 CQRS 패턴과 Event Sourcing 에 대해서 더 잘 이해하고 더 많은 Lesson Learn 을 얻을 수 있을 것이라 생각한다
+
+<img width="564" alt="image" src="https://user-images.githubusercontent.com/48385288/183277841-32be14a7-24be-47f7-a141-23547b57e5b8.png">
+
+위 그림은 콘토소 컨퍼런스 관리 시스템을 구성하는 핵심적인 3가지의 Bounded Context 의 관계를 나타낸다
+
+해당 그림에 있는 화살표는 각각의 구성요소 사이에서 발생하는 이벤트의 흐름을 나타낸다
+
+> 그레이 : CQRS 프로젝트에 대해서 모든 것을 이해하기란 쉽지 않습니다. 한 시스템에 여러 구성요소가 있는 경우 다른 바운디드 컨텍스트 간의 결합과 통합에 대해서 이해하기 위해서는 Context Map 이 좋은 방법이 될 수 있습니다.
+
+각각의 Bounded Context 에 대해서 다루는 챕터에서 더욱 자세히 알 수 있겠지만 그림 1에 있는 화살표에 대해서 간략하게 설명하자면 다음과 같다.
+
+1. 컨퍼런스가 생성, 업데이트, 공개될 때 이벤트, 좌석이 생성되고 업데이트 될 때 발생하는 이벤트
+2. 주문이 발생되고 업데이트 될 때 발생하는 이벤트, 참석자가 좌석에 배정되면 발생하는 이벤트
+3. 결제 하나가 생성될 때 발생하는 이벤트 (requests for a payment)
+4. 결제 성공과 실패에 대한 ack
+
+# 왜 우리는 이러한 Boundex Context 를 선택했는가?
+
+_During the planning stage of the journey, it became clear that these were the natural divisions in the domain that could each contain their own, independent domain models. Some of these divisions were eas- ier to identify than others. For example, it was clear early on that the conference management bounded context is independent of the re- mainder of the domain. It has clearly defined responsibilities that re- late to defining conferences and seat types and clearly defined points of integration with the rest of the application._
+
+_On the other hand, it took some time to realize that the orders and registrations bounded context is separate from the Payments bounded context. For example, it was not until the V2 release of the application that all concepts relating to payments disappeared from the orders and registrations bounded context when the OrderPaymentConfirmed event became the OrderConfirmed event._
+
+_More practically, from the perspective of the journey, we wanted a set of bounded contexts that would enable us to release a working application with some core functionality and that would enable us to explore a number of different implementation patterns: CQRS, CQRS/ES, as well as integration with a legacy, CRUD-style bounded context._
+
+---
