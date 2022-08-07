@@ -1,0 +1,88 @@
+<div align="center">
+
+#### [목차 바로가기](https://github.com/dhslrl321/cqrs-journey-korean-ver/blob/master/Table%20of%20Contents.mdwn)
+
+</div>
+
+---
+
+# order 를 생성하기 위한 요구사항
+
+예약자는 컨퍼런스에서 좌석을 주문하고 지불하는 사람이다.
+
+주문은 두가지 단계가 있다.
+
+### 첫번째 단계
+
+예약자는 여러 좌석을 선택한 다음 좌석에 대한 비용을 지불한다.
+
+만약 좌석 예약에 대한 결제가 완료되지 않는다면 좌석 예약은 정해진 시간 후에 만료되며 시스템은 다른 예약자가 좌석을 예약할 수 있도록 한다
+
+아래 그림은 초기 예약을 탐구하기 위해서 사용되었던 UI mockup 을 보여준다.
+
+<img width="1150" alt="image" src="https://user-images.githubusercontent.com/48385288/183282838-75c766b1-320f-4f46-9606-6417d3f3045c.png">
+
+위에 보이는 UI Mockup 은 여러가지로 팀에게 도움이 되었었다.
+
+- 팀이 개발하려는 시스템의 핵심 가치를 디자인 외주를 맡기는 다른 회사에게 전달할 수 있게 되었다.
+- 도메인 전문가의 지식을 개발자에게 전달할 수 있게 되었다.
+- ubiquitous language 에 대한 정의를 정제할 수 있게 되었다.
+- "만약? ~ 하다면" 이라는 시나리오에 대해서 생각할 수 있게 되었다
+- 인수 테스트의 기반을 확립할 수 있게 되었다
+
+# 아키텍처
+
+이 애플리케이션은 Windows Azure 에 배포되도록 설계되었다.
+
+애플리케이션은 ASP 로 구성된 웹 페이지이며 .NET MVC 웹 애플리케이션 프레임워크가 사용되었다.
+
+애플리케이션의 읽기 및 쓰기 데이터는 모두 Azure SQL DB 인스턴스를 사용한다.
+
+While you are exploring and testing the solution, you can run it locally, either using the Windows Azure compute emulator or by run- ning the MVC web application directly and running a console applica- tion that hosts the handlers and domain objects. When you run the application locally, you can use a local SQL Server Express database instead of SQL Database, and use a simple messaging infrastructure implemented in a SQL Server Express database.
+
+응용프로그램 실행 옵션에 대한 자세한 내용은 부록 1 "릴리스 노트"를 참조하라.
+
+> Gray : CQRS 패턴에서 자주 언급되는 장점은 query side 와 command side 의 서로 다르게 scale 을 유지할 수 있다는 것입니다. 해당 바운디드 컨텍스트에서는 command side 의 작업이 매우 많지 않을 것입니다. 즉, 해당 컨텍스트에서는 command 와 query 가 동일한 worker 에 배포될 것입니다.
+
+# 패턴과 컨셉
+
+팀은 첫번째 바운디드 컨텍스트를 일을 복잡하게 만들지 않기 위해서 Event Sourcing 은 사용하지 않는 방향으로 구현을 결정했다.
+
+하지만 추후에 이벤트 소싱이 어떠한 확실한 이점을 가져다 준다면 이벤트 소싱 사용을 다시 검토하기로 했다.
+
+> 이벤트 소싱이 CQRS 에 어떻게 사용되는지 궁금하다면 reference guide 의 "Introducint Event Sourcing" 을 확인하세요
+
+팀이 구현할 Aggregate 와 Entity 에 대한 중요한 토론이 있었다.
+
+아래 나올 이미지는 그들이 생각해낸 여러 방법의 장단점을 비교하기 위해서 사용된 화이트보드의 이미지다.
+
+아래의 시나리오는 예약자가 특정 좌석을 예약하기 위해서 시도하는 일련의 과정이다.
+
+시스템은 아래의 것들을 보장해야 한다.
+
+- 충분한 좌석이 있는지 확인한다
+- 예약에 대한 세부 정보들을 기록해야 한다
+- 컨퍼런스 좌석에 대해서 전체 좌석의 수와 예약된 좌석의 수를 항상 최신화해야한다.
+
+> 우리는 팀이 더욱 도메인에 집중할 수 있게 하기 위해서 의도적으로 시나리오를 단순하게 유지했다. 이 예들은 해당 바운디드 컨텍스트의 최종 구현을 설명하지 않는다.
+
+첫번째 접근 방식은 두개의 서로 다른 애그리거트를 사용하는 것이다.
+
+<img width="959" alt="image" src="https://user-images.githubusercontent.com/48385288/183284590-ad2bf424-0948-4c80-be05-ee744bac4520.png">
+
+> gray : 이 다이어그램은 시스템이 어떻게 이벤트를 다루고 전달하는 지에 대해서 설명하지 않습니다. 다이어그램은 애그리거트 간의 논리적인 관계에 집중합니다.
+
+다이어그램에서 표현되는 숫자는 아래에서 설명한다.
+
+1. UI 는 attendee 인 X 와 Y 를 157 번호의 컨퍼런스로 등록하는 command 를 보낸다. 이 command 는 새로운 Order aggregate 로 전달된다
+2. 주문 aggregate 는 주문이 생성되었다는 이벤트를 발생시킨다. 이벤트는 SeatsAvailability Aggregate 로 라우팅된다.
+3. 컨퍼런스 번호 157에 대한 SeatsAvailability 애그리거트는 데이터소스로부터 seat 정보를 (rehydration) 가져온다.
+4. SeatsAvailability 가 예약된 총 좌석 수를 업데이트한다.
+5. 업데이트된 버전의 SeatsAvailability 가 데이터 스토어에 저장된다.
+6. 4239 라는 ID 를 가진 새로운 Order 애그리거트는 데이터스토어에 저장된다.
+
+> Markus : rehydration 이라는 용어는 데이터소스로 부터 불러들어온 애그리거트을 역직렬화하는 과정을 뜻합니다.
+
+> Jana : 당신은 persistence 와 rehydration 을 위해서 Memento 패턴을 사용할 수 있습니다.
+
+---
