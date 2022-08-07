@@ -8,4 +8,4 @@
 
 # Journey 3. Orders 와 Registration 의 Bounded Context
 
-#### 1. [시작하며](https://github.com/dhslrl321/cqrs-journey-korean-ver/blob/master/part01-journey/journey03/01.%20시작하며.mdwn)
+#### 1. [Bounded Context 에 대한 설명](https://github.com/dhslrl321/cqrs-journey-korean-ver/blob/master/part01-journey/journey03/01.%20시작하며.mdwn)

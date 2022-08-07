@@ -6,7 +6,7 @@
 
 ---
 
-# Bounded Context 의 추가 설명
+# Bounded Context 에 대한 설명
 
 주문과 예약(Order, Registration) 바운디드 컨텍스트는 컨퍼런스에 참가하고자 하는 참석자의 예약 프로세스 (booking process) 에 대해서 부분적으로 책임이 있다.
 
