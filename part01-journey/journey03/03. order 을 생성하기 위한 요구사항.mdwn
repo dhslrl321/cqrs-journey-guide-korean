@@ -122,8 +122,8 @@ While you are exploring and testing the solution, you can run it locally, either
 팀은 위의 접근법에 대해서 다음 질문들을 식별했다.
 
 - 등록을 위한 충분한 좌석이 있다는 검증은 어디에서 이루어질까? 주문 또는 좌석 가용성 집계에서?
-- [\*Transaction Boundaries](#) 는 어디일까?
+- [\*Transaction Boundaries](https://github.com/dhslrl321/cqrs-journey-korean-ver/blob/master/terms/Transaction%20Boundaries.mdwn) 는 어디일까?
 - 이 모델에서 동시성 (concurrency) 이슈는 어디서 발생할까? 동시에 주문이 이뤄질까?
-- Aggregate Root 는 무엇일까?
+- [\*Aggregate Root](#) 는 무엇일까?
 
 ---
