@@ -19,4 +19,6 @@ registration 프로세스는 참석자 혹은 구매자에게 불편함을 주�
 
 우리 팀이 처음으로 다루는 바운디드 컨텍스트이기 때문에, 도메인의 기능들을 support 할 수 있는 몇가지의 인프라 컴포넌트들 (infrastructure elements of the system) 을 구현해야 한다.
 
+event [message bus](#) 나 [aggregate](https://github.com/dhslrl321/cqrs-journey-korean-ver/blob/master/terms/Aggregate.mdwn) 를 위한 영속성 계층과
+
 ---
