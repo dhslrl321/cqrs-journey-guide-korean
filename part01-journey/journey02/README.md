@@ -14,4 +14,4 @@
 
 #### 2. [Contoso Management System 에서 사용되는 Bounded Context](https://github.com/dhslrl321/cqrs-journey-korean-ver/blob/master/part01-journey/journey02/02.%20Contoso%20에서%20사용되는%20Bounded%20Context.mdwn)
 
-#### 3.[Context Map](https://github.com/dhslrl321/cqrs-journey-korean-ver/blob/master/part01-journey/journey02/03.%20Context%20Map.mdwn)
+#### 3.[Contoso Management System 에서 사용되는 Context Map](https://github.com/dhslrl321/cqrs-journey-korean-ver/blob/master/part01-journey/journey02/03.%20Context%20Map.mdwn)
