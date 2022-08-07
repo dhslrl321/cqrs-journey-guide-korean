@@ -14,6 +14,7 @@ CQRS Journey 의 목차입니다.
 - **Part1** : CQRS Journey
 - **Part2** : CQRS References
 - **Part3** : Tales from the trenches
+- **terms** : 책에서 나오는 용어에 대한 번역자의 추가적인 설명
 
 <br />
 
@@ -44,6 +45,7 @@ CQRS Journey 의 목차입니다.
 ### **Journey 3.** [Orders 와 Registration 의 Bounded Context](https://github.com/dhslrl321/cqrs-journey-korean-ver/tree/master/part01-journey/journey03)
 
 1. [Bounded Context 에 대한 설명](https://github.com/dhslrl321/cqrs-journey-korean-ver/blob/master/part01-journey/journey03/01.%20Bounded%20Context%20에%20대한%20설명.mdwn)
+2. [도메인 정의](https://github.com/dhslrl321/cqrs-journey-korean-ver/tree/master/terms)
 
 ### **Journey 4.** Orders 와 Registrations 에 대한 개념 확장과 성능 향상
 
@@ -92,3 +94,5 @@ CQRS Journey 의 목차입니다.
 ### **Chapter 5.** "TOPAZ"
 
 ### **Chapter 6.** "eMoney Nexus"
+
+# 4. [Terms](https://github.com/dhslrl321/cqrs-journey-korean-ver/tree/master/terms)

@@ -1,0 +1,15 @@
+<div align="center">
+
+#### [목차 바로가기](https://github.com/dhslrl321/cqrs-journey-korean-ver/blob/master/Table%20of%20Contents.mdwn)
+
+</div>
+
+---
+
+# 도메인 정의, Ubiquitous Language
+
+아래 나올 것들은 팀이 Order 과 Registration 에 대한 Bounded Context 를 개발하기 위해서 사용되는 주요 도메인 관련 용어이다.
+
+### Attendee
+
+---

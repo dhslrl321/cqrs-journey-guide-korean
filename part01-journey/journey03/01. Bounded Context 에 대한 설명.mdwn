@@ -46,6 +46,8 @@ command 는 시스템에서 필수적이다
 
 한가지 예로 `MakeSeatResetvation` 라는 command 는 이번 바운디드 컨텍스트에서 사용자가 UI 를 통해서 요청을 보내거나 Process Manager 가 어떠한 행동을 통해서 process 를 수행하도록 요청할 때 발생하곤 한다
 
+> Gray : command 의 약간 다른 정의를 포함하는 몇 가지 최적화에 대한 이야기는 6장, "우리 시스템 버전"을 참조하세요
+
 ### Event
 
 `OrderConfirmed` 라는 이벤트 처럼 Event 는 시스템에서 과거에 발생한 어떠한 사건을 의미한다. 보통 어떤 Command 의 결과에 의해서 발생되며 domain model 안의 [\*aggregate](https://github.com/dhslrl321/cqrs-journey-korean-ver/blob/master/terms/Aggregate.mdwn) 에서 이벤트를 발생시킨다.
@@ -66,6 +68,10 @@ Process Manager 는 어떠한 비즈니스 로직도 갖지 않는다.
 단순하게 다음에 보낼 이벤트를 결정할 로직만 갖는다
 
 우리의 Process Manager 는 Gregor Hohpe 와 Bobby Woolf 의 기업 통합 패턴이라는
-책의 312쪽에서 321 쪽에서 정의한 [\*Process Manager Pattern](#) 의 구현이다
+책의 312쪽에서 321 쪽에서 정의한 [\*Process Manager Pattern](https://github.com/dhslrl321/cqrs-journey-korean-ver/blob/master/terms/Process%20Manager%20Patterm.mdwn) 의 구현이다.
+
+이 바운디드 컨텍스트에서 Process Manager 는 이벤트를 수신할 뿐만 아니라 구독할 수 있다.
+
+Reference Guide 에서는 다양한 CQRS 관련 정의들과 용어에 대해서 학습할 수 있다.
 
 ---
