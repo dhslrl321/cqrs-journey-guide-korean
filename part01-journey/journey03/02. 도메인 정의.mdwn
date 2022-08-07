@@ -10,6 +10,99 @@
 
 아래 나올 것들은 팀이 Order 과 Registration 에 대한 Bounded Context 를 개발하기 위해서 사용되는 주요 도메인 관련 용어이다.
 
-### Attendee
+- attendee
+- registrant
+- user
+- seat assignment
+- order
+- order item
+- seat
+- reservation
+- seat availablity
+- conference site
+
+### Attendee, 참석자
+
+attendee 는 컨퍼런스에 참석할 자격이 있는 사람이다.
+
+attendee 는 참석에 대한 badge 를 인쇄하거나 컨퍼런스 후에 피드백을 제공하며 agenda 를 관리하기 위해서 시스템과 상호작용할 수 있다.
+
+attendee 는 돈을 지불해서 참가하는 참석자 일 수도 있지만. 자원 봉사자, 연사 혹은 100% 할인된 사람과 깉이 회의에 참가하기 위해서 돈을 지불하지 않은 사람일 수 있다.
+
+attendee 는 speaker, student, volunteer, track chair 과 같은 여러 유형의 참석자 타입에 포함될 수 있다
+
+### Registrant, 예약자
+
+Registrant 는 주문과 해당 주문에 대한 결제를 위해 시스템과 상호작용하는 사람이다.
+
+registrant 는 order 에 대한 registration 을 생성할 수 있고 Registrant 는 attendee 가 될 수 있다.
+
+### User, 사용자
+
+User 는 attendee, registrant, speaker, volunteer 과 같이 컨퍼런스에 관련이 있는 사람이다.
+
+각각의 user 는 시스템에 있는 사용자 고유 정보에 접근할 때 사용하는 unique record locator code 가 존재한다.
+
+예를 들어서 예약자인 사용자는 record locator code 를 이용해서 그의 주문에 접근할 수 있고, 참석자인 사용자는 record locator code 를 이용해서 그의 개인화된 회의 agenda 에 접근할 수 있다
+
+### Seat assignment, 좌석 배정
+
+seat assignment 는 참석자를 확인된 순서로 좌석에 배정한다.
+
+즉, 주문은 이상의 좌석을 가질 수 있게 된다.
+
+### Order
+
+주문자가 시스템과 상호작용할 때, 시스템은 예약, 결제 그리고 등록을 위해서 order 하나를 생성한다.
+
+Order Item 에 대해서 성공적으로 결제가 완료된다면, Order 는 완료된다. (_order 의 state 가 confirmed 된다_)
+
+### Order Item
+
+Order Item 은 좌석의 타입과 수량을 나타내며 order 와 연관이 있다.
+
+Order Item 은 다음 세가지 상태 중 하나의 상태로 존재한다.
+
+- CREATED
+- RESERVED
+- REJECTED
+
+Order Item 이 생성된다면 CREATED 상태가 될 것이다.
+
+그리고 시스템이 예약자가 요청한 좌석 유형의 좌석의 수량을 예약한 경우 Order Item 의 상태는 RESERVED 상태가 된다
+
+시스템이 예약자가 요청한 좌석 타입의 수량을 제공할 수 없는 경우는 REJECTED 된 상태이다
+
+### Seat
+
+좌석은 회의에 참석하거나 칵테일 파티, 튜토리얼 혹은 워크샵과 같은 컨퍼런스에서 특정 세션에 접근할 수 있는 권리를 나타낸다.
+
+기업 고객은 각 회의의 좌석 할당량을 변경할 수 있으며 각 세션의 좌석 할당량을 변경할 수 있다.
+
+### Reservation
+
+예약은 하나 이상의 좌석을 일시적으로 예약하는 것이다.
+
+주문 프로세스는 예약을 생성하고 예약자가 주문 프로세스를 진행하면 시스템은 예약자가 요청한 좌석 수를 예약한다.
+
+그러면 해당 좌석은 다른 예약자들이 예약할 수 없게 되며 좌석을 선점한 예약자가 주문 프로세스를 승인할 수 있는 n 분 동안 보류된다.
+
+예약자가 n 분 이내에 좌석에 대한 비용을 지불하지 않으면 시스템은 예약을 자동으로 취소하고 다른 예약자가 좌석을 예약할 수 있게 된다.
+
+### Seat availability
+
+모든 컨퍼런스는 각 유형의 좌석의 가용성을 추적한다.
+
+처음에는 모든 좌석을 예약하고 구매할 수 있는데, 누군가가 좌석을 예약하면 해당 유형의 이용 가능한 좌석의 수가 줄어든다.
+
+시스템이 예약을 취소하면 해당 유옇ㅇ의 이용 가능한 좌석 수가 증가한다.
+
+기업 고객은 사용할 수 있는 각 좌석 유형의 초기 수를 정의할 수 있고 이 정보들은 컨퍼런스의 property 이다. 또한 컨퍼런스의 소유자는 개별 좌석 유형에 대한 번호를 조정할 수 있다
+
+### Conference Site
+
+고유한 URL을 사용하여 시스템에 정의된 모든 회의에 액세스할 수 있다.
+
+등록자는 해당 site 에서 주문 프로세스를 시작할 수 있다
 
 ---
