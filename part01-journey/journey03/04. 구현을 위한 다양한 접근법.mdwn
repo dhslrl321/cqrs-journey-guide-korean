@@ -70,6 +70,14 @@ Order 과 Registration 을 구현하기 위해서 팀은 다양한 방식으로 
 - 이 모델에서 동시성 (concurrency) 이슈는 어디서 발생할까? 동시에 주문이 이뤄질까?
 - 여기서 [\*Aggregate Root](https://github.com/dhslrl321/cqrs-journey-korean-ver/blob/master/terms/Aggregate%20Root.mdwn) 는 무엇일까?
 
-> Gray : 프로세스 매니저가 옳은가 [\*Saga](#) 가 옳은가?
+아래에서 하나씩 알아보도록 하자
 
----
+# 검증, Validation
+
+예약자가 좌석을 예약하기 전에, 시스템은 해당 좌석이 예약이 가능한 상태인지 확인해야 한다.
+
+비록 UI 에 있는 로직이 Command 를 보내기 전에 충분한 좌석이 있는지 검사할 수 있지만, 도메인 내부에서도 검사를 해야 한다.
+
+UI 에서 검사를 요청하는 시간과 실제 Aggregate 로 요청이 들어와서 처리되는 시간에 차이가 있기 때문이다.
+
+초기 모델에서 유효성 검증은 Order 와 SeatsAvailablilty 애그리거트에서 발생했다
