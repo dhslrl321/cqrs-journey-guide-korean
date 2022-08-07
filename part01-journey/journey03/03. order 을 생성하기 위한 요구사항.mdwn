@@ -66,6 +66,8 @@ While you are exploring and testing the solution, you can run it locally, either
 
 > 우리는 팀이 더욱 도메인에 집중할 수 있게 하기 위해서 의도적으로 시나리오를 단순하게 유지했다. 이 예들은 해당 바운디드 컨텍스트의 최종 구현을 설명하지 않는다.
 
+# 첫번쨰 접근방식
+
 첫번째 접근 방식은 두개의 서로 다른 애그리거트를 사용하는 것이다.
 
 <img width="959" alt="image" src="https://user-images.githubusercontent.com/48385288/183284590-ad2bf424-0948-4c80-be05-ee744bac4520.png">
@@ -84,5 +86,44 @@ While you are exploring and testing the solution, you can run it locally, either
 > Markus : rehydration 이라는 용어는 데이터소스로 부터 불러들어온 애그리거트을 역직렬화하는 과정을 뜻합니다.
 
 > Jana : 당신은 persistence 와 rehydration 을 위해서 Memento 패턴을 사용할 수 있습니다.
+
+# 두번째 접근방식
+
+팀이 고려한 두번째 접근방식은 아래 보이는 그림과 같이 하나의 애그리거트를 사용한다.
+
+<img width="904" alt="image" src="https://user-images.githubusercontent.com/48385288/183285193-5fee31d1-0a74-4a7d-a3ba-78acc9bd0657.png">
+
+다이어그램에서 표현되는 숫자는 아래에서 설명한다.
+
+1. UI 는 attendee 인 X 와 Y 를 157 번호의 컨퍼런스로 등록하는 command 를 보낸다. 이 command 는 Conference aggregate 로 Id 157 과 함께 전달된다
+2. 157 번호를 가진 컨퍼런스 애그리거트는 데이터 소스로부터 데이터를 가져온다.
+3. Order Entity 는 예약을 검증한다. (좌석이 충분한지 확인하기 위해서 SeatsAvailablility 엔티티로 쿼링한다), 그리고 컨퍼런스의 엔티티에서 예약된 좌석의 수를 업데이트하는 메서드를 호출한다.
+4. SeatsAvailability 가 예약된 총 좌석 수를 업데이트한다.
+5. 업데이트된 버전의 Conference 애그리거트가 데이터 스토어에 저장된다.
+
+# 세번째 접근 방식
+
+세번째 접근 방식은 프로세스 관리자를 이용한 방식이다.
+프로세스 관리자를 이용해서 두 애그리거트 간의 상호작용을 조정한다.
+
+<img width="914" alt="image" src="https://user-images.githubusercontent.com/48385288/183285366-f3e96b13-3b4e-4e25-b673-cd644cd63df0.png">
+
+다이어그램에서 표현되는 숫자는 아래에서 설명한다.
+
+1. UI 는 attendee 인 X 와 Y 를 157 번호의 컨퍼런스로 등록하는 command 를 보낸다. 해당 command 는 Order Aggregate 로 라우팅된다.
+2. 4239 라는 ID 를 가진 새로운 Order 애그리거트가 데이터 스토어에 저장된다.
+3. Order 애그리거트는 RegistrationProcessManager 클래스에 의해서 처리된 이벤트를 발생시킨다.
+4. RegistrationProcessManager 클래스는 해당 명령이 157 이라는 Id 를 가진 SeatsAvailiablity 애그리거트로 보내져야 한다는 것을 결정한다.
+5. SeatsAvailability 가 예약된 총 좌석 수를 업데이트한다.
+6. 예약된 좌석의 수는 SeatsAvailability 애그리거트에서 업데이트 되며 저장된다.
+
+> Process Manager 과 Saga 에 대한 더 다양한 정보는 Reference Guide 의 챕터 6인 Saga on Sagas 에서 확인할 수 있다.
+
+팀은 위의 접근법에 대해서 다음 질문들을 식별했다.
+
+- 등록을 위한 충분한 좌석이 있다는 검증은 어디에서 이루어질까? 주문 또는 좌석 가용성 집계에서?
+- [\*Transaction Boundaries](#) 는 어디일까?
+- 이 모델에서 동시성 (concurrency) 이슈는 어디서 발생할까? 동시에 주문이 이뤄질까?
+- Aggregate Root 는 무엇일까?
 
 ---
