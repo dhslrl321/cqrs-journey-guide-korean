@@ -19,6 +19,18 @@ registration 프로세스는 참석자 혹은 구매자에게 불편함을 주�
 
 우리 팀이 처음으로 다루는 바운디드 컨텍스트이기 때문에, 도메인의 기능들을 support 할 수 있는 몇가지의 인프라 컴포넌트들 (infrastructure elements of the system) 을 구현해야 한다.
 
-event [message bus](#) 나 [aggregate](https://github.com/dhslrl321/cqrs-journey-korean-ver/blob/master/terms/Aggregate.mdwn) 를 위한 영속성 계층과
+이러한 컴포넌트들은 command 와 event 에 대한 [message bus](https://github.com/dhslrl321/cqrs-journey-korean-ver/blob/master/terms/Message%20Bus.mdwn) 나 [aggregate](https://github.com/dhslrl321/cqrs-journey-korean-ver/blob/master/terms/Aggregate.mdwn) 를 위한 영속성 계층 기술들을 포함한다
+
+> 이번 챕터에서 말하는 콘토소 컨퍼런스 관리 시스템은 시스템의 최종 버전이 아니다 (not a final version of system) 여정을 진행하면서 결정되었던 혹은 개발되구 구현된 시스템의 구성요소들이 시간이 지나면서 다른 여정에서 바뀔 수 있다.
+
+추후에 있을 다음 여정에서 이러한 바운디드 컨텍스트에 대한 개선 계획이 있다.
+
+개선 계획 중에는 다음과 같은 것들이 있다
+
+- 대기자 명단에 대한 관리
+- 좌석 요청에대 한 대기자 명단 관리
+- 기업 고객이 좌석유형에 따른 할인
+
+> 이번 릴리즈에서 대기자 명단은 구현되지 않지만 CQRS 커뮤니티의 멤버들이 이 기능을 포함해서 다른 기능들을 추가하고 있습니다. CQRS Journey 사이트를 통해서 확인하길 바랍니다.
 
 ---
