@@ -57,6 +57,99 @@ read model 은 Datasource 로 부터 정보를 검색하고 데이터 전송 객
 
 # 2. Command Issuing, 커맨드 발행하기
 
-Web Application 은
+Web Application 은 command 를 write model 에게 전송하기 위해서 Command Bus 를 사용한다.
+
+이 Command bus 는 신뢰할 수 있는 message 를 전달하는 infrstructure 이며, 이번 시나리오에서는 단일 consumer 를 위해서 비동기적으로 전송된다.
+
+**RegistrationController** 는 user 와 상호작용 결과로 `RegisterToConference` 커맨드를 write model 에게 전달할 수 있다.
+
+이 커맨드는 Conference 에게 하나 이상의 좌석 등록에 대한 command 를 보낸다.
+
+그런 다음 **RegistrationController** 클래스는 Read Model 을 Polling 하여 등록 요청이 성공했는지 확인한다.
+
+자세한 내용은 6. Polling The Read Model 을 참조하라.
+
+아래의 코드는 **RegistrationController** 가 `RegisterToConference` 커맨드를 보내는 일부분의 코드를 발췌한 것이다.
+
+```java
+@RestController
+@RequiredArgsConstructor
+public class RegistrationController {
+    private final CommandBus commandBus;
+
+    @PostMapping("/apis/registrations")
+    public ResponseEntity<Boolean> registry(@RequestBody RegisterModel model) {
+        RegisterToConference command = RegisterToConference.of(
+                model.getOrderId(),
+                model.getConferenceId(),
+                Seats.of(model.items
+                        .stream()
+                        .map(x -> Seat.of(x.getSeatTypeId(), x.getQuantity()))
+                        .collect(Collectors.toList())));
+
+        commandBus.send(command);
+        return ResponseEntity.ok(Boolean.TRUE);
+    }
+}
+```
+
+모든 커맨드는 비동기적으로 CommandBus 로 보내지고 반환값이 존재하지 않는다
+
+# 3. Handling Commands, 커맨드 핸들링
+
+커맨드 핸들러가 커맨드 버스에 등록되면, 커맨드 버스는 커맨드를 올바른 핸들러로 전달한다.
+
+**OrderCommandHandler** 클래스는 UI에서 보낸 `RegisterToConference` 명령을 핸들링한다.
+일반적으로 핸들러는 도메인에서 비즈니스 로직을 시작하고 데이터 저장소에 대한 상태 변경을 수행할 책임이 있다.
+
+아래의 코드는 **OrderCommandHander** 클래스가 `RegisterToConference` 커맨드를 처리하는 일부분의 코드를 발췌한 것이다.
+
+```java
+@RequiredArgsConstructor
+public class OrderCommandHandler {
+
+    private final OrderRepository repository;
+
+    public void handle(RegisterToConference command) {
+        List<OrderItem> orderItems = command.getSeats().get()
+                .stream()
+                .map(s -> OrderItem.of(s.getSeatTypeId(), s.getQuantity()))
+                .collect(Collectors.toList());
+
+        Order order = Order.create(command.getOrderId(), command.getConferenceId(), orderItems);
+        repository.save(order);
+    }
+}
+```
+
+# 4. Domain 에 비즈니스 로직 추가하기
+
+바로 앞에서 본 코드 샘플에서 OrderCommandHandler 클래스는 새로운 Order 인스턴스를 생성한다.
+
+Order 엔티티는 애그리거트 루트이며 생성자에서 도메인 로직을 시작한다.
+
+이 애그리거트 루트가 수행하는 작업에 대한 자세한 내용은 아래의 "쓰기 모델 내부" 섹션을 참조하라.
+
+# 5. 변화를 저장하기
+
+이전의 코드 샘플에서 handler 는 repository 의 save 메서드를 호출해서 새로운 Order 애그리거트를 저장한다.
+
+이 save 메서드는 Order 애그리거트에서 발생하는 어떠한 이벤트 타입이든 커맨드 버스로 publish 한다
+
+# 6. Polling the read Model
+
+사용자가 예약을 잘 수행했는지 확인하기 위해서는 UI 에서 RegisterToConference 커맨드가 잘 발행되었는지 확인할 수 있어야 한다.
+
+이 시스템의 모든 커맨드와 같이 RegisterToConference 커맨드는 비동기적으로 수행되며 어떠한 반환값도 갖지 않는다.
+
+결국 UI 는 해당 커맨드가 잘 수행되었는지 확인하기 위해서 read model 에게 확인하는 요청을 보내야 한다.
+
+아래의 코드는 시스템이 Order 를 잘 생성했는지 혹은 타임아웃이 발생했는지에 대한 Polling 을 구현한 코드이다.
+
+```java
+
+```
+
+팀은 이후에 시스템이 order 를 잘 생성하고 저장했는지 확인하기 위한 로직을 [\*Post-Redirect-Get Pattern]() 으로 대체했다.
 
 ---

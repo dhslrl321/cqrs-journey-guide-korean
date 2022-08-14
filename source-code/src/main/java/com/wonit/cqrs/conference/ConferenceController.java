@@ -1,4 +1,4 @@
-package com.wonit.cqrs.read;
+package com.wonit.cqrs.conference;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;

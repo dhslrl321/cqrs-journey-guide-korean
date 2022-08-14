@@ -1,4 +1,4 @@
-package com.wonit.cqrs.read;
+package com.wonit.cqrs.conference;
 
 public class ConferenceRepository {
     public Conference findByCode(String conferenceCode) {
