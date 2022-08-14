@@ -8,11 +8,11 @@
 
 # Bounded Context 에 대한 설명
 
-주문과 예약(Order, Registration) 바운디드 컨텍스트는 컨퍼런스에 참가하고자 하는 참석자의 예약 프로세스 (booking process) 에 대해서 부분적으로 책임이 있다.
+주문과 예약(Order, Registration) 바운디드 컨텍스트는 컨퍼런스에 참가하고자 하는 참석자의 예약 프로세스 (booking process) 에 대해서 책임이 있다.
 
-주문과 등록 바운디드 컨텍스트에서 에약자는 컨퍼런스의 좌석을 구매하고 해당 좌석에 참석하는 사람의 이름을 명시할 수 있다. (자세한 내용은 Chapter 5, Preparing for the V1 Release 에서 확인할 수 있다)
+주문과 예약 (Order, Registration) 바운디드 컨텍스트에서 에약자는 컨퍼런스의 좌석을 구매하고 해당 좌석에 참석하는 사람의 이름을 명시할 수 있다. (자세한 내용은 Chapter 5, Preparing for the V1 Release 에서 확인할 수 있다)
 
-이것은 우리의 여정에서 첫번째 정류지가 되었기 떄문에 (this is first stop on our CQRS Journey) 결국 팀은 주문 및 등록에 대한 core 를 구현하기로 결정했다.
+이것은 우리의 여정에서 첫번째 정류지가 되었기 떄문에 (this is first stop on our CQRS Journey) 팀은 주문 및 등록에 대한 core 를 구현하기로 결정했다.
 
 registration 프로세스는 참석자 혹은 구매자에게 불편함을 주어서는 안된다.
 또한 기업 고객들이 최대한 많은 좌석을 팔 수 있도록 해야 하며 컨퍼런스에서 다양한 유형의 좌석의 유형의 가격을 유연하게 판매할 수 있도록 해야 한다

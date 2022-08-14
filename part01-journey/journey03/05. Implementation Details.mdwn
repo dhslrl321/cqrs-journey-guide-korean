@@ -1,0 +1,58 @@
+<div align="center">
+
+#### [목차 바로가기](https://github.com/dhslrl321/cqrs-journey-korean-ver/blob/master/Table%20of%20Contents.mdwn)
+
+</div>
+
+---
+
+## Implementation details
+
+이번 파트에서는 주문 및 등록 바운디드 컨텍스트의 구현 및 몇가지의 중요한 기능에 대해서 설명한다.
+
+따라서 코드가 제공되는데, [https://github.com/microsoftarchive/cqrs-journey](https://github.com/microsoftarchive/cqrs-journey) 에서 확인할 수 있다.
+
+> 코드 샘플이 [\*RI](https://github.com/dhslrl321/cqrs-journey-korean-ver/blob/master/terms/Reference%20Implementation.mdwn)의 코드와 정확히 일치하기를 기대하지 마십시오. 이 장에서는 CQRS 여정의 단계를 설명합니다. 구현은 우리가 더 많이 배우고 코드를 반영함에 따라 변경될 수 있습니다.
+
+# High-Level Architecture
+
+이전 섹션에서 말했듯이, 팀은 처음에 이벤트 소싱을 사용하지 않고 CQRS 패턴만을 사용해서 컨퍼런스 관리 시스템의 예약을 구현하기로 했다.
+아래의 그림은 구현에 대한 핵심 컴포넌트들을 보여준다.
+
+MVC 웹 애플리케이션과 DB 및 Read And Write 모델 및 인프라의 구성요소를 포함한다.
+
+> read model 과 write model 내부에서 어떤 일이 발생하는지는 다음 섹션에서 설명할 것이다
+
+<img width="880" alt="image" src="https://user-images.githubusercontent.com/48385288/184528608-f9cc4430-6ef0-452b-820f-4c551e888e36.png">
+
+위 그림에 나온 컴포넌트에 대해서 조금 더 자세히 알아보도록 하자
+
+# Querying the Read Model
+
+ConferenceController 클래스에는 특정 회의에 대한 정보가 포함된 뷰를 만드는 Display라는 작업이 포함되어 있다.
+
+이 컨트롤러 클래스는 다음 코드를 사용하여 read Model 을 query 한다
+
+```C#
+public ActionResult Display(string conferenceCode) {
+var conference = this.GetConference(conferenceCode);
+return View(conference); }
+private Conference.Web.Public.Models.Conference GetConference(string conferenceCode) {
+var repo = this.repositoryFactory(); using (repo as IDisposable)
+{
+var conference = repo.Query<Conference>()
+.First(c => c.Code == conferenceCode);
+var conferenceModel =
+new Conference.Web.Public.Models.Conference
+{
+Code = conference.Code,
+Name = conference.Name,
+Description = conference.Description
+};
+return conferenceModel; }
+}
+```
+
+read model 은 Datasource 로 부터 정보를 검색하고 데이터 전송 객체(DTO) 클래스를 사용하여 컨트롤러에 반환한다
+
+---
