@@ -78,7 +78,7 @@ public class RegistrationController {
     private final CommandBus commandBus;
 
     @PostMapping("/apis/registrations")
-    public ResponseEntity<Boolean> registry(@RequestBody RegisterModel model) {
+    public ResponseEntity<Boolean> startRegistration(@RequestBody RegisterModel model) {
         RegisterToConference command = RegisterToConference.of(
                 model.getOrderId(),
                 model.getConferenceId(),
@@ -147,9 +147,39 @@ Order 엔티티는 애그리거트 루트이며 생성자에서 도메인 로직
 아래의 코드는 시스템이 Order 를 잘 생성했는지 혹은 타임아웃이 발생했는지에 대한 Polling 을 구현한 코드이다.
 
 ```java
+@RestController
+@RequiredArgsConstructor
+public class RegistrationController {
+    private final CommandBus commandBus;
 
+    @PostMapping("/apis/registrations")
+    public ResponseEntity<Boolean> startRegistration(@RequestBody RegisterModel model) {
+        RegisterToConference command = RegisterToConference.of(
+                model.getOrderId(),
+                model.getConferenceId(),
+                Seats.of(model.items
+                        .stream()
+                        .map(x -> Seat.of(x.getSeatTypeId(), x.getQuantity()))
+                        .collect(Collectors.toList())));
+
+        commandBus.send(command);
+
+        // added!!
+        OrderState draftOrder = this.waitUntilUpdated(model.getOrderId());
+
+        if (OrderState.BOOKED.equals(draftOrder)) {
+            return ResponseEntity.ok(Boolean.TRUE);
+        } else if (OrderState.REJECTED.equals(draftOrder)) {
+            return ResponseEntity.ok(Boolean.FALSE);
+        }
+
+        return ResponseEntity.ok(Boolean.FALSE);
+    }
+}
 ```
 
-팀은 이후에 시스템이 order 를 잘 생성하고 저장했는지 확인하기 위한 로직을 [\*Post-Redirect-Get Pattern]() 으로 대체했다.
+팀은 이후에 시스템이 order 를 잘 생성하고 저장했는지 확인하기 위한 로직을 [\*Post-Redirect-Get Pattern](https://github.com/dhslrl321/cqrs-journey-korean-ver/blob/master/terms/Post-Redirect-Get%20Pattern.mdwn) 으로 대체했다.
+
+<img width="888" alt="image" src="https://user-images.githubusercontent.com/48385288/184532063-8b1b9968-2000-45d0-8de0-48a3ff32fbdb.png">
 
 ---
