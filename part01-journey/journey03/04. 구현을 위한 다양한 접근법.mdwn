@@ -8,9 +8,9 @@
 
 # 구현을 위한 다양한 접근법
 
-Order 과 Registration 을 구현하기 위해서 팀은 다양한 방식으로 의논을 하였다.
+팀은 Order 과 Registration 을 구현하기 위해서 다양한 방식으로 의논을 하였고, 최종적으로 3가지의 의견이 나뉘게 되었다.
 
-# 첫번쨰 접근방식
+# 첫번쨰 접근방식: 두 개의 애그리거트, Order, SeatsAvailability
 
 첫번째 접근 방식은 두개의 서로 다른 애그리거트를 사용하는 것이다.
 
@@ -18,11 +18,11 @@ Order 과 Registration 을 구현하기 위해서 팀은 다양한 방식으로 
 
 > gray : 이 다이어그램은 시스템이 어떻게 이벤트를 다루고 전달하는 지에 대해서 설명하지 않습니다. 다이어그램은 애그리거트 간의 논리적인 관계에 집중합니다.
 
-다이어그램에서 표현되는 숫자는 아래에서 설명한다.
+다이어그램의 순서는 다음과 같다
 
-1. UI 는 attendee 인 X 와 Y 를 157 번호의 컨퍼런스로 등록하는 command 를 보낸다. 이 command 는 새로운 Order aggregate 로 전달된다
+1. UI 는 attendee 인 X 와 Y 를 [컨퍼런스 ID: 157] 로 등록하는 command 를 보낸다. 이 command 는 새로운 Order aggregate 로 전달된다
 2. 주문 aggregate 는 주문이 생성되었다는 이벤트를 발생시킨다. 이벤트는 SeatsAvailability Aggregate 로 라우팅된다.
-3. 컨퍼런스 번호 157에 대한 SeatsAvailability 애그리거트는 데이터소스로부터 seat 정보를 (rehydration) 가져온다.
+3. [컨퍼런스 ID: 157]에 대한 SeatsAvailability 애그리거트는 데이터소스로부터 seat 정보를 (rehydration) 가져온다.
 4. SeatsAvailability 가 예약된 총 좌석 수를 업데이트한다.
 5. 업데이트된 버전의 SeatsAvailability 가 데이터 스토어에 저장된다.
 6. 4239 라는 ID 를 가진 새로운 Order 애그리거트는 데이터스토어에 저장된다.
@@ -31,7 +31,7 @@ Order 과 Registration 을 구현하기 위해서 팀은 다양한 방식으로 
 
 > Jana : 당신은 persistence 와 rehydration 을 위해서 Memento 패턴을 사용할 수 있습니다.
 
-# 두번째 접근방식
+# 두번째 접근방식: 단일 애그리거트, Conference
 
 팀이 고려한 두번째 접근방식은 아래 보이는 그림과 같이 하나의 애그리거트를 사용한다.
 
@@ -39,13 +39,13 @@ Order 과 Registration 을 구현하기 위해서 팀은 다양한 방식으로 
 
 다이어그램에서 표현되는 숫자는 아래에서 설명한다.
 
-1. UI 는 attendee 인 X 와 Y 를 157 번호의 컨퍼런스로 등록하는 command 를 보낸다. 이 command 는 Conference aggregate 로 Id 157 과 함께 전달된다
-2. 157 번호를 가진 컨퍼런스 애그리거트는 데이터 소스로부터 데이터를 가져온다.
+1. UI 는 attendee 인 X 와 Y 를 [컨퍼런스 ID: 157]로 등록하는 command 를 보낸다. 이 command 는 Conference aggregate 로 Id 157 과 함께 전달된다
+2. [컨퍼런스 ID: 157] 애그리거트는 데이터 소스로부터 데이터를 가져온다.
 3. Order Entity 는 예약을 검증한다. (좌석이 충분한지 확인하기 위해서 SeatsAvailablility 엔티티로 쿼링한다), 그리고 컨퍼런스의 엔티티에서 예약된 좌석의 수를 업데이트하는 메서드를 호출한다.
 4. SeatsAvailability 가 예약된 총 좌석 수를 업데이트한다.
 5. 업데이트된 버전의 Conference 애그리거트가 데이터 스토어에 저장된다.
 
-# 세번째 접근 방식
+# 세번째 접근 방식, 두 개의 애그리거트와 Process Manager
 
 세번째 접근 방식은 프로세스 관리자를 이용한 방식이다.
 프로세스 관리자를 이용해서 두 애그리거트 간의 상호작용을 조정한다.
@@ -54,7 +54,7 @@ Order 과 Registration 을 구현하기 위해서 팀은 다양한 방식으로 
 
 다이어그램에서 표현되는 숫자는 아래에서 설명한다.
 
-1. UI 는 attendee 인 X 와 Y 를 157 번호의 컨퍼런스로 등록하는 command 를 보낸다. 해당 command 는 Order Aggregate 로 라우팅된다.
+1. UI 는 attendee 인 X 와 Y 를 [컨퍼런스 ID: 157] 등록하는 command 를 보낸다. 해당 command 는 Order Aggregate 로 라우팅된다.
 2. 4239 라는 ID 를 가진 새로운 Order 애그리거트가 데이터 스토어에 저장된다.
 3. Order 애그리거트는 RegistrationProcessManager 클래스에 의해서 처리된 이벤트를 발생시킨다.
 4. RegistrationProcessManager 클래스는 해당 명령이 157 이라는 Id 를 가진 SeatsAvailiablity 애그리거트로 보내져야 한다는 것을 결정한다.
@@ -80,4 +80,62 @@ Order 과 Registration 을 구현하기 위해서 팀은 다양한 방식으로 
 
 UI 에서 검사를 요청하는 시간과 실제 Aggregate 로 요청이 들어와서 처리되는 시간에 차이가 있기 때문이다.
 
-초기 모델에서 유효성 검증은 Order 와 SeatsAvailablilty 애그리거트에서 발생했다
+### 첫번쨰 접근 방식에서는
+
+첫번째 모델에서, 검증은 Order 혹은 SeatsAvailability 애그리거트에서 이루어져야 한다. Order 애그리거트에서 검증을 할 경우 예약이 이루어지기 전과 이벤트가 발생되기 전에 각각 SeatsAvailability 애그리거트 에서 현재 좌석의 가용성을 확인해야 한다.
+
+만약 유효하지 않은 상태라면, 즉 validation 에 실패했을 경우 SeatsAvailability 애그리거트에서 어떻게든 주문 애그리커트에게 해당 좌석을 예약할 수 없으며, 주문 애그리거트는 지금까지 완료한 작업을 취소(또는 보상)해야 한다고 알려줘야 한다.
+
+> Bath : 취소는 현실에서 발생하는 여러 많은 보상에 관련된 행위중 하나입니다. 보상이라는 행위 자체가 시스템 밖에서 일어날 수도 있습니다. 예를 들어서 콘토소 직원이나 기업 고객이 시스템에 문제가 발생했기 때문에 예약 관련 이메일을 무시하라고 하는등의 행위를 수동으로 처리하게 할 수도 있습니다
+
+### 두번째 접근 방식에서는
+
+두번째 모델에서는, Conference 애그리거트 안에서 Order 과 SeatsAvailability 가 협력하고 있다는 것만 빼면 비슷하다
+
+### 세번째 접근 방식에서는
+
+`In the third model, with the process manager, the aggregates ex- change messages through the process manager about whether the registrant can make the reservation at the current time.`
+
+세 모델 모두 유효성 검증을 위해서 통신할 엔티티가 필요하지만, 세번째 모델은 Process manager 때문에 다른 두 모델보다 복잡해보인다.
+
+# Transaction Boundaries, 트랜잭션 바운더리
+
+DDD 에서 애그리거트는 해당 바운더리에 대해서 일관성을 보장해야 한다.
+
+그러므로 두개의 애그리거트 (Order, SeatsAvailability) 사용하는 첫번째 접근 방식과 두개의 애그리거트 (Order, SeatsAvailability)와 Process Manager 를 사용하는 세번째 접근 방식에서는 두개의 애그리거트에 대한 일관성을 보장해야 한다.
+
+즉, Order 가 생성될 되는 것과, SeatsAvailability 가 갱된다는 것을 보장해야 한다
+
+> consistency boundary 는 일관성 경계라는 용어는 모든 요소가 항상 서로 일관된다고 가정할 수 있는 경계를 가리킨다.
+
+예약자가 Order 가 생성될 때 일관성을 보장하기 위해서는 두 작업 모두가 성공해야 된다.
+
+이걸 보장하려면 우리는 infrastructure 가 메시지를 안정적으로 애그리거트에게 전달하여 **최종적인 일관성, Eventually Consistent** 이 보장될 수 있도록 해야 한다.
+
+단일 애그리거트를 사용하는 두 번째 접근 방식에서는 등록자가 주문할 때, 단일 트랜잭션이 발생할 것이고, 한 시스템의 내부에서만 발생하기 떄문에 세 가지 접근법 중에서 가장 간단한 방법일 것이다.
+
+# Concurrency, 동시성
+
+예약이라는 작업은 수많은 예약자가 좌석 구매를 동시에 시도할 수 있는 multi-user 환경에서 발생한다.
+
+팀은 결국 예약을 위해서 _Reservation Pattern_ 을 사용하여 동시성 문제를 해결하기로 결정했다.
+
+이 시나리오에서, 예약자가 좌석을 선점했다는 것을 의미한다. (선점을 한다면 다른 사용자는 해당 리소스를 이용할 수 없다)
+그리고 예약자가 타임아웃 내에 결제를 완료한다면 시스템은 해당 선점을 유지하고 그렇지 않다면 선점을 취소한다.
+
+이러한 예약 시스템에서는 두가지의 추가적인 메시지 타입이 필요하게 된다.
+
+- 예약자가 결제를 완료했다는 이벤트
+- 타임아웃이 발생했다는 이벤트
+
+이러한 상황에서는 복잡한 동작을 모델링하는 것보다 Process Manager 를 사용하는 것이 가장 좋다
+
+# Aggregates and aggregate roots, 애그리거트와 애그리거트 루트
+
+Order 와 SeatsAvailability 애그리거트를 포함하는 두가지 모델 (1번, 3번) 에서 Aggregate Root 엔티티를 쉽게 파악할 수 있다.
+
+하지만 단일 애그리거트를 사용하는 두번째 모델에서는 주문 애그리거트를 통해서 좌석 가용성을 확인한다거나 좌석 과용성 애그리거트를 통해서 주문 애그리거트로 접근한다거나 한다는 것이 자연스러운 일이 아니라고 판단했고 애그리거트 루트를 만드는 것이 불필요하다는 것으로 결론내렸다.
+
+결국 팀은 바운디드 컨텍스트 내에서 동시성 문제를 가장 잘 해결할 수 있는 Process Manager 를 사용하는 방식으로 가기로 결정했다.
+
+---
