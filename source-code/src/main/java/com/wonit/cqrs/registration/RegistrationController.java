@@ -51,30 +51,6 @@ public class RegistrationController {
         return ResponseEntity.ok(Boolean.FALSE);
     }
 
-    @PostMapping("/apis/registrations")
-    public ResponseEntity<Boolean> startRegistration2(@RequestBody RegisterModel model) {
-        RegisterToConference command = RegisterToConference.of(
-                model.getOrderId(),
-                model.getConferenceId(),
-                Seats.of(model.items
-                        .stream()
-                        .map(x -> Seat.of(x.getSeatTypeId(), x.getQuantity()))
-                        .collect(Collectors.toList())));
-
-        commandBus.send(command);
-
-        // added!!
-        OrderState draftOrder = this.waitUntilUpdated(model.getOrderId());
-
-        if (OrderState.BOOKED.equals(draftOrder)) {
-            return ResponseEntity.ok(Boolean.TRUE);
-        } else if (OrderState.REJECTED.equals(draftOrder)) {
-            return ResponseEntity.ok(Boolean.FALSE);
-        }
-
-        return ResponseEntity.ok(Boolean.FALSE);
-    }
-
     private OrderState waitUntilUpdated(Long orderId) {
         return null;
     }

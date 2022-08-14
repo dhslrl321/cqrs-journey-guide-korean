@@ -8,4 +8,12 @@
 
 # Inside the Write Model
 
+## Aggregate
+
+아래의 코드는 Order 애그리거트의 도메인 코드를 나타낸 것이다
+
+```java
+
+```
+
 ---
