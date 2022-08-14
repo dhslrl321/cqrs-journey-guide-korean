@@ -27,32 +27,34 @@ MVC 웹 애플리케이션과 DB 및 Read And Write 모델 및 인프라의 구�
 
 위 그림에 나온 컴포넌트에 대해서 조금 더 자세히 알아보도록 하자
 
-# Querying the Read Model
+> #### 아래 내용부터는 번역자가 Java 로 재해석한 코드와 내용입니다.
+
+# 1. Querying the Read Model
 
 ConferenceController 클래스에는 특정 회의에 대한 정보가 포함된 뷰를 만드는 Display라는 작업이 포함되어 있다.
 
 이 컨트롤러 클래스는 다음 코드를 사용하여 read Model 을 query 한다
 
-```C#
-public ActionResult Display(string conferenceCode) {
-var conference = this.GetConference(conferenceCode);
-return View(conference); }
-private Conference.Web.Public.Models.Conference GetConference(string conferenceCode) {
-var repo = this.repositoryFactory(); using (repo as IDisposable)
-{
-var conference = repo.Query<Conference>()
-.First(c => c.Code == conferenceCode);
-var conferenceModel =
-new Conference.Web.Public.Models.Conference
-{
-Code = conference.Code,
-Name = conference.Name,
-Description = conference.Description
-};
-return conferenceModel; }
+```java
+@RestController
+@RequiredArgsConstructor
+public class ConferenceController {
+
+    private final ConferenceRepository repository;
+
+    @GetMapping("/apis/conferences/{code}")
+    public ResponseEntity<ConferenceModel> getConference(@PathVariable(value = "code") String conferenceCode) {
+        Conference conference = repository.findByCode(conferenceCode);
+        ConferenceModel model = ConferenceModel.from(conference);
+        return ResponseEntity.ok(model);
+    }
 }
 ```
 
 read model 은 Datasource 로 부터 정보를 검색하고 데이터 전송 객체(DTO) 클래스를 사용하여 컨트롤러에 반환한다
+
+# 2. Command Issuing, 커맨드 발행하기
+
+Web Application 은
 
 ---
