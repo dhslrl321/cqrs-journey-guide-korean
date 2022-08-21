@@ -13,7 +13,125 @@
 아래의 코드는 Order 애그리거트의 도메인 코드를 나타낸 것이다
 
 ```java
+@Getter
+public class Order implements AbstractAggregateRoot, EventPublisher {
 
+    private Long id;
+    private Long conferenceId;
+    private Long userId;
+    private List<Event> events;
+    private List<TicketOrderLine> lines;
+    private OrderState state;
+
+    public void markAsBooked() {
+        if (!CREATED.equals(state)) {
+            throw new IllegalStateException();
+        }
+        state = BOOKED;
+    }
+
+    public void reject() {
+        if (!CREATED.equals(state)) {
+            throw new IllegalStateException();
+        }
+        state = REJECTED;
+    }
+}
 ```
+
+> 번역자 : 아래의 내용은 `C#` 에 대한 내용입니다. Java 로 구현한 현재 CQRS Journey 버전에서는 이해를 방해할 수 있기 때문에 번역에서는 제외하였습니다. 대신 원문을 추가하였으니 참고하시길 바랍니다.
+
+```C#
+public class Order :IAggregateRoot, IEventPublisher {
+    public static class States {
+        public const
+        int Created = 0;
+        public const
+        int Booked = 1;
+        public const
+        int Rejected = 2;
+        public const
+        int Confirmed = 3;
+    }
+
+    private List<IEvent> events = new List<IEvent>(); ...
+    public Guid Id {
+        get;
+        private set ;
+    }
+    public Guid UserId {
+        get;
+        private set ;
+    }
+    public Guid ConferenceId {
+        get;
+        private set ;
+    }
+    public virtual ObservableCollection<TicketOrderLine > Lines {
+        get;
+        private set ;
+    } public int State {
+        get;
+        private set ;
+    }
+    public IEnumerable<Ievent> Events {
+        get {
+            return this.events;
+        }
+    }
+    public void MarkAsBooked () {
+        if (this.State != States.Created) {
+            throw new InvalidOperationException();
+        }
+        this.State = States.Booked;
+    }
+    public void Reject () {
+        if (this.State != States.Created) {
+            throw new InvalidOperationException();
+        }
+        this.State = States.Rejected;
+    }
+}
+```
+
+Notice how the properties of the class are not virtual. In the original version of this class, the proper- ties Id, UserId, ConferenceId, and State were all marked as virtual. The following conversation be- tween two developers explores this decision.
+
+#### Developer 1
+
+I’m really convinced you should not make the property virtual, except if required by the object-relational mapping (ORM) layer. If this is just for testing purposes, entities and ag- gregate roots should never be tested using mocking. If you need mocking to test your entities, this is a clear smell that something is wrong in the design.
+
+#### Developer 2
+
+I prefer to be open and extensible by default. You never know what needs may arise in the future, and making things virtual is hardly a cost. This is certainly controversial and a bit non-standard in .NET, but I think it’s OK. We may only need virtuals on lazy-loaded collec- tions.
+
+#### Developer 1
+
+Since CQRS usually makes the need for lazy load vanish, you should not need it either. This leads to even simpler code.
+
+#### Developer 2
+
+CQRS does not dictate usage of event sourcing (ES), so if you’re using an aggre- gate root that contains an object graph, you’d need that anyway, right?
+
+#### Developer 1
+
+This is not about ES, it’s about DDD. When your aggregate boundaries are right, you don’t need delay loading.
+
+#### Developer 2
+
+To be clear, the aggregate boundary is here to group things that should change to- gether for reasons of consistency. A lazy load would indicate that things that have been grouped together don’t really need this grouping.
+
+#### Developer 1
+
+I agree. I have found that lazy-loading in the command side means I have it mod- eled wrong. If I don’t need the value in the command side, then it shouldn’t be there. In addition, I dislike virtuals unless they have an intended purpose (or some artificial requirement from an object-relational mapping (ORM) tool). In my opinion, it violates the Open-Closed principle: you have opened yourself up for modification in a variety of ways that may or may not be intended and where the repercussions might not be immediately discoverable, if at all.
+
+#### Developer 2
+
+Our Order aggregate in the model has a list of Order Items. Surely we don’t need to load the lines to mark it as Booked? Do we have it modeled wrong there?
+
+#### Developer 1
+
+Is the list of Order Items that long? If it is, the modeling may be wrong because you don’t necessarily need transactionality at that level. Often, doing a late round trip to get and updated Order Items can be more costly that loading them up front: you should evaluate the usual size of the collection and do some performance measurement. Make it simple first, opti- mize if needed.
+
+—Thanks to Jérémie Chassaing and Craig Wilson
 
 ---
