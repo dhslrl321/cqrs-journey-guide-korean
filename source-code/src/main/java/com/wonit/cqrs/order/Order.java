@@ -8,6 +8,7 @@ import com.wonit.cqrs.common.AbstractAggregateRoot;
 import com.wonit.cqrs.common.EventPublisher;
 import com.wonit.cqrs.event.Event;
 import com.wonit.cqrs.event.OrderPlaced;
+import com.wonit.cqrs.event.SeatOrderPlaced;
 import java.util.List;
 import java.util.stream.Collectors;
 import lombok.Getter;
@@ -29,12 +30,14 @@ public class Order implements AbstractAggregateRoot, EventPublisher {
         this.conferenceId = conferenceId;
         this.lines = lines;
 
-        lines.stream().map(item -> {
-            new OrderPlaced()
-            item.getSeatTypeId(), item.getQuantity()
-        }).collect(Collectors.toList());
+        OrderPlaced event = OrderPlaced.of(
+                id,
+                conferenceId,
+                userId,
+                lines.stream()
+                        .map(item -> SeatOrderPlaced.of(item.getSeatTypeId(), item.getQuantity()))
+                        .collect(Collectors.toList()));
 
-        OrderPlaced event = OrderPlaced.of(id, conferenceId, userId, );
         this.events.add(event);
     }
 

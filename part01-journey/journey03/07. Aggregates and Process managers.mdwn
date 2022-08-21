@@ -31,7 +31,26 @@ comamnd 에 대한 결과는 시스템이 새로운 **Order** 인스턴스를 �
 > 번역본에서는 GUID 를 식별자로 이용하였지만 해당 코드샘플에서는 외부에서 id 를 주입받는 형태로 구성하였습니다.
 
 ```java
+public Order(Long id, Long conferenceId, Long userId, List<OrderItem> lines) {
+        this.id = id;
+        this.userId = userId;
+        this.conferenceId = conferenceId;
+        this.lines = lines;
 
+        OrderPlaced event = OrderPlaced.of(
+                id,
+                conferenceId,
+                userId,
+                lines.stream()
+                        .map(item -> SeatOrderPlaced.of(item.getSeatTypeId(), item.getQuantity()))
+                        .collect(Collectors.toList()));
+
+        this.events.add(event);
+    }
 ```
+
+시스템은 새로운 Order 를 관리하기 위해 RegistrationProcessManager 인스턴스를 생성한다.
+
+아래의 코드 샘플은 Process Manager 에서 RegistrationProcessManager 클래스가 어떻게 이벤트를 handling 하는지를 보여준다
 
 ---
