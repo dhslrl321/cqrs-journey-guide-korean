@@ -13,3 +13,5 @@
 #### 2. [ddd 의 컨셉과 용어](https://github.com/dhslrl321/cqrs-journey-korean-ver/blob/master/part02-references/reference01/02.%20ddd%20의%20컨셉과%20용어%20.mdwn)
 
 #### 3. [Bounded Contexts](https://github.com/dhslrl321/cqrs-journey-korean-ver/blob/master/part02-references/reference01/03.%20Bounded%20Contexts.mdwn)
+
+#### 4. [CQRS and DDD](#)
