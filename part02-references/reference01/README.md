@@ -8,4 +8,8 @@
 
 # Reference 1. CQRS in Context
 
-#### 1. [Bounded Context 에 대한 설명](https://github.com/dhslrl321/cqrs-journey-korean-ver/blob/master/part01-journey/journey03/01.%20Bounded%20Context%20에%20대한%20설명.mdwn)
+#### 1. [domain-driven-design 이란 무엇인가](https://github.com/dhslrl321/cqrs-journey-korean-ver/blob/master/part02-references/reference01/01.%20domain-driven-design%20이란%20무엇인가.mdwn)
+
+#### 2. [ddd 의 컨셉과 용어](https://github.com/dhslrl321/cqrs-journey-korean-ver/blob/master/part02-references/reference01/02.%20ddd%20의%20컨셉과%20용어%20.mdwn)
+
+#### 3. [Bounded Contexts](https://github.com/dhslrl321/cqrs-journey-korean-ver/blob/master/part02-references/reference01/03.%20Bounded%20Contexts.mdwn)
