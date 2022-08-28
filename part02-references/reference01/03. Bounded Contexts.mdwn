@@ -8,4 +8,54 @@
 
 # Bounded Contexts
 
+지금까지 간략히 알아본 DDD 컨셉과 용어는 도메인 모델을 생성, 유지 및 사용하는 것과 관련이 있다.
+
+대형 시스템에서는 도메인 모델을 단일로 관리하고 만들어 나가는 것은 실용적이지 않을 수 있다.
+
+크기와 복잡성으로 인해서 consistency 역시 보장하고 유지하기가 어렵다.
+
+이런 상황에서 DDD는 Bounded Context 에 대한 개념을 사용한다.
+
+시스템 내에서 단일 대형 모델이 아닌, 여러 개의 작은 모델을 사용하여 해당 모델들이 적절한 협력을 거쳐서 기능을 수행하게 된다.
+
+각각은 전체 시스템 내의 일부의 기능이나 비즈니스 가치에 집중할 수 있게 된다.
+
+Boundex Context, 바운디드 컨텍스트는 특정 도메인 모델의 문맥 (컨텍스트)이다.
+
+각 바운디드 컨텍스트는 자체적인 유비쿼터스 언어를 가지게 될 수 있고 자체적인 개념이 존재할 수도 있다.
+
+<img width="859" alt="image" src="https://user-images.githubusercontent.com/48385288/187064826-4bff4c3f-e8d5-4340-9b69-dea986ab38e1.png">
+
+위 그림은 우리가 journey 에서 구현한 컨퍼런스 관리 시스템이 여러 바운디드 컨텍스트로 분리된 것을 보여준다.
+
+실제로는 위 그림에 나온 3개의 바운디드 컨테스트보다 훨씬 많을 것이다.
+
+바운디드 컨텟트스가 얼마나 커야하고 얼마나 작아야 하는지에 대한 규칙은 없다.
+
+궁극적으로 비즈니스에 대한 가치와 요구사항 및 프로젝트 제약에 의해서 결정되는 것이다.
+
+> “A given bounded context should be divided into business components, where these business components have full UI through DB code, and are put together in composite UI’s and other physical pipelines to fulfill the system’s functionality. A business component can exist in only one bounded context.” —Udi Dahan, Udi & Greg Reach CQRS Agreement
+
+#### Eric Evans 는 더 거대한 바운디드 컨텍스트에 대한 여러 사례들을 만들었다.
+
+- **거대한 바운디드 컨텍스트**
+  - 통합 모델로 더 많은 것을 처리할 때 사용자 작업 간의 흐름이 더 부드럽다.
+  - 두 개의 별개의 모델과 매핑보다 하나의 일관된 모델을 이해하는 것이 더 쉽다.
+  - 두 모델을 해석하는 것은 어렵다. (어쩔 때는 불가능에 가깝다)
+  - 두 모델을 사용하는 것은 팀의 커뮤니케이션 비용을 증가시킨다.
+- **작은 바운디드 컨텍스트**
+  - 개발자 간의 커뮤니케이션 오버헤드가 줄어든다.
+  - CI, 지속적 통합이 더욱 쉬워진다.
+  - 큰 바운디드 컨텍스트는 더욱 추상적이게 될 수 있으며 더 다양한 기술을 요구할 수 있다.
+
+위의 내용들은 Eric Evans 의 Domain-Driven Design: Tackling Complexity in the Heart of Software, page 383. 에서 확인할 수 있다.
+
+# [\*Anti-Corruption Layers](#), 손상 방지 레이어
+
+서로 다른 바운디드 컨텍스트는 서로 다른 도메인 모델을 가지고 있는다.
+
+만약 한 바운디드 컨텍스트에서 다른 바운디드 컨텍스트와 통신할 때, 한 도메인 모델의 특정 개념이 다른 도메인 모델의 개념으로 잘못 침투하는 것을 주의해야 한다.
+
+이 때, Anti-Corruption Layers 는 두 도메인 모델 사이를 깨끗하게 만드는 게이트웨이 역할을 수행한다.
+
 ---

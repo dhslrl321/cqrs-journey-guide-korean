@@ -8,4 +8,4 @@
 
 # Part 02. CQRS References
 
-### References 1. [CQRS in Context](https://github.com/dhslrl321/cqrs-journey-korean-ver/tree/master/part01-journey/journey01)
+### References 1. [CQRS in Context](https://github.com/dhslrl321/cqrs-journey-korean-ver/tree/master/part02-references/reference01)
