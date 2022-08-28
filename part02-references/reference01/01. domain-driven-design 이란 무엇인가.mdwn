@@ -1,0 +1,27 @@
+<div align="center">
+
+#### [목차 바로가기](https://github.com/dhslrl321/cqrs-journey-korean-ver/blob/master/Table%20of%20Contents.mdwn)
+
+</div>
+
+---
+
+# domain-driven-design 이란 무엇인가
+
+앞서 언급했듯이, DDD (domain-driven-design) 는 특히 복잡하고, 끊임없이 변화하는 비즈니스 규칙이 존재하며, 기업 내에서 해당 비즈니스가 계속해서 유지되고 발전될 것으로 예상되는 시스템을 개발하는 방법론이라고 설명했었다.
+
+DDD 는 핵심 접근법 (The core of the DDD approach) 은 도메인을 분석하고 해당 분석을 토대로 개념적 도메인 모델을 만드는 몇가지 일련의 기술을 사용한다.
+
+그리고 만들어진 모델은 개발하려는 소프트웨어의 기반이 된다.
+
+DDD 방식의 접근법 (분석과 모델링)은 특히 크고 복잡한 도메인을 설계하는데에 적합하다.
+
+> “Every effective DDD person is a Hands-on Modeler, including me.” —Eric Evans, What I’ve learned about DDD since the book
+
+DDD 는 또한 복잡한 시스템을 관리하는데에도 도움이 되며 소프트웨어 개발 프로세스의 다른 측면으로도 해결 방법이 될 수 있다.
+
+- domain 에 집중할 때, DDD 는 비즈니스 팀과 개발 팀이 의사소통 사이에서 오해를 할 수 있는 부분에 집중한다. DDD 가 사용하는 도메인 모델은 상세하고 풍부한 비즈니스 지식을 표현하기도 함과 동시에 실제 작성된 코드와 모델이 비슷해야 하기 때문이다.
+
+DDD는 비즈니스와 개발팀이 서로 명확하게 소통할 수 있어야 하지만, 실제로는 종종 서로를 오해하는 분야에 집중한다. DDD가 사용하는 도메인 모델은 상세하고 풍부한 비즈니스 지식을 포착해야 하지만 실제로 작성된 코드와 매우 가까워야 합니다.
+
+---
