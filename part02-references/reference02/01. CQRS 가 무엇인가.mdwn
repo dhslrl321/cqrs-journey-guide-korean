@@ -1,0 +1,25 @@
+<div align="center">
+
+#### [목차 바로가기](https://github.com/dhslrl321/cqrs-journey-korean-ver/blob/master/Table%20of%20Contents.mdwn)
+
+</div>
+
+---
+
+이번 챕터에서는 이 CQRS Journey 에서 논의된 거의 모든 것의 핵심인 Command Query Responsibility Seg- regation (CQRS) pattern, 명령-조회의 책임 분리 패턴에 대해서 알아본다.
+
+여기서 우리는 CQRS 패턴을 적용하는 것이 엔터프라이즈 애플리케이션의 아키텍처에 어떤 영향을 미치는지 알아볼 것이다.
+
+CQRS는 엔터프라이즈 애플리케이션을 설계하고 구축할 때 발생하는 모든 문제에 대한 은색 총알이 아니라는 것을 이해하는 것이 중요하다.
+
+시스템의 모든 부분이 아니라 핵심 부분에 선택적으로 적용하면 CQRS 패턴을 적용하는 모든 이점을 볼 수 있다.
+
+2장, CQRS 및 이벤트 소싱 탐색의 "도메인 분해"는 Contoso 컨퍼런스 관리 시스템을 바운디드 컨텍스트로 나누고 CQRS 패턴을 사용하면 어떤 바운디드 컨텍스트를 식별했는지 설명한다.
+
+CQRS 및 이벤트 소싱 탐색의 후속 장은 실제 애플리케이션을 구현할 때 CQRS 패턴 및 기타 관련 패턴을 적용하는 방법에 대한 여러 방법들을 제공할 것이다.
+
+# CQRS 란 무엇인가
+
+버트란드 메이어의 "Object Oriented Software Construction" 책에서 [\*Command Query Separation](#) 이라는 용어가 처음 소개되었다.
+
+---

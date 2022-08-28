@@ -8,4 +8,4 @@
 
 # Reference 2. CQRS, Command Query Responsibility Segregation Pattern 의 소개
 
-#### 1. [domain-driven-design 이란 무엇인가](https://github.com/dhslrl321/cqrs-journey-korean-ver/blob/master/part02-references/reference01/01.%20domain-driven-design%20이란%20무엇인가.mdwn)
+#### 1. [CQRS 란 무엇인가](https://github.com/dhslrl321/cqrs-journey-korean-ver/blob/master/part02-references/reference01/01.%20domain-driven-design%20이란%20무엇인가.mdwn)
