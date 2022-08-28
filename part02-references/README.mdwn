@@ -9,3 +9,5 @@
 # Part 02. CQRS References
 
 ### References 1. [CQRS in Context](https://github.com/dhslrl321/cqrs-journey-korean-ver/tree/master/part02-references/reference01)
+
+### References 2. [CQRS, Command Query Responsibility Segregation Pattern 의 소개](#)

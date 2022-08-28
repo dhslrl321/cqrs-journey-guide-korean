@@ -73,7 +73,7 @@ CQRS Journey 의 목차입니다.
 3. [Bounded Contexts](https://github.com/dhslrl321/cqrs-journey-korean-ver/blob/master/part02-references/reference01/03.%20Bounded%20Contexts.mdwn)
 4. [CQRS and DDD](https://github.com/dhslrl321/cqrs-journey-korean-ver/blob/master/part02-references/reference01/04.%20CQRS%20and%20DDD.mdwn)
 
-### **Reference 2.** CQRS 패턴에 대한 소개
+### **Reference 2.** [CQRS, Command Query Responsibility Segregation Pattern 의 소개](#)
 
 ### **Reference 3.** Event Sourcing 에 대한 소개
 
