@@ -20,6 +20,56 @@ CQRS 및 이벤트 소싱 탐색의 후속 장은 실제 애플리케이션을 �
 
 # CQRS 란 무엇인가
 
-버트란드 메이어의 "Object Oriented Software Construction" 책에서 [\*Command Query Separation](#) 이라는 용어가 처음 소개되었다.
+버트란드 메이어의 "Object Oriented Software Construction" 책에서 [\*Command Query Separation](https://github.com/dhslrl321/cqrs-journey-korean-ver/blob/master/terms/Command%20and%20Query%20Separation.mdwn) 이라는 용어가 처음 소개되었다.
+
+어떠한 객체의 메서드는 명령(command) 형이거나 조회(query) 형 둘중에 하나라는 개념이다.
+
+- Command : 상태를 변경하고 데이터를 반환해선 안된다
+- Query : 데이터를 반환하고 상태를 변경하면 안된다
+
+이 원칙을 지키면 소프트웨어가 더욱 단순해지고 이해하기 쉬워지며 변경에 용이해진다.
+
+> “CQRS is simply the creation of two objects where there was previously only one. The separation occurs based upon whether the methods are a command or a query (the same definition that is used by Meyer in Command and Query Separation: a command is any method that mutates state and a query is any method that returns a value).” —Greg Young, CQRS, Task Based UIs, Event Sourcing agh!
+
+#### CQRS 는 이 원칙을 차용한다.
+
+이 간단한 패턴에서 중요하고 흥미로운 것은 엔터프라이즈 시스템을 구축할 때 어떻게, 어디서, 왜 사용하는지 이다.
+
+이 간단한 패턴을 사용하면 확장성이 용이하며, 복잡성을 쉽게 관리할 수 있고, 시스템의 일부 부분에서 변화하는 비즈니스 요구사항을 관리하는 것과 같은 광범위한 문제를 쉽게 해결할 수 있다.
+
+# Read Side and Write Side
+
+아래 그림은 CQRS 패턴을 적용한 애플리케이션의 일반적인 처리 흐름을 보여준다.
+
+<img width="844" alt="image" src="https://user-images.githubusercontent.com/48385288/187067484-127d0efd-d0f5-46ae-90a1-b408722632c6.png">
+
+위 그림에서 어떻게 시스템이 read side 와 write side 로 분리되었는지 볼 수 있다.
+
+Read Side 의 객체들은 오로지 query 메서드만 가지고 있으며 write side 의 객체들은 오로지 command 메서드만 가지고 있다.
+
+이렇게 분리를 하는 데에는 몇가지 동기가 존재한다.
+
+- 많은 비즈니스 시스템에서, 읽기와 쓰기에 대한 불균형이 존재힌다.
+  - 시스템은 모든 쓰기와 읽기 작업이 1:1000 비율로 존재한다.
+  - 이 둘을 분리하면 쓰기 연산과 읽기 연산을 각각 독립적으로 분리할 수 있다.
+  - 읽기 연산과 쓰기 연산에 각각 최적화된 솔루션을 사용할 수 있다.
+- 일반적으로 command 는 시스템이 정확하고 일관된 데이터를 영속화 할 수 있도록 복잡한 비즈니스 로직을 포함한다.
+  - 이는 query 보다 훨씬 복잡하기 때문에 이 둘을 분리하면 더 간단하고 유지보수가 쉬운 모델을 만들 수 있다.
+- 앞서 말했든 데이터 저장소 수준에서도 Segregation 을 할 수 있다.
+  - command 는 제 3 정규화에 가깝고 데이터 수정에 최적화된 데이터베이스 스키마를 사용할 수 있다.
+  - 읽기 측은 빠른 쿼리 작업에 최적화된 비정규화, 반정규화, 역정규화된 데이터베이스 스키마를 사용할 수 있다.
+
+위 그림은 읽기 연산과 쓰기 연산에 대해서 1대 1관계로 표현되었지만 실제로는 다수의 쓰기 연산에 대해서 하나의 읽기 연산과 n:1 관계로 매핑될 수도 있다.
+
+그림 1에 표시된 것과 같이 CQRS 패턴을 채택하는 것이 실용성 측면에서 몇 가지 질문이 있다.
+
+- 읽기 작업과 쓰기 작업을 분리한다면 각각은 복합 모델보다 간단할 수 있지만, 전체 아키텍처는 전통적인 접근 방식보다 훨씬 복잡한데, 우리가 개발할 서비스도 분리할 만큼 복잡한가?
+- 읽기 쪽에 있는 데이터 저장소의 변경 사항 전파를 어떻게 관리해 할까?
+- 쓰기 연산과 읽기 연산 사이의 딜레이는 어떻게 처리할 것인가?
+-
+
+읽기 측면과 쓰기 측면의 개별 모델은 단일 복합 모델보다 간단할 수 있지만, 전체 아키텍처는 단일 모델과 단일 데이터 저장소가 있는 전통적인 접근 방식보다 더 복잡하다. 그래서, 우리는 단지 복잡성을 바꾸지 않았나요?
+
+이번 장에서는 이러한 질문에 대한 답을 찾아가며 CQRS 패턴을 사용하기 위한 동기를 탐구하기 시작할 것이다.
 
 ---
