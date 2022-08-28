@@ -8,6 +8,45 @@
 
 # CQRS 와 domain-driven-design
 
-이전 CQRS in Context 챕터에서 domain-driven-design 에 대한 몇가지 개념들을 소개했다
+이전 CQRS in Context 챕터에서 CQRS Pattern 을 이해하는데에 도움이 되는 domain-driven-design 에 대한 몇가지 개념들을 소개했다
+
+두가지 분야가 특히 중요했다.
+
+### 첫번쨰는 모델의 개념이다.
+
+에릭 에반스는 그의 책 “Domain-Driven Design: Tackling Complexity in the Heart of Software,” (Addison-Wesley Professional, 2003) 는 효과적인 모델링을 위해서 다음과 같은 것들을 제공한다.
+
+> “CQRS is an architectural style that is often enabling of DDD.” —Eric Evans, tweet February 2012.
+
+- Models should be bound to the implementation.
+- You should cultivate a language based on the model.
+- Models should be knowledge rich.
+- you should brainstorm and experiment to develop the model.
+
+> 위 목록은 모델의 아이디어를 포착하는 데 도움이 되지만, 개념을 더 깊이 이해하기 위해 책을 읽는 것을 대신할 수는 없습니다
+
+<img width="844" alt="image" src="https://user-images.githubusercontent.com/48385288/187067484-127d0efd-d0f5-46ae-90a1-b408722632c6.png">
+
+위의 그림에서 도메인 모델의 구현은 write side 에 존재하고 시스템의 복잡한 비즈니스 로직을 캡슐화 한다.
+
+읽기 측면은 쿼리를 통해 액세스하는 시스템 상태의 더 간단하게 구성되며, 읽기 연산에 최적화된 형태로 구성된다.
+
+### 두 번째로 중요한 개념은 DDD가 크고 복잡한 시스템을 바운디드 컨텍스트로 알려진 더 관리하기 쉬운 단위로 나누는 방식이다.
+
+바운디드 컨텍스트는 모델의 컨텍스트를 정의한다.
+
+시스템의 일부에 CQRS 패턴을 적용해야 한다고 말할 때, 바운디드 컨텍스트 내에서 CQRS 패턴을 구현해야 한다는 것을 의미한다
+
+도메인 모델에서 컨텍스트의 경계를 구분짓는게 반드시 CQRS 패턴을 사용해야 하는 이유는 아니다.
+
+DDD 에서 바운디드 컨텍스트는 유비쿼터스 언어의 범위에 맞는 모델의 문맥을 정의한다.
+
+#### CQRS 패턴은 단지 시스템을 구현하는 구현상에서 확장성이나 단순성 혹은 유지보수성에 대한 이점을 얻기 위함이다.
+
+이러한 차이점들 때문에, 바운디드 컨텍스트가 아니라 비즈니스 컴포넌트에 CQRS 패턴을 적용하는 것이 더욱 합리적이게 보이기도 한다.
+
+비즈니스 컴포넌트는 바운디드 컨텍스트 맵과 일치할 확률이 높다.
+
+#### 요약하자면, CQRS 패턴을 아키텍처 전반에 걸쳐서 사용해야할 필요는 없다. 독립적으로 설계하고 구현할 수 있는 시스템에서 컨텍스트의 경계를 명확하게 구분지을 수 있고 명확한 비즈니스 이점이 있는 부분에만 CQRS 패턴을 적용해야 한다
 
 ---
