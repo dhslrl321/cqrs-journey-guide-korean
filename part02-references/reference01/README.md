@@ -14,4 +14,4 @@
 
 #### 3. [Bounded Contexts](https://github.com/dhslrl321/cqrs-journey-korean-ver/blob/master/part02-references/reference01/03.%20Bounded%20Contexts.mdwn)
 
-#### 4. [CQRS and DDD](#)
+#### 4. [CQRS and DDD](https://github.com/dhslrl321/cqrs-journey-korean-ver/blob/master/part02-references/reference01/04.%20CQRS%20and%20DDD.mdwn)
