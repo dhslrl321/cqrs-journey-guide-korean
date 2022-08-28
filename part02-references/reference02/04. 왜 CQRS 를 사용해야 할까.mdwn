@@ -1,0 +1,11 @@
+<div align="center">
+
+#### [목차 바로가기](https://github.com/dhslrl321/cqrs-journey-korean-ver/blob/master/Table%20of%20Contents.mdwn)
+
+</div>
+
+---
+
+# 왜 CQRS 를 사용해야 할까
+
+---

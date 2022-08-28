@@ -12,4 +12,4 @@
 
 #### 2. [CQRS 와 domain-driven-design](https://github.com/dhslrl321/cqrs-journey-korean-ver/blob/master/part02-references/reference02/02.%20CQRS%20와%20domain-driven-design.mdwn)
 
-#### 3. [Command 와 Events 그리고 Messages](#)
+#### 3. [Command 와 Events 그리고 Messages](https://github.com/dhslrl321/cqrs-journey-korean-ver/blob/master/part02-references/reference02/03.%20command%20와%20events%20그리고%20messages.mdwn)
