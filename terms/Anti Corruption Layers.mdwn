@@ -8,4 +8,6 @@
 
 # Anti Corruption Layers
 
+<img width="806" alt="image" src="https://user-images.githubusercontent.com/48385288/187065656-fbeb89d8-dee7-427e-af29-9a9a37a09c17.png">
+
 ---
