@@ -10,4 +10,4 @@
 
 #### 1. [CQRS 란 무엇인가](https://github.com/dhslrl321/cqrs-journey-korean-ver/blob/master/part02-references/reference01/01.%20domain-driven-design%20이란%20무엇인가.mdwn)
 
-#### 2. [CQRS 와 domain-driven-design](#)
+#### 2. [CQRS 와 domain-driven-design](https://github.com/dhslrl321/cqrs-journey-korean-ver/blob/master/part02-references/reference02/02.%20CQRS%20와%20domain-driven-design.mdwn)

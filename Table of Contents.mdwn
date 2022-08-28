@@ -75,6 +75,9 @@ CQRS Journey 의 목차입니다.
 
 ### **Reference 2.** [CQRS, Command Query Responsibility Segregation Pattern 의 소개](https://github.com/dhslrl321/cqrs-journey-korean-ver/tree/master/part02-references/reference02)
 
+1. [CQRS 란 무엇인가](https://github.com/dhslrl321/cqrs-journey-korean-ver/blob/master/part02-references/reference02/01.%20CQRS%20가%20무엇인가.mdwn)
+2. [CQRS 와 domain-driven-design](https://github.com/dhslrl321/cqrs-journey-korean-ver/blob/master/part02-references/reference02/02.%20CQRS%20와%20domain-driven-design.mdwn)
+
 ### **Reference 3.** Event Sourcing 에 대한 소개
 
 ### **Reference 4.** CQRS 와 Event Sourcing 의 Deep Dive

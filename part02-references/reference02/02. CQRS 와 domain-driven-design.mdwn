@@ -8,4 +8,6 @@
 
 # CQRS 와 domain-driven-design
 
+이전 CQRS in Context 챕터에서 domain-driven-design 에 대한 몇가지 개념들을 소개했다
+
 ---
