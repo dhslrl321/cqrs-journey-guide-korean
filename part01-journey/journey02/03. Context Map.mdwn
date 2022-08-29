@@ -30,11 +30,11 @@
 4. 결제 성공과 실패에 대한 ack
 
 # 왜 우리는 이러한 Boundex Context 를 선택했는가?
-
-_During the planning stage of the journey, it became clear that these were the natural divisions in the domain that could each contain their own, independent domain models. Some of these divisions were eas- ier to identify than others. For example, it was clear early on that the conference management bounded context is independent of the re- mainder of the domain. It has clearly defined responsibilities that re- late to defining conferences and seat types and clearly defined points of integration with the rest of the application._
-
-_On the other hand, it took some time to realize that the orders and registrations bounded context is separate from the Payments bounded context. For example, it was not until the V2 release of the application that all concepts relating to payments disappeared from the orders and registrations bounded context when the OrderPaymentConfirmed event became the OrderConfirmed event._
-
-_More practically, from the perspective of the journey, we wanted a set of bounded contexts that would enable us to release a working application with some core functionality and that would enable us to explore a number of different implementation patterns: CQRS, CQRS/ES, as well as integration with a legacy, CRUD-style bounded context._
+이Boundex Context는 여정의 계획 단계에서 각각의 도메인이 고유한 독립 도메인 모델을 가지도록 자연스럽게 분할되면서 나타난것이다.
+일부 도멘인의 분할은 식별하기가 더 쉬웠습니다. 예를 들어, 회의 관리 Bounded Context는 다른 도메인과 관계가 없다는것이 초기부터 분명했습니다.
+회의 관리 Bounded Context는 회의 및 좌석 유형 정의와 관련된 명확한 책임을 가지고 있으며 나머지 애플리케이션과의 명확한 통합 지점을 가지고 있습니다.
+반면에 주문 및 등록 Bounded Context가 지불 Bounded Context와 별개라는 것을 깨닫는 데 시간이 좀 걸렸습니다.
+예를 들어, 애플리케이션의 V2버젼이 릴리스되고서야 OrderPaymentConfirmed 이벤트가 OrderConfirmed 이벤트로 변경되었고, payments와 관련된 모든 개념이 주문 및 등록 Bounded Context에서 사라졌습니다.
+여정의 실용적인 관점에서 우리는 핵심기능을 가진 동작하는 어플리케이션을 출시할 수 있고 CQRS, CQRS/ES, 뿐만 아니라 레거시 CRUD 스타일의 Bounded Context와의 통합과 같은 많은 다양한 구현 패턴을 분석할수 있는 Bounded Context 세트를 원했습니다.
 
 ---
