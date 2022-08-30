@@ -34,7 +34,7 @@
 일부 도멘인의 분할은 식별하기가 더 쉬웠다. 예를 들어, 컨퍼런스 관리 Bounded Context는 다른 도메인과 관계가 없다는것이 초기부터 분명했다.
 컨퍼런스 관리 Bounded Context는 회의 및 좌석 유형 정의와 관련된 명확한 책임을 가지고 있으며 나머지 애플리케이션과의 명확한 통합 지점을 가지고 있다.
 반면에 주문 및 등록 Bounded Context가 지불 Bounded Context와 별개라는 것을 깨닫는 데 시간이 좀 걸렸다.
-예를 들어, 애플리케이션의 V2버젼이 릴리스되고서야 OrderPaymentConfirmed 이벤트가 OrderConfirmed 이벤트로 변경되었고, payments와 관련된 모든 개념이 주문 및 등록 Bounded Context에서 사라졌다.
+예를 들어, 애플리케이션의 V2버젼이 릴리스되고서야 `OrderPaymentConfirmed` 이벤트가 `OrderConfirmed` 이벤트로 변경되었고, payments와 관련된 모든 개념이 주문 및 등록 Bounded Context에서 사라졌다.
 여정의 실용적인 관점에서 우리는 핵심기능을 가진 동작하는 어플리케이션을 출시할 수 있고 CQRS, CQRS/ES, 뿐만 아니라 레거시 CRUD 스타일의 Bounded Context와의 통합과 같은 많은 다양한 구현 패턴을 분석할수 있는 Bounded Context 세트를 원했다.
 
 ---
