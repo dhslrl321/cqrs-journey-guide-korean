@@ -13,3 +13,5 @@
 #### 2. [CQRS 와 domain-driven-design](https://github.com/dhslrl321/cqrs-journey-korean-ver/blob/master/part02-references/reference02/02.%20CQRS%20와%20domain-driven-design.mdwn)
 
 #### 3. [Command 와 Events 그리고 Messages](https://github.com/dhslrl321/cqrs-journey-korean-ver/blob/master/part02-references/reference02/03.%20command%20와%20events%20그리고%20messages.mdwn)
+
+#### 4. [왜 CQRS 를 사용해야 할까](https://github.com/dhslrl321/cqrs-journey-korean-ver/blob/master/part02-references/reference02/04.%20왜%20CQRS%20를%20사용해야%20할까.mdwn)
