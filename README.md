@@ -1,6 +1,6 @@
 ### Contributors
 
-<div align="center>
+<div align="center">
 
 <a href="https://github.com/dhslrl321/cqrs-journey-korean-ver/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=dhslrl321/cqrs-journey-korean-ver" />
