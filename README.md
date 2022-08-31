@@ -1,10 +1,10 @@
-<!-- Copy-paste in your Readme.md file -->
+### Contributors
 
-<a href = "https://github.com/Tanu-N-Prabhu/Python/graphs/contributors">
-  <img src = "https://contrib.rocks/image?repo=dhslrl321/cqrs-journey-korean-ver"/>
+<a href="https://github.com/dhslrl321/cqrs-journey-korean-ver/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=dhslrl321/cqrs-journey-korean-ver" />
 </a>
 
-Made with [contributors-img](https://contrib.rocks).
+Made with [contrib.rocks](https://contrib.rocks).
 
 <div align="center">
 
