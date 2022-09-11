@@ -82,7 +82,9 @@ CQRS Journey 의 목차입니다.
 5. [언제 CQRS 를 사용해야 할까](https://github.com/dhslrl321/cqrs-journey-korean-ver/blob/master/part02-references/reference02/05.%20언제%20CQRS%20를%20사용해야할까.mdwn)
 6. [언제 CQRS 를 사용해야 할까](https://github.com/dhslrl321/cqrs-journey-korean-ver/blob/master/part02-references/reference02/06.%20언제%20CQRS%20를%20사용하지%20말아야%20할까.mdwn)
 
-### **Reference 3.** Event Sourcing 에 대한 소개
+### **Reference 3.** [Event Sourcing 에 대한 소개](https://github.com/dhslrl321/cqrs-journey-korean-ver/tree/master/part02-references/reference03)
+
+1. [Event Sourcing 이란 무엇인가](https://github.com/dhslrl321/cqrs-journey-korean-ver/blob/master/part02-references/reference03/01.%20Event%20Sourcing%20이란%20무엇인가.mdwn)
 
 ### **Reference 4.** CQRS 와 Event Sourcing 의 Deep Dive
 
