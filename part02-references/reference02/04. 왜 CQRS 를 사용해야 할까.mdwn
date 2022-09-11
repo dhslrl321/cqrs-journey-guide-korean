@@ -18,6 +18,73 @@ DDD 에서 바운디드 컨텍스트를 나누는 것에 대한 이점은 명확
 
 CQRS 패턴을 적용함으로써 얻을 수 있는 가장 일반적인 비즈니스 이점은 **확장성**, 도메인의 복잡한 **측면의 단순화**, **유연성 향상, 변화하는 비즈니스 요구 사항에 대한 수용 가능성**이다.
 
-## Scalability
+## Scalability, 확장성
+
+많은 enterprise 시스템에서, read 연산이 write 연산보다 훨씬 많이 일어나기 때문에 당신의 scalability, 즉 서버의 확장성은 read side 와 write side 각각에 다른 기준이 적용되어야 한다.
+
+하나의 Bounded Context 내에서 read side 와 write side 를 분리함으로써 각각을 서로 다르게 확장할 수 있음을 의미한다.
+
+예를 들어, Windows Azure에서 애플리케이션을 호스팅하는 경우, 각 side 를 분리한다면 서로 다른 수의 인스턴스를 추가하여 독립적으로 확장할 수 있다.
+
+> Scalability should not be the only reason why you choose to implement the CQRS pattern in a specific bounded context: “In a non-collaborative domain, where you can horizontally add more database servers to support more users, requests, and data at the same time you’re adding web servers, there is no real scalability problem (until you’re the size of Amazon, Google, or Facebook). Database servers can be cheap if you’re using MySQL, SQL Server Express, or others.” —Udi Dahan, When to avoid CQRS.
+
+## Reduced Complexity, 복잡성 줄이기
+
+당신의 복잡한 도메인 속에서, 하나의 객체 안에 읽기 연산과 쓰기 연산을 모두 설계하고 구현하는 것은 복잡성을 더욱 악화시킬 수 있다.
+
+여러 케이스에서, 비즈니스 로직의 복잡성은 update 와 트랜잭셔널한 연산을 수행할 떄에만 발생하지만, 반대로 읽기 연산은 그보다 훨씬 단순하다.
+
+비즈니스 로직과 읽기 연산이 하나의 모델에 뒤섞여 있다면, 더욱 어려운 비즈니스적 문제를 해결하거나, 대용량 처리, 분산 처리, 성능, 트랜잭션 및 consistency 를 처리하는 데에 큰 산이 될 것이다.
+
+읽기 연산과 비즈니스 로직을 분리하면 이러한 문제를 해결하는데에 도움이 되지만 많은 대다수는 기존 모델을 분리하고 이해하는데에 여러 노력이 필요할 수도 있다.
+
+많은 다른 Pattern 들 처럼, CQRS 패턴을 도메인에 내제된 복잡성 중 일부를 더 쉽게 이해되고 특정 영역에서 문제 해결에 집중할 수 있도록 하는 접근 방식 또는 메커니즘으로 바라볼 수 있다.
+
+읽기 연산과 비즈니스 로직을 분리하여 경계 컨텍스트를 단순화하는 또 다른 잠재적인 이점은 테스트를 더 쉽게 만들 수 있다는 것이다.
+
+> Separation of concerns is the key motivation behind Bertrand Meyer’s Command Query Separation Principle: “The really valuable idea in this principle is that it’s extremely handy if you can clearly separate methods that change state from those that don’t. This is because you can use queries in many situations with much more confidence, introducing them anywhere, changing their order. You have to be more careful with modifiers.”
+> —Martin Fowler, Command- QuerySeparation
+
+## Flexibility, 유연성
+
+CQRS 패턴을 사용할 때 얻어지는 유연성은 read-side 와 write-side 를 분리할 때 주로 발생된다.
+
+CQRS 패턴을 사용한다면, UI 에서 보여질 특정 쿼리를 추가한다거나 하는 read-side 에서 변경 및 추가가 쉬워진다.
+
+비즈니스 로직에 어떠한 영향을 끼치지 않는다고 확신할 수 있을 때, UI 에서 보여질 특정 view 를 위해서 쿼리를 추가하는 것과 같이 read-side 에서 변경하는 것이 훨씬 쉬워진다.
+
+write-side 에서, 도메인의 핵심 비즈니스 로직만 표현하는 모델을 갖는다는 것은 read 연산과 write 연산이 혼재되어있을 때 보다 훨씬 간단하다는 것을 의미한다.
+
+장기적으로 봤을 때, 당신의 핵심 도메인 비즈니스 로직을 명확하게 설명하는 코어 도메인 모델이 가치 있는 자산이 될 것이다.
+
+당신이 직면해있는 계속해서 변경되는 비즈니스 환경과 경쟁의 압박 속에서 훨씬 더 agile 스럽게 해준다.
+
+이러한 유연성과 agility 은 DDD 의 Continousous Integration 과 관련이 있다.
+
+어떤 경우에는 write side 와 read side 에 서로 다른 개발 팀을 구성하는 것이 가능할 수도 있지만, 현실에서 이것은 아마도 얼마나 특정 바운디드 컨텍스트가 얼마나 큰지에 달려있을 것이다.
+
+> “Continuous integration means that all work within the context is being merged and made consistent fre- quently enough that when splinters happen they are caught and corrected quickly.” —Eric Evans, “Domain- Driven Design,” p342.
+
+## 비즈니스에 집중하기
+
+만약 당신이 CRUD 를 사용한다면, 기술은 해결책을 형성하는 경향이 있다.
+
+CQRS 패턴을 채택하는 것은 당신이 비즈니스에 집중하고 task-oridened (작업 지향) UIs 를 만드는 데에 집중할 수 있도록 도와준다.
+
+read side 와 write side 의 관심사를 분리하는 것의 결과는 변화하는 비즈니스 요구사항에 더 잘 적응할 수 있는 솔루션이다. 이로 인해서 장기적으로 개발 및 유지보수 비용이 절감된다.
+
+## 작업 기반 UI 만들기를 촉진 (Facilitates building task-based UIs)
+
+CQRS 패턴을 구현할 때, 도메인에게 작업을 시작하도록 할때 command 를 사용한다.
+
+이러한 command 들은 일반적으로 도메인의 연산과 [\*유비쿼터스 언어](https://github.com/dhslrl321/cqrs-journey-korean-ver/blob/master/terms/Ubiquitous%20Language.mdwn)에 밀접하게 연관이 있다.
+
+예를 들어서 "컨퍼런스 X 의 두 자리 좌석을 예매한다" 라는 command 가 있다고 해보자. 전통적인 CRUD 스타일의 작업을 하는 대신 이러한 명령을 도메인으로 보내기 위한 UI 를 설계할 수 있다.
+
+이렇게 된다면 더욱 직관적이게 되고 작업 기반 UI 를 더 쉽게 설계할 수 있게 된다.
+
+## CQRS 패턴을 채택하는데 존재하는 장벽
+
+특정 시나리오에서 CQRS 패턴을 채택하는 데 많은 명확한 이점이 존재하는 것은 사실이나, 이러한 혜택이 솔루션의 추가적인 복잡성을 해결하는 데에 도움이 된다는 것을 이해 관계자에게 확신시키는 것이 어려울 수 있다.
 
 ---
