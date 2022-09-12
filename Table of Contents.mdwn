@@ -91,9 +91,9 @@ CQRS Journey 의 목차입니다.
 5. [이벤트 스토어, Event Store](https://github.com/dhslrl321/cqrs-journey-korean-ver/blob/master/part02-references/reference03/05.%20Event%20Store.mdwn)
 
 
-### **Reference 4.** CQRS 와 Event Sourcing 의 Deep Dive
+### **Reference 4.** [CQRS 와 Event Sourcing 의 Deep Dive](https://github.com/dhslrl321/cqrs-journey-korean-ver/tree/master/part02-references/reference04)
 
-1. [소개](#)
+1. [소개](https://github.com/dhslrl321/cqrs-journey-korean-ver/blob/master/part02-references/reference04/01.%20Introduction.mdwn)
 
 ### **Reference 5.** Bounded Context 사이의 통신
 
