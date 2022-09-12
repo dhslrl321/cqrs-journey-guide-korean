@@ -8,4 +8,58 @@
 
 # 도메인 모델에서 aggregate 정의하기
 
+DDD 접근법에서 애그리거트는 consistency boundary 를 정의한다.
+
+일반적으로 CQRS 패턴을 구현할 때, write model 에 있는 클래스가 aggregates 를 정의한다.
+
+애그리거트는 command 의 수신자이며 영속의 단위 (units of persistence) 이다.
+
+애그리거트의 인스턴스가 command 를 처리하고 해당 상태가 변경된 후 시스템은 인스턴스의 새 상태를 스토리지에 저장해야 한다.
+
+애그리거트는 여러 관련 객체로 구성될 수 있다.
+예를 들어 주문 애그리거트는 여러 개의 OrderItem 을 포함할 수 있으며 모두 함께 있어야 완벽한 하나의 Order 애그리거트가 된다.
+
+애그리거트의 경계를 올바르게 식별했다면 여러 애그리거트 인스턴스를 함께 유지하기 위해서 트랜잭션을 사용할 필요가 없다.
+
+애그리거트가 여러 엔티티로 표현되는 경우 한 엔티티를 Aggregate Root 로 지정해야 하고 한 Aggregate 의 접근은 오로지 Aggregate Root 를 통해서만 수행되어야 한다.
+
+
+## 애그리거트와 ORM 
+
+애그리거트를 저장하기 위해서 ORM 을 사용할 떄, 최소한의 코드가 애그리거트 클래스 내부에 위치하게 된다.
+
+아래 나오는 코드 샘플은 `AggregateRoot` 인터페이스와 Order 애그리거트를 표현한 코드이다.
+이것은 ORM 을 사용하여 저장할 수 있는 애그리거트의 구현을 보여준다.
+
+```java
+public interface AggregateRoot {
+    Long getId();
+}
+
+public class Order implements AggregateRoot {
+
+    private Long id;
+    private List<SeatQuantity> seats;
+
+    @Override
+    public Long getId() {
+        return null;
+    }
+
+    public void updateSeats(List<SeatQuantity> seats) {
+        this.seats = convertItems(seats);
+    }
+}
+```
+
+## 애그리거트와 이벤트 소싱
+
+만약 event sourcing 을 사용한다면, 당신의 애그리거트는 command 에 대한 처리로 발생하는 모든 상태 변화를 저장할 이벤트를 생성해야 한다.
+
+아래의 코드 샘플은 `EventSourced` 인터페이스와 abstract 클래스를 보여준다.
+
+```java
+
+```
+
 ---
