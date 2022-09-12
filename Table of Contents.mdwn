@@ -94,6 +94,7 @@ CQRS Journey 의 목차입니다.
 ### **Reference 4.** [CQRS 와 Event Sourcing 의 Deep Dive](https://github.com/dhslrl321/cqrs-journey-korean-ver/tree/master/part02-references/reference04)
 
 1. [소개](https://github.com/dhslrl321/cqrs-journey-korean-ver/blob/master/part02-references/reference04/01.%20Introduction.mdwn)
+2. [애그리거트에서 domain model 정의하기](https://github.com/dhslrl321/cqrs-journey-korean-ver/blob/master/part02-references/reference04/02.%20defining%20aggregates%20in%20the%20domain%20model.mdwn)
 
 ### **Reference 5.** Bounded Context 사이의 통신
 
