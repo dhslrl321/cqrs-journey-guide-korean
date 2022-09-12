@@ -8,4 +8,44 @@
 
 # Event Sourcing 이란 무엇인가
 
+ES (Event Sourcing) 과 CQRS (Command Query Responsibility Segration) 는 주로 함께 언급되곤 한다.
+
+ES 가 CQRS 를 의미하지 않고 역시 CQRS 가 ES 를 의미하지는 않지만 각각이 서로 상호보완 관계라는 것을 알게 될 것이다.
+
+이번 챕터에서 이벤트 소싱의 기초가 되는 핵심 개념을 쇅하고 CQRS 패턴과의 잠재적인 관계에 대한 몇가지 지침을 제공한다.
+
+이번 챕터는 다음 챕터인 "CQRS 와 ES Deep Dive" 의 준비운동 격으로 생각해주면 된다.
+
+다음 챕터에서 ES 와 CQRS 에 대해서 더욱 깊게 이야기 나눠볼 것이다.
+
+#### 이벤트 소싱의 이해를 돕기 위해서 Event 라는 것의 특징을 정확히 알고 가는 것이 중요하다
+
+- **Event 는 과거에 일어난 사건이다.**
+  - 예를 들면 다음과 같다. "the speaker was booked", "the seat was reserved"
+  - 과거 시제를 사용하는 것을 주목하라.
+- **Event 는 불변하다**
+  - 이벤트는 과거에 일어난 사건이기 떄문에 변경되거나 미완성이어서는 안된다.
+  - 이전의 event 를 수정하거나 취소하거나 수정하기 위해서는 보정 이벤트를 발행할 수 있다.
+  - 예를 들면 "id 123 reservation was cancelled" 이벤트는 이전의 123 이라는 id 를 가진 reservation 을 취소하는 이벤트를 의미한다
+- **Event 는 one-way 메시지다.**
+  - event 는 단일 출처 (single source, publisher) 여야 한다.
+  - 하지만 수신자 (recipients, subscribers) 는 여럿이 될 수 있다
+- **일반적으로 Event 는 해당 이벤트에 포함되는 추가적인 정보를 포함한다.**
+- **이벤트 소싱에서 이벤트는 비즈니스를 포함해야 한다.**
+  - 이벤트는 그 자체로도 비즈니스 용어로 설명될 수 있는 것이 좋다.
+
+우리가 이번 챕터에서 이야기할 Events 는 애그리거트와 관련이 있다. 
+
+Aggregate, 애그리거트는 DDD 와 관련이 깊은데, 이에 대해서는 [References 01. CQRS in Context](https://github.com/dhslrl321/cqrs-journey-korean-ver/tree/master/part02-references/reference01) 에서 자세한 내용을 확인할 수 있다. 
+
+#### 또한 이벤트와 이벤트 소싱에 관련이 깊은 애그리거트의 두가지 특징을 알아야 한다.
+
+- 애그리거트는 관련있는 entity 에 대해서 일관성을 보장해야 한다. (consistency boundaries)
+  - 그러므로 애그리거트의 event 를 이용해서 해당 트랜잭션에 참여하는 다른 애그리거트로 특정 사건이 일어났음을 알릴 수 있다.
+- 모든 애그리거트는 유일한 ID 를 가지고 있다. 그러므로 해당 ID 를 통해서 특정 이벤트의 소스였던 애그리거트를 기록할 수 있다.
+
+# Event Sourcing, 이벤트 소싱이란 무엇인가
+
+이벤트 소싱이란 애플리케이션의 현재 상태의 변경 모두를 저장하고 이를 이용하여 애플리케이션의 상태를 유지하는 방법이다.
+
 ---
