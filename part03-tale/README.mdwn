@@ -1,11 +1,11 @@
 # Part 03. Tale from the trenches
 
-#### 1. [Twilio](#)
+#### 1. [Twilio](https://github.com/dhslrl321/cqrs-journey-korean-ver/blob/master/part03-tale/01.%20twilio.mdwn)
 
-#### 2. [Lokad Hub](#)
+#### 2. [Lokad Hub](https://github.com/dhslrl321/cqrs-journey-korean-ver/blob/master/part03-tale/02.%20lokad%20hub.mdwn)
 
-#### 3. [DDD/CQRS for large financial company](#)
+#### 3. [DDD/CQRS for large financial company](https://github.com/dhslrl321/cqrs-journey-korean-ver/blob/master/part03-tale/03.%20ddd%20cqrs%20for%20large%20financial%20company.mdwn)
 
-#### 4. [Digital Marketing](#)
+#### 4. [Digital Marketing](https://github.com/dhslrl321/cqrs-journey-korean-ver/blob/master/part03-tale/04.%20digital%20marketing.mdwn)
 
-#### 5. [TOPAZ technologies](#)
+#### 5. [TOPAZ technologies](https://github.com/dhslrl321/cqrs-journey-korean-ver/blob/master/part03-tale/05.%20TOPAZ%20technologies.mdwn)

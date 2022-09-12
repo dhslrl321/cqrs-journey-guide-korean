@@ -102,16 +102,11 @@ CQRS Journey 의 목차입니다.
 
 # 3. Tales from the trenches
 
-### **Chapter 1.** "Twilio"
 
-### **Chapter 2.** "Lokad Hub"
-
-### **Chapter 3.** "금융 회사에서 사용하는 DDD/CQRS"
-
-### **Chapter 4.** "Digital Marketing"
-
-### **Chapter 5.** "TOPAZ"
-
-### **Chapter 6.** "eMoney Nexus"
+1. [Twilio](https://github.com/dhslrl321/cqrs-journey-korean-ver/blob/master/part03-tale/01.%20twilio.mdwn)
+2. [Lokad Hub](https://github.com/dhslrl321/cqrs-journey-korean-ver/blob/master/part03-tale/02.%20lokad%20hub.mdwn)
+3. [DDD/CQRS for large financial company](https://github.com/dhslrl321/cqrs-journey-korean-ver/blob/master/part03-tale/03.%20ddd%20cqrs%20for%20large%20financial%20company.mdwn)
+4. [Digital Marketing](https://github.com/dhslrl321/cqrs-journey-korean-ver/blob/master/part03-tale/04.%20digital%20marketing.mdwn)
+5. [TOPAZ technologies](https://github.com/dhslrl321/cqrs-journey-korean-ver/blob/master/part03-tale/05.%20TOPAZ%20technologies.mdwn)
 
 # 4. [Terms](https://github.com/dhslrl321/cqrs-journey-korean-ver/tree/master/terms)
