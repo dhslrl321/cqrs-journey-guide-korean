@@ -16,4 +16,4 @@
 
 #### 4. [CQRS와 ES](https://github.com/dhslrl321/cqrs-journey-korean-ver/blob/master/part02-references/reference03/04.%20CQRS%20%EC%99%80%20ES.mdwn)
 
-#### 5. [이벤트 스토어](#)
+#### 5. [이벤트 스토어](https://github.com/dhslrl321/cqrs-journey-korean-ver/blob/master/part02-references/reference03/05.%20Event%20Store.mdwn)
