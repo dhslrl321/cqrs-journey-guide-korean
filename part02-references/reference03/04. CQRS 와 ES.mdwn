@@ -8,4 +8,26 @@
 
 # CQRS 와 ES
 
+CQRS 와 Event Sourcing 은 자주 언급된다.
+
+각각은 서로의 상호보완적인 관계이다.
+
+2장 CQRS 패턴의 소개에서 이벤트가 write-side 데이터 저장소에서 read-side 데이터 저장소로 애플리케이션 상태의 push synchronization 을 형성할 수 있다고 했다.
+
+일반적으로 read side 의 데이터 저장소에는 비정규화된 데이터가 포함되어있다. (materialized view)
+
+이벤트 스토어에 저장되는 이벤트를 사용해서 write side 에서 발행되는 모든 업데이트를 read side 로 전파할 수 있다.
+
+read side 에서는 이벤트에 포함된 정보를 사용해서 비정규화된 뷰를 유지할 수 있게 된다.
+
+> 이규원님의 [Event sourcing 원리와 구현](https://www.youtube.com/watch?v=Yd7TXUdcaUQ) 발표에서 말하길 CQRS 는 Event Sourcing 없이도 존재할 수 있지만 Event Sourcing 은 CQRS 없이 존재할 수 없다고 표현합니다.
+
+아래의 그림은 CQRS 와 ES 를 함꼐 사용한 일련의 예 이다.
+
+![image](https://user-images.githubusercontent.com/48385288/189587376-ec56f6ee-908c-4439-8a60-1d10cbdf2b7a.png)
+
+write side 에서 이벤트를 이벤트 스토어에 저장한 후 이벤트를 publish 하는 방법에 대해서 주목하라.
+
+이렇게 애그리거트가 이벤트 스토어에 이벤트를 저장하고 이벤트를 read side 에 publish 하는 경우, [*two phase commit](#) 을 할 필요가 없다.
+
 ---
