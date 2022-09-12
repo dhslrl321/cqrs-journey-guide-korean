@@ -1,1 +1,11 @@
 # Part 03. Tale from the trenches
+
+#### 1. [Twilio](#)
+
+#### 2. [Lokad Hub](#)
+
+#### 3. [DDD/CQRS for large financial company](#)
+
+#### 4. [Digital Marketing](#)
+
+#### 5. [TOPAZ technologies](#)
