@@ -1,3 +1,9 @@
+<div align="center">
+
+#### [목차 바로가기](https://github.com/dhslrl321/cqrs-journey-korean-ver/blob/master/Table%20of%20Contents.mdwn)
+
+</div>
+
 # Part 03. Tale from the trenches
 
 #### 1. [Twilio](https://github.com/dhslrl321/cqrs-journey-korean-ver/blob/master/part03-tale/01.%20twilio.mdwn)
