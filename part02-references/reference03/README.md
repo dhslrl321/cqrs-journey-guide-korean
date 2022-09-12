@@ -15,3 +15,5 @@
 #### 3. [이벤트 소싱의 고민거리](https://github.com/dhslrl321/cqrs-journey-korean-ver/blob/master/part02-references/reference03/03.%20Event%20Sourcing%20concerns.mdwn)
 
 #### 4. [CQRS와 ES](https://github.com/dhslrl321/cqrs-journey-korean-ver/blob/master/part02-references/reference03/04.%20CQRS%20%EC%99%80%20ES.mdwn)
+
+#### 5. [이벤트 스토어](#)

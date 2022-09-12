@@ -1,0 +1,83 @@
+<div align="center">
+
+#### [목차 바로가기](https://github.com/dhslrl321/cqrs-journey-korean-ver/blob/master/Table%20of%20Contents.mdwn)
+
+</div>
+
+---
+
+# 이벤트 스토어
+
+이벤트 소싱을 사용하는 경우 이벤트를 저장하고 애그리거트 인스턴스와 연결된 이벤트 스트림을 반환하는 메커니즘이 필요하기 떄문에 이벤트를 replay 해서 애그리거트를 특정 상태로 만들 수 있다.
+
+이러한 저장 메커니즘을 바로 이벤트 스토어, Event Store 라고 한다.
+
+자체적으로 이벤트 스토어를 구현하거나 Jonathan Oliver의 EventStore 와 같은 외부 솔루션을 사용할 수도 있다.
+
+소규모 이벤트 스토어는 비교적 쉽게 구축이 가능하지만 프로덕션 품질과 확장 가능한 형태로 구축하는 것은 더욱 challenging 하다.
+
+# Event Store 의 기본 요구사항
+
+일반적으로 CQRS 패턴을 구현할 때는 애그리거트는 이벤트를 발생시켜서 다른 애그리거트, Process Manager, read model 및 다른 바운디드 컨텍스트와 같은 이해관계자에게 정보를 publish 한다.
+
+이벤트 소싱을 사용할 때 이러한 과정이 이벤트 스토어에 저장된다.
+
+이렇게 된다면 이벤트를 사용하여 해당 애그리거트와 연결된 이벤트 시퀀스를 통해 다른 애그리거트로 상태를 전파할 수 있다.
+
+따라서 하나의 애그리거트에서 이벤트가 발생되면 다음 두가지가 동시에 일어나야 한다.
+
+1. 시스템은 이벤트를 이벤트 저장소에 저장한다.
+2. 시스템은 이벤트 를 publish 해야 한다.
+
+> 참고로 모든 이벤트에 subscriber 가 존재하는 것은 아니다. 애그리거트의 일부 속성을 유지하기 위해서 이벤트를 발행시키는 경우도 존재한다.
+
+시스템이 애그리거트의 현재 상태를 로드할 때마다 해당 애그리거트 인스턴스와 연결된 과거 이벤트 목록에 대해서 이벤트 스토어에 쿼리하는 과정이 필요하다
+
+# 저장소 구현 기술
+
+이벤트는 복잡한 데이터 구조가 아니다. 
+
+일반적으로 애그리거트 인스턴스의 ID, version, 이벤트 자체의 payload 가 구성요소일 것이다.
+
+이벤트를 저장하기 위해서 꼭 RDB 를 사용할 필요도 없다.
+
+NoSQL 이나 문서형 데이터베이스 혹은 파일 시스템을 사용할 수도 있다
+
+# 성능, 확장성 그리고 일관성
+
+저장된 이벤트는 변경할 수 없으며 항상 저장된 순서를 보장해야 하며 이벤트를 저장하는 것은 간단하고 빨라야 한다.
+
+관계형 데이터베이스를 사용하는 경우 이벤트 순서를 정의하는 필드와 애그리거트 ID 를 사용하여 레코드에 키를 저장해야 한다.
+
+애그리거트 인스턴스에 많은 수의 이벤트가 포함되어 있는 경우 해당 애그리거트를 로드하기 위해 모든 이벤트를 탐색해야 하므로 오랜 시간이 걸릴 수 있다.
+
+이 시나리오에서 고려할만한 한 가지 옵션은 바로 스냅샷이라는 매커니즘이다.
+
+이벤트 스토어의 전체 이벤트 스트림 외에도 최근 특정 시점의 애그리거트 상태를 스냅샷으로 저장할 수 있다.
+
+애그리거트 상태를 다시 로드하려면, 가장 최근의 스냅샷을 조회하고 이후의 모든 이벤트를 재생한다.
+
+write process 중에 스냅샷을 생성할 수 있다.
+예를 들어서 100 개의 이벤트마다 스냅샷을 생성하는 형태로도 가능하다 
+
+> 참고로 스냅샷은 DB 인스턴스 성능에 따라서 그 빈도가 결정될 수 있다.
+
+스냅샷을 생성하기 위한 최적의 시간을 결졍하기 위해서 다양한 길이의 이벤트 스트림을 재생하는 데 걸리는 시간을 측정해야 한다.
+
+또는 이벤트 스트림을 반복적으로 재생하지 않도록 메모리에 많이 로드되는 애그리거트 인스턴스를 캐싱할 수 있다.
+
+이벤트를 저장할 때 해당 이벤트도 publish 되어야 한다.
+
+시스템의 일관성을 유지하기 위해서 두 작업이 함께 성공하거나 함께 실패해야 한다.
+
+기존에는 이것을 지원하기 위해서 two phase commit 을 사용하는 것이 있다.
+
+실제로 많은 데이터베이스와 메시징 플랫폼에서 two phase commit 트랜잭션에 대해 지원이 제한되어있다.
+
+two phase commit 을 사용하면 시스템의 성능과 확장성이 제한될 수도 있다.
+
+> 이와 관련해서는 Gregor Hohpe 의 "Your Coffee Shop Doesn’t Use Two-Phase Commi" 을 참고하라
+
+> One of the key problems you must solve if you choose to implement your own event store is how to achieve this consistency. For example, an event store built on top of Windows Azure table storage could take the following approach to maintain consistency between persisting and publishing events: use a transaction to write copies of the event to two entities in the same partition in the same table; one entity stores an immutable event that constitutes part of the event stream of the aggregate; the other entity stores an event that is part of a list of events pending publication. You can then have a process that reads the list of events pending publication, guarantees to publish those events at least once, and then after publication removes each event from the pending list. An additional set of problems related to consistency occurs if you plan to scale out your event store across multiple storage nodes, or use multiple writers to write to the store. In this scenario, you must take steps to ensure the consistency of your data. The data on the write side should be fully consistent, not eventually consistent. For more information about the CAP theorem and maintaining consistency in distributed systems, see the next chapter “A CQRS and ES Deep Dive.”
+
+---
