@@ -8,4 +8,78 @@
 
 # Introduction
 
+이번 챕터에서는 이전 장의 몇가지 핵심 사항에 대한 간략한 요약으로 시작해서 CQRS 패턴과 Event Sourcing 과 관련된 몇가지 중요한 개념을 더욱 자세히 탐구한다
+
+- Read Models and Write Models
+- Commands And Data Transfer Objects
+- DDD and aggregates
+- Data And Normalization
+- Events and Event Sourcing
+- Eventual Consistency
+
+## Read Models and Write Models
+
+CQRS 패턴은 객체의 상태를 수정하는 것과 조회하는 것의 책임을 분리한다.
+
+이를 write model 과 read model 이라고 하는데, 이러한 분리의 이점은 단일 책임 원칙을 적용하여 코드를 명확하고 단순화하는 것이다.
+
+객체는 데이터 수정 또는 쿼리 둘 중 하나를 담당하게 된다.
+
+## Commands And Data Transfer Objects
+
+사용자가 데이터를 update 할 수 있도록 하는 일반적인 접근 방식은 DTO 를 사용하는 것이다.
+
+UI 는 application 에서 update 할 데이터를 DTO 로 검색하고, update 한다.
+
+DTO 가 application 에 요청되면 해당 DTO 의 정보를 토대로 DB 와 상호작용헌다.
+
+이러한 방식은 데이터 중심적이며 CRUD 작업에 매몰되는 경향이 있다.
+
+이러한 방식이 많은 application 에서 효과적으로 사용되고 있지만 일부 경우에는 DTO 대신 Command 를 application 에 보내는 것이 더 유용할 수 있다.
+
+command 는 데이터 중심이 아닌 행동 중심이며 도메인의 작업을 직접 나타내며 사용자에게 더욱 직관적일 수 있다.
+
+또한 DTO 보다 더 효과적으로 사용자의 의도를 표현할 수 있으며 CQRS 에서는 read model 은 데이터를 DTO 로 UI 에 반영하고 write model 로 command 를 전송한다
+
+## DDD and aggregates
+
+command 를 사용하면 도메인과 관련된 동작과 더 밀접하게 일치하는 UI 를 만들 수 있다.
+
+이와 관련해서 도메인 개념을 기반으로 consistency boundaries 를 모델링하는 방법으로 aggregate 에 초점을 맞춘 DDD 접근법이 있다.
+
+DTO 대신 command 와 aggregate 를 사용하는 이점 중 하나는 application 에서 locking 및 concurrency 관리를 단순화 할 수 있다는 것이다
+
+## Data And Normalization
+
+application 에서 CQRS 패턴은 데이터와 object 를 분리하는 것이다.
+
+write model 은 완전히 정규화되어 write 에 최적화 된 데이터베이스를 사용할 수 있다.
+
+read model 은 애플리케이션이 읽기 작업에 특화된 형태로 비정규화될 수 있고 이에 맞는 데이터베이스를 사용할 수 있다.
+
+각 데이터베이스는 특정 작업에 최적화 되어있으므로 성능이 향상되며 locking 이 더욱 간단해진다.
+
+write side 에서는 locking 이 query 에 미치는 영향에 대해 더 이상 걱정할 필요가 없으며 read side 에서는 DB 가 읽기 전용일 수 있다.
+
+## Events and Event Sourcing
+
+read side 와 write side 모두 RDB 를 사용하는 경우 write side 에서 테이블에 대해서 CRUD 작업을 계속 수행하고 write side 의 정규화된 테이블에서 비정규화된 테이블로 변경 사항을 push 하는 메커니즘이 필요하다.
+
+write model 에서 변경 사항을 event 로 표현하는 경우, 해당 변경 사항들을 모두 Event 로 만들고 db 에 이들을 저장할 수 있다.
+
+동일한 이벤트를 사용해서 변경사항을 read side 로 push 할 수도 있다.
+
+이러한 이벤트를 사용하여 read side 에서 query 를 지원하도록 구조화된 데이터가 포함된 데이터의 projection 을 작성할 수도 있다
+
+## Eventual Consistency
+
+application 에서 단일 데이터베이스를 사용하는 경우 locking 에 따라 쿼리에서 반환되는 record 의 버전이 결정된다.
+
+쿼리가 여러 테이블의 레코드를 조인하는 경우 이 프로세스가 매우 복잡할 수 있는데, UI 에서 렌더링 되자 마자 다른 프로세스나 사용자가 해당 데이터를 수정한다면 올바르지 않은 데이터가 표현될 수 있다.
+
+데이터를 write side 저장소와 read side 저장소로 분리하는 경우 데이터를 쿼리할 때 오래된 데이터일 수 있지만 결국 write side 의 데이터와 일치하게 될 것이다.
+
+이렇게 하면 application 을 더 단순화하고 여러 사용자가 write side 에서 동일한 데이터를 동시에 수정하려고 하는 상황에서 효과적일 수 있다.
+
 ---
+
