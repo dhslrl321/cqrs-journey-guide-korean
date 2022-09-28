@@ -6,6 +6,6 @@
 
 ---
 
-# Event Sourcing 이란 무엇인가
+# two phase commit
 
 ---

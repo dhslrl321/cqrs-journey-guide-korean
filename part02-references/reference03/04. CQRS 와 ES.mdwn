@@ -1,0 +1,55 @@
+<div align="center">
+
+#### [목차 바로가기](https://github.com/dhslrl321/cqrs-journey-korean-ver/blob/master/Table%20of%20Contents.mdwn)
+
+</div>
+
+---
+
+# CQRS 와 ES
+
+CQRS 와 Event Sourcing 은 자주 언급된다.
+
+각각은 서로의 상호보완적인 관계이다.
+
+2장 CQRS 패턴의 소개에서 이벤트가 write-side 데이터 저장소에서 read-side 데이터 저장소로 애플리케이션 상태의 push synchronization 을 형성할 수 있다고 했다.
+
+일반적으로 read side 의 데이터 저장소에는 비정규화된 데이터가 포함되어있다. (materialized view)
+
+이벤트 스토어에 저장되는 이벤트를 사용해서 write side 에서 발행되는 모든 업데이트를 read side 로 전파할 수 있다.
+
+read side 에서는 이벤트에 포함된 정보를 사용해서 비정규화된 뷰를 유지할 수 있게 된다.
+
+> 이규원님의 [Event sourcing 원리와 구현](https://www.youtube.com/watch?v=Yd7TXUdcaUQ) 발표에서 말하길 CQRS 는 Event Sourcing 없이도 존재할 수 있지만 Event Sourcing 은 CQRS 없이 존재할 수 없다고 표현합니다.
+
+아래의 그림은 CQRS 와 ES 를 함꼐 사용한 일련의 예 이다.
+
+![image](https://user-images.githubusercontent.com/48385288/189587376-ec56f6ee-908c-4439-8a60-1d10cbdf2b7a.png)
+
+write side 에서 이벤트를 이벤트 스토어에 저장한 후 이벤트를 publish 하는 방법에 대해서 주목하라.
+
+이렇게 애그리거트가 이벤트 스토어에 이벤트를 저장하고 이벤트를 read side 에 publish 하는 경우, [*two phase commit](https://github.com/dhslrl321/cqrs-journey-korean-ver/blob/master/terms/two%20phase%20commit.mdwn) 을 할 필요가 없다.
+
+이런 방식으로 read side 데이터를 거의 실시간으로 최신 상태로 유지할 수 있다.
+
+transport mechanism 에 의해서 약간의 지연이 있을 수 있으며 4장 “A CQRS and ES  Deep Dive” 에서 이러한 지연의 가능성과 결과에 대해서 설명한다.
+
+또한 write side 에서 이벤트 스토어의 이벤트를 재생하여 언제든지 처음부터 read side 의 view 를 다시 생성할 수 있다.
+
+또한 다른 바운디드 컨텍스트도 동일한 이벤트를 구독하려는 경우 신중하게 replay 를 수행해야 한다.
+
+이벤트의 중복 스트림이 다른 바운디드 컨텍스트의 일관성을 보장하지 않을 수 있다.
+
+CQRS 는 read side 와 write side 의 서로 다른 데이터 저장소를 사용하도록 강제하지 않는다.
+
+write side 의 제 3 정규화가 된 스키마와 해당 스키마에 대한 비정규화된 뷰 집합이 있는 단일 RDBMS 를 사용할 수도 있다.
+
+그러나 Event Replay 는 read side 와 write side 를 동기화하는 매우 편리한 메커니즘이다
+
+# 독립형 Event Sourcing
+
+이벤트 소싱을 CQRS 와 함께 사용하지 않을 수 있다.
+
+일부 시나리오에서는 애플리케이션의 상태를 재구축하고, 새로운 비즈니스 데이터에 대한 이벤트를 식별하고 replay 하며 데이터 저장을 단순화하는 기능이 유용할 수 있지만 이 가이드에서는 CQRS 패턴의 컨텍스트에서 이벤트 소싱을 사용하는데에 집중한다
+
+---

@@ -1,0 +1,37 @@
+<div align="center">
+
+#### [목차 바로가기](https://github.com/dhslrl321/cqrs-journey-korean-ver/blob/master/Table%20of%20Contents.mdwn)
+
+</div>
+
+---
+
+# 이벤트 소싱의 고민 거리
+
+이전 섹션에서는 시스템에서 이벤트 소싱을 사용할 경우 어떠한 이점들이 있는지에 대해서 설명했다.
+
+이번 장에서는 다음을 포함한 여러 해결거리들에 대해서 알아보도록 할 것이다
+
+### 성능
+
+이벤트 소싱은 일반적으로 업데이트 성능을 향상시키지만 애그리거트 상태와 관련된 모든 이벤트에 대해서 이벤트 스토어를 쿼리하여 도메인 개체 상태를 로드하는데 걸리는 시간이 오래 걸릴 수 있다.
+
+스냅샷을 사용한다면 최신 스냅샷으로 돌아가야 해당 시점부터 이벤트를 replay 할 수 있기 떄문에 로드해야하는 데이터의 양을 제한할 수 있다.
+
+스냅샷 shanpshot 에 대해서는 다음 챕터에서 자세히 설명할 것이다
+
+### versioning
+
+미래에 어느 시점에서는 특정 이벤트의 스키마를 변경해야할 수도 있다.
+
+시스템은 이러한 이벤트 유형에 대해서 여러 버전을 처리할 수 있는 방법에 대해서 고려해야 한다
+
+### querying
+
+이벤트 스트림을 재생하여 개체의 현재 상태를 로드하는 것은 쉽지만 "total value 가 $250 이상인 모든 주문(order) 찾기" 와 같은 쿼리를 실행하는 것은 어렵거나 비용이 많이 든다.
+
+그러나 CQRS 패턴을 함께 사용하는 경우엔 이러한 쿼리를 위해 존재하는 materialized view 를 통해서 문제를 해결할 수 있긴 하다
+
+> “From experience, ORMs lead you down the path of a structural model while ES leads you down the path of a behavioral model. Sometimes one just makes more sense than the other. For example, in my own domain (not model) I get to integrate with other parties that send a lot of really non-interesting information that I need to send out again later when something interesting happens on my end. It’s inherently structural. Putting those things into events would be a waste of time, effort, and space. Contrast this with another part of the domain that benefits a lot from knowing what happened, why it happened, when it did or didn’t happen, where time and historical data are important to make the next business decision. Putting that into a structural model is asking for a world of pain. It depends, get over it, choose wisely, and above all: make your own mistakes.” —Yves Reynhout (CQRS Advisors Mail List)
+
+---

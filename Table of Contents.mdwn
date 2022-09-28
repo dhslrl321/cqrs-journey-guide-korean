@@ -84,10 +84,16 @@ CQRS Journey 의 목차입니다.
 
 ### **Reference 3.** [Event Sourcing 에 대한 소개](https://github.com/dhslrl321/cqrs-journey-korean-ver/tree/master/part02-references/reference03)
 
-1. [Introducing Event Sourcing](https://github.com/dhslrl321/cqrs-journey-korean-ver/blob/master/part02-references/reference03/01.%20Event%20Sourcing%20이란%20무엇인가.mdwn)
-2. [Event Sourcing 이란 무엇인가](https://github.com/dhslrl321/cqrs-journey-korean-ver/blob/master/part02-references/reference03/01.%20Event%20Sourcing%20이란%20무엇인가.mdwn)
+1. [Event Sourcing 이란 무엇인가](https://github.com/dhslrl321/cqrs-journey-korean-ver/blob/master/part02-references/reference03/01.%20Event%20Sourcing%20이란%20무엇인가.mdwn)
+2. [왜 이벤트 소싱을 사용해야 할까?](https://github.com/dhslrl321/cqrs-journey-korean-ver/blob/master/part02-references/reference03/02.%20Why%20should%20I%20use%20event%20sourcing.mdwn)
+3. [이벤트 소싱의 고민거리](https://github.com/dhslrl321/cqrs-journey-korean-ver/blob/master/part02-references/reference03/03.%20Event%20Sourcing%20concerns.mdwn)
+4. [CQRS와 ES](https://github.com/dhslrl321/cqrs-journey-korean-ver/blob/master/part02-references/reference03/04.%20CQRS%20%EC%99%80%20ES.mdwn)
+5. [이벤트 스토어, Event Store](https://github.com/dhslrl321/cqrs-journey-korean-ver/blob/master/part02-references/reference03/05.%20Event%20Store.mdwn)
 
-### **Reference 4.** CQRS 와 Event Sourcing 의 Deep Dive
+### **Reference 4.** [CQRS 와 Event Sourcing 의 Deep Dive](https://github.com/dhslrl321/cqrs-journey-korean-ver/tree/master/part02-references/reference04)
+
+1. [소개](https://github.com/dhslrl321/cqrs-journey-korean-ver/blob/master/part02-references/reference04/01.%20Introduction.mdwn)
+2. [애그리거트에서 domain model 정의하기](https://github.com/dhslrl321/cqrs-journey-korean-ver/blob/master/part02-references/reference04/02.%20defining%20aggregates%20in%20the%20domain%20model.mdwn)
 
 ### **Reference 5.** Bounded Context 사이의 통신
 
@@ -103,16 +109,12 @@ CQRS Journey 의 목차입니다.
 
 # 3. Tales from the trenches
 
-### **Chapter 1.** "Twilio"
+### Tales. [CQRS/ES 를 사용한 여러 기업 사례](https://github.com/dhslrl321/cqrs-journey-korean-ver/tree/master/part03-tale)
 
-### **Chapter 2.** "Lokad Hub"
-
-### **Chapter 3.** "금융 회사에서 사용하는 DDD/CQRS"
-
-### **Chapter 4.** "Digital Marketing"
-
-### **Chapter 5.** "TOPAZ"
-
-### **Chapter 6.** "eMoney Nexus"
+1. [Twilio](https://github.com/dhslrl321/cqrs-journey-korean-ver/blob/master/part03-tale/01.%20twilio.mdwn)
+2. [Lokad Hub](https://github.com/dhslrl321/cqrs-journey-korean-ver/blob/master/part03-tale/02.%20lokad%20hub.mdwn)
+3. [DDD/CQRS for large financial company](https://github.com/dhslrl321/cqrs-journey-korean-ver/blob/master/part03-tale/03.%20ddd%20cqrs%20for%20large%20financial%20company.mdwn)
+4. [Digital Marketing](https://github.com/dhslrl321/cqrs-journey-korean-ver/blob/master/part03-tale/04.%20digital%20marketing.mdwn)
+5. [TOPAZ technologies](https://github.com/dhslrl321/cqrs-journey-korean-ver/blob/master/part03-tale/05.%20TOPAZ%20technologies.mdwn)
 
 # 4. [Terms](https://github.com/dhslrl321/cqrs-journey-korean-ver/tree/master/terms)
