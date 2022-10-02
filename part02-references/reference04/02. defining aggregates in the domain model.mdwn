@@ -23,8 +23,7 @@ DDD 접근법에서 애그리거트는 consistency boundary 를 정의한다.
 
 애그리거트가 여러 엔티티로 표현되는 경우 한 엔티티를 Aggregate Root 로 지정해야 하고 한 Aggregate 의 접근은 오로지 Aggregate Root 를 통해서만 수행되어야 한다.
 
-
-## 애그리거트와 ORM 
+## 애그리거트와 ORM
 
 애그리거트를 저장하기 위해서 ORM 을 사용할 떄, 최소한의 코드가 애그리거트 클래스 내부에 위치하게 된다.
 
@@ -57,6 +56,8 @@ public class Order implements AggregateRoot {
 만약 event sourcing 을 사용한다면, 당신의 애그리거트는 command 에 대한 처리로 발생하는 모든 상태 변화를 저장할 이벤트를 생성해야 한다.
 
 아래의 코드 샘플은 `EventSourced` 인터페이스와 abstract 클래스를 보여준다.
+
+이것은 event sourcing 을 통ㅎ애 저장될 수 있는 애그리거트의 구현에 대한 접근법이다
 
 ```java
 
