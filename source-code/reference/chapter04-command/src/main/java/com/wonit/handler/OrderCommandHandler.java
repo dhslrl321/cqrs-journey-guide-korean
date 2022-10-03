@@ -12,12 +12,21 @@ import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
 public class OrderCommandHandler {
-    CommandHandler<RegisterToConference> makeReservationCommandHandler;
-    CommandHandler<MarkSeatsAsReserved> markSeatsAsReservedCommandHandler;
-    CommandHandler<RejectOrder> rejectOrderCommandHandler;
-    CommandHandler<AssignRegistrantDetails> assignRegistrantDetailsCommandHandler;
-    CommandHandler<ConfirmOrder> confirmOrderCommandHandler;
-
     private final EventSourcedRepository<Order> repository;
 
+    CommandHandler<RegisterToConference> makeReservationCommandHandler = command -> {
+        // .. impl
+    };
+    CommandHandler<MarkSeatsAsReserved> markSeatsAsReservedCommandHandler = command -> {
+        // .. impl
+    };
+    CommandHandler<RejectOrder> rejectOrderCommandHandler = command -> {
+        // .. impl
+    };
+    CommandHandler<AssignRegistrantDetails> assignRegistrantDetailsCommandHandler = command -> {
+        // .. impl
+    };
+    CommandHandler<ConfirmOrder> confirmOrderCommandHandler = command -> {
+        // .. impl
+    };
 }

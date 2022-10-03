@@ -64,7 +64,75 @@ public class SeatQuantity {
 이것은 event sourcing 을 통해 저장될 수 있는 애그리거트의 구현에 대한 접근법이다
 
 ```java
+public interface EventSourced {
+    String getId();
+    int getVersion();
+    List<VersionedEvent> getEvents();
+}
 
+
+public class AbstractEventSourced implements EventSourced {
+
+
+    @Getter
+    private final String id;
+    @Getter
+    private int version = -1;
+    @Getter
+    private final Map<Type, Action<VersionedEvent>> handlers = new HashMap<>();
+    private final List<VersionedEvent> pendingEvents = new ArrayList<>();
+
+    protected AbstractEventSourced(String id) {
+        this.id = id;
+    }
+
+    @Override
+    public List<VersionedEvent> getEvents() {
+        return pendingEvents;
+    }
+
+    protected void handles(Action<VersionedEvent> handler) {
+        this.handlers.put(handler.getType(), handler);
+    }
+
+    protected void loadFrom(List<VersionedEvent> pastEvents) {
+        for (VersionedEvent e : pastEvents) {
+            this.handlers.get(e).invoke(e);
+            this.version = e.getVersion();
+        }
+    }
+
+    protected void update(VersionedEvent e) {
+        e.setSourceId(this.id);
+        e.setVersion(this.version + 1);
+        this.handlers.get(e.getType()).invoke(e);
+        this.version = e.getVersion();
+        this.pendingEvents.add(e);
+    }
+}
+
+public class Order extends AbstractEventSourced {
+
+    private List<SeatQuantity> seats;
+
+    protected Order(String id) {
+        super(id);
+        super.handles(null);
+    }
+
+    public Order(String id, List<VersionedEvent> history) {
+        super(id);
+        super.loadFrom(history);
+    }
+
+    public void updateSeats(List<OrderItem> seats) {
+        super.update(new OrderUpdatedEvent(convert(seats)));
+    }
+
+    private Object convert(List<OrderItem> seats) {
+        return null;
+    }
+}
 ```
 
 이 예제에서, `updateSeats()` 메서드는 직접적으로 aggregate 의 상태를 바꾸지 않고 새로운 `OrderUpdated` 라는 이벤트를 발행한다.
