@@ -1,1 +1,6 @@
 rootProject.name = 'source-code'
+include 'reference'
+include 'journey'
+include 'reference:chapter04-command'
+findProject(':reference:chapter04-command')?.name = 'chapter04-command'
+

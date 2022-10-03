@@ -49,6 +49,10 @@ public class Order implements AggregateRoot {
         this.seats = convertItems(seats);
     }
 }
+
+public class SeatQuantity {
+    // ...
+}
 ```
 
 ## 애그리거트와 이벤트 소싱
@@ -57,10 +61,20 @@ public class Order implements AggregateRoot {
 
 아래의 코드 샘플은 `EventSourced` 인터페이스와 abstract 클래스를 보여준다.
 
-이것은 event sourcing 을 통ㅎ애 저장될 수 있는 애그리거트의 구현에 대한 접근법이다
+이것은 event sourcing 을 통해 저장될 수 있는 애그리거트의 구현에 대한 접근법이다
 
 ```java
 
 ```
+
+이 예제에서, `updateSeats()` 메서드는 직접적으로 aggregate 의 상태를 바꾸지 않고 새로운 `OrderUpdated` 라는 이벤트를 발행한다.
+
+abstract 클래스에 존재하는 update 메서드는 event store 의 event stream 에 추가할 pending events 에 추가하고, OnOrderUpdated 이벤트 핸들러를 호출하여 애그리거트의 상태를 업데이트 하는 책임을 가지고 있다.
+
+> 마커스: 우리는 aggregate 가 infrastructure 관련된 코드로부터 오염되는 것을 피하기 위해서 많은 노력을 하였습니다. 애그리거트 클래스는 도메인 모델과 도메인 로직으로 구성되어야 합니다.
+
+이런 방식으로 다뤄지는 모든 이벤트는 애그리거트의 버전을 함께 업데이트 한다.
+
+애그리거트의 생성자와 추상 클래스의 `loadFrom()` 메서드는 이벤트 스트림을 재생하여 집계의 상태를 다시 로드합니다.
 
 ---
