@@ -96,6 +96,7 @@ CQRS Journey 의 목차입니다.
 2. [애그리거트에서 domain model 정의하기](https://github.com/dhslrl321/cqrs-journey-korean-ver/blob/master/part02-references/reference04/02.%20defining%20aggregates%20in%20the%20domain%20model.mdwn)
 3. [Command 와 CommandHandler](https://github.com/dhslrl321/cqrs-journey-korean-ver/blob/master/part02-references/reference04/03.%20Command%20와%20command%20handlers.md)
 4. [Event 와 EventHandler](https://github.com/dhslrl321/cqrs-journey-korean-ver/blob/master/part02-references/reference04/04.%20Event%20와%20Event%20handlers.md)
+5. [Eventual Consistency](https://github.com/dhslrl321/cqrs-journey-korean-ver/blob/master/part02-references/reference04/05.%20Eventual%20Consistency.md)
 
 ### **Reference 5.** Bounded Context 사이의 통신
 

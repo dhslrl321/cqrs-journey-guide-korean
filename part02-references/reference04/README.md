@@ -16,4 +16,4 @@
 
 #### 4. [Event 와 EventHandler](https://github.com/dhslrl321/cqrs-journey-korean-ver/blob/master/part02-references/reference04/04.%20Event%20와%20Event%20handlers.md)
 
-#### 5. [Eventual Consistency](https://github.com/dhslrl321/cqrs-journey-korean-ver/blob/master/part02-references/reference04/04.%20Event%20와%20Event%20handlers.md)
+#### 5. [Eventual Consistency](https://github.com/dhslrl321/cqrs-journey-korean-ver/blob/master/part02-references/reference04/05.%20Eventual%20Consistency.md)
