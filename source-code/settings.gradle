@@ -5,3 +5,6 @@ include 'journey'
 include 'reference'
 include 'reference:chapter04-command'
 include 'reference:chapter04-aggregate-and-eventsourcing'
+include 'reference:chapter04-event'
+findProject(':reference:chapter04-event')?.name = 'chapter04-event'
+
