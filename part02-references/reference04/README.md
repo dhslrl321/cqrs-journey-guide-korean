@@ -18,8 +18,10 @@
 
 #### 5. [Eventual Consistency](https://github.com/dhslrl321/cqrs-journey-korean-ver/blob/master/part02-references/reference04/05.%20Eventual%20Consistency.md)
 
-#### 6. [Eventual Consistency과 CQRS]()
+#### 6. [Eventual Consistency과 CQRS](https://github.com/dhslrl321/cqrs-journey-korean-ver/blob/master/part02-references/reference04/06.%20최종적%20일관성과%20CQRS.md)
 
-#### 7. [Optimizing read sied]()
+#### 7. [Optimizing read sied](https://github.com/dhslrl321/cqrs-journey-korean-ver/blob/master/part02-references/reference04/07.%20Optimizing%20the%20read-side.md)
 
-#### 8. [Optimizing write side]()
+#### 8. [Optimizing write side](https://github.com/dhslrl321/cqrs-journey-korean-ver/blob/master/part02-references/reference04/08.%20Optimizing%20the%20write%20side.md)
+
+#### 9. [Messaging 과 CQRS](#)

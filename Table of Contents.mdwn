@@ -97,6 +97,10 @@ CQRS Journey 의 목차입니다.
 3. [Command 와 CommandHandler](https://github.com/dhslrl321/cqrs-journey-korean-ver/blob/master/part02-references/reference04/03.%20Command%20와%20command%20handlers.md)
 4. [Event 와 EventHandler](https://github.com/dhslrl321/cqrs-journey-korean-ver/blob/master/part02-references/reference04/04.%20Event%20와%20Event%20handlers.md)
 5. [Eventual Consistency](https://github.com/dhslrl321/cqrs-journey-korean-ver/blob/master/part02-references/reference04/05.%20Eventual%20Consistency.md)
+6. [Eventual Consistency과 CQRS](https://github.com/dhslrl321/cqrs-journey-korean-ver/blob/master/part02-references/reference04/06.%20최종적%20일관성과%20CQRS.md)
+7. [Optimizing read sied](https://github.com/dhslrl321/cqrs-journey-korean-ver/blob/master/part02-references/reference04/07.%20Optimizing%20the%20read-side.md)
+8. [Optimizing write side](https://github.com/dhslrl321/cqrs-journey-korean-ver/blob/master/part02-references/reference04/08.%20Optimizing%20the%20write%20side.md)
+9. [Messaging 과 CQRS](#)
 
 ### **Reference 5.** Bounded Context 사이의 통신
 
