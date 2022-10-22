@@ -15,3 +15,5 @@
 ### References 3. [Event Sourcing 의 소개](https://github.com/dhslrl321/cqrs-journey-korean-ver/tree/master/part02-references/reference03)
 
 ### References 4. [CQRS 와 Event Sourcing Deep Dive](https://github.com/dhslrl321/cqrs-journey-korean-ver/tree/master/part02-references/reference04)
+
+### References 5. [Communicating Between Bounded Context](https://github.com/dhslrl321/cqrs-journey-korean-ver/tree/master/part02-references/reference05)
