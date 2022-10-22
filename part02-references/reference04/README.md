@@ -26,6 +26,6 @@
 
 #### 9. [Messaging 과 CQRS](https://github.com/dhslrl321/cqrs-journey-korean-ver/blob/master/part02-references/reference04/09.%20Messaging%20과%20CQRS.md)
 
-#### 10. [Task Based UI](#)
+#### 10. [Task Based UI](https://github.com/dhslrl321/cqrs-journey-korean-ver/blob/master/part02-references/reference04/10.%20Task%20Based%20UI.md)
 
-#### 11. [Windows Azure 의 장점](#)
+#### 11. [Windows Azure 의 장점](https://github.com/dhslrl321/cqrs-journey-korean-ver/blob/master/part02-references/reference04/11.%20Windows%20Azure%20의%20장점.md)

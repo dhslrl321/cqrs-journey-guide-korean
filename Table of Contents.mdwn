@@ -101,6 +101,8 @@ CQRS Journey 의 목차입니다.
 7. [Optimizing read sied](https://github.com/dhslrl321/cqrs-journey-korean-ver/blob/master/part02-references/reference04/07.%20Optimizing%20the%20read-side.md)
 8. [Optimizing write side](https://github.com/dhslrl321/cqrs-journey-korean-ver/blob/master/part02-references/reference04/08.%20Optimizing%20the%20write%20side.md)
 9. [Messaging 과 CQRS](https://github.com/dhslrl321/cqrs-journey-korean-ver/blob/master/part02-references/reference04/09.%20Messaging%20과%20CQRS.md)
+10. [Task Based UI](https://github.com/dhslrl321/cqrs-journey-korean-ver/blob/master/part02-references/reference04/10.%20Task%20Based%20UI.md)
+11. [Windows Azure 의 장점](https://github.com/dhslrl321/cqrs-journey-korean-ver/blob/master/part02-references/reference04/11.%20Windows%20Azure%20의%20장점.md)
 
 ### **Reference 5.** Bounded Context 사이의 통신
 
