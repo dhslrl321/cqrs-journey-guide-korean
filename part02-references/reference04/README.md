@@ -24,4 +24,4 @@
 
 #### 8. [Optimizing write side](https://github.com/dhslrl321/cqrs-journey-korean-ver/blob/master/part02-references/reference04/08.%20Optimizing%20the%20write%20side.md)
 
-#### 9. [Messaging 과 CQRS](#)
+#### 9. [Messaging 과 CQRS](https://github.com/dhslrl321/cqrs-journey-korean-ver/blob/master/part02-references/reference04/09.%20Messaging%20과%20CQRS.md)
