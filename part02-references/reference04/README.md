@@ -25,3 +25,7 @@
 #### 8. [Optimizing write side](https://github.com/dhslrl321/cqrs-journey-korean-ver/blob/master/part02-references/reference04/08.%20Optimizing%20the%20write%20side.md)
 
 #### 9. [Messaging 과 CQRS](https://github.com/dhslrl321/cqrs-journey-korean-ver/blob/master/part02-references/reference04/09.%20Messaging%20과%20CQRS.md)
+
+#### 10. [Task Based UI](#)
+
+#### 11. [Windows Azure 의 장점](#)
