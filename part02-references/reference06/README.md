@@ -8,6 +8,6 @@
 
 # Reference 6. Saga on Sagas
 
-#### 1. [용어 정리](https://github.com/dhslrl321/cqrs-journey-korean-ver/blob/master/part02-references/reference05/01.%20Introduction.md)
+#### 1. [용어 정리](https://github.com/dhslrl321/cqrs-journey-korean-ver/blob/master/part02-references/reference06/01.%20용어%20정리.md)
 
-#### 2. [Process manager](https://github.com/dhslrl321/cqrs-journey-korean-ver/blob/master/part02-references/reference05/02.%20Context%20Map%20과%20anti-corruption%20layer.md)
+#### 2. [Process manager](https://github.com/dhslrl321/cqrs-journey-korean-ver/blob/master/part02-references/reference06/02.%20Process%20manager.md)

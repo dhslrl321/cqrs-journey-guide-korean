@@ -17,3 +17,5 @@
 ### References 4. [CQRS 와 Event Sourcing Deep Dive](https://github.com/dhslrl321/cqrs-journey-korean-ver/tree/master/part02-references/reference04)
 
 ### References 5. [Communicating Between Bounded Context](https://github.com/dhslrl321/cqrs-journey-korean-ver/tree/master/part02-references/reference05)
+
+### References 6. [Saga on Sagas](https://github.com/dhslrl321/cqrs-journey-korean-ver/tree/master/part02-references/reference06)
