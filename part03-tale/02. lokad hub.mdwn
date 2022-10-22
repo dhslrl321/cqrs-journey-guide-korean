@@ -6,6 +6,90 @@
 
 ---
 
-# title
+# Lokad Hub
+
+## Project Overview
+
+Lokad Hub 는 계량, 종량제, 예측 구독을 통합하는 인프라 요소다.
+
+또한 Lokad의 내부 팀을 위한 백오피스 지원 백엔드를 제공한다.
+
+Lokad 는 이러한 인프라가 매우 유연하고 집중적이며 자체적으로 관리되며 클라우드 상황에 장애에도 서버가 죽지 않도록 해야한다.
+
+Lokad hub 의 주요 기능은 다음과 같다.
+
+- Multi-tenancy
+- Scalability
+- 여러 위치로부터 즉각적인 데이터 복제
+- 모든 클라우드에 배포 가능
+- 매일 발생되는 CI
+- 전체 audit log 와 모든 시점으로 rollback 할 수 있는 기능
+- 다른 시스템과 integration
+
+현재 버전은 DDD 접근 방식을 사용하여 개발되었으며 CQRS 패턴을 구현하며 Event Sourcing 을 사용한다.
+
+Lokad 의 경우 레거시 CRUD 스타일을 대체하고 위와 같은 접근법을 채택함으로써 새로운 시스템의 두 가지 주요 장점이 있다.
+
+- 하루에 여러 배포를 수행할 수 있다.
+- 복잡한 비즈니스 요구사항의 변화에 신속하게 대응할 수 있다.
+
+## Lesson Learned
+
+Lokad 를 구현하면서 얻었던 몇가지의 레슨-런이 존재한다.
+
+- DDD 의 장점, Benefits of DDD
+- 의존성 제거, Reducing Dependencies
+- Saga 사용, Using Sagas
+- 테스트와 문서화, Testing And Documentation
+- Migration to ES
+- 데이터 프로젝션, Using Projections
+- Event Sourcing
+- Infrastructure
+
+
+### DDD 의 장점, Benefits of DDD
+
+Lokad 의 팀은 LokadHub 를 개발하기 위해서 DDD 를 사용했다.
+
+복잡한 하나의 도메인을 여러 개의 바운디드 컨텍스트로 나누는 데에 도움이 된다.
+
+이렇게 나눔으로써 바운디드 컨텍스트별로 독립적인 모델링이 가능해졌고 각각의 바운디드 컨텍스트별 적절한 기술을 선택할 수 있게 되었다.
+
+이번 프로젝트에서 CQRS/ES 구현을 통해 바운디드 컨텍스트를 설계하였다.
+
+Lokad 는 모든 비즈니스 요구사항을 코드로써 시스템에 표현하였다. 이러한 비즈니스 코드가 새로운 시스템의 기저가 되었다.
+
+그렇지만 이 모델을 구현하고 비즈니스 요구사항을 포착하기까지 꽤 많은 시간이 걸렸던 것도 사실이다.
+
+### 의존성 제거, Reducing Dependencies
+
+core 비즈니스 로직은 오로지 Lokad 의 CQRS 인터페이스와 message contract 에만 의존한다. 그러므로 코어 비즈니스 로직이 ORM 이나 특정 클라우드 서비스 혹은 IoC Container나 데이터소스 기술에 의존하지 않는다.
+
+이렇게 됨으로써 특정 벤더의 결합이 되지 않고 단순화된 비즈니스 로직을 유지할 수 있게 된 것이다.
+
+### Using Sagas
+
+Lokad 는 필요 이상으로 시스템이 복잡해지는 것을 방지하고자 saga 를 사용하지 않기로 결정했다.
+
+Lokad 는 또한 레거시 CRUD 시스템에서 새로운 event sourced system 으로 마이그레이션 하는 과정에서 몇가지의 이슈를 찾았다.
+
+### 테스트와 문서화, Testing And Documentation
+
+Lokad 는 단위 테스트를 기본적으로 해당 제품의 문서로써 사용한다. 이것은 특별히 복잡한 비즈니스 로직의 명세를 정의하는데 꽤나 가치가 있다.
+
+이러한 명세들은 message contract 시스템의 메시지를 구분하는데 사용되며, 도메인을 표현하는데 도움을 준다.
+
+### Migration to ES
+
+Lokad 는 레거시 SQL 데이터 저장소로부터 이벤트 소싱을 위한 이벤트 스트림으로 마이그레션하는 툴을 제작해서 사용했다.
+
+### 데이터 프로젝션, Using Projections
+
+read-side 으로 데이터를 프로젝션함으로써 더욱 쉽고 빠르게 새로운 UI 시스템을 만들 수 있게 하였다. 
+
+개발 과정은 또한 만약 시스템이 새로운 변경사항을 감지한다면 새롭게 re-built 되는 smart projections 을 개발하는데 많은 이점이 있었다.
+
+### Event Sourcing
+### Infrastructure
 
 ---
