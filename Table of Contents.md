@@ -32,7 +32,7 @@ CQRS Journey 의 목차입니다.
 ### **Journey 1.** [Conference Management System](https://github.com/dhslrl321/cqrs-journey-guide-korean/tree/master/part01-journey/journey01)
 
 1. [우리의 도메인](https://github.com/dhslrl321/cqrs-journey-guide-korean/blob/master/part01-journey/journey01/01.우리의%20도메인.md)
-2. [누가 우리와 함께하는가](https://github.com/dhslrl321/cqrs-journey-guide-korean/blob/master/part01-journey/journey01/02.누가%20우리와%20함께%20여정을%20떠날%20것인가.md)
+2. [누가 우리와 함께 여정을 떠날 것인가](https://github.com/dhslrl321/cqrs-journey-guide-korean/blob/master/part01-journey/journey01/02.누가%20우리와%20함께%20여정을%20떠날%20것인가.md)
 3. [The Contoso Conference Management System](https://github.com/dhslrl321/cqrs-journey-guide-korean/blob/master/part01-journey/journey01/03.The%20Contoso%20Conference%20Management%20System.md)
 
 ### **Journey 2.** [도메인 분석](https://github.com/dhslrl321/cqrs-journey-guide-korean/tree/master/part01-journey/journey02)
@@ -48,9 +48,8 @@ CQRS Journey 의 목차입니다.
 2. [도메인 정의](https://github.com/dhslrl321/cqrs-journey-guide-korean/blob/master/part01-journey/journey03/02.%20도메인%20정의.md)
 3. [order 를 생성하기 위한 요구사항](https://github.com/dhslrl321/cqrs-journey-guide-korean/blob/master/part01-journey/journey03/03.%20order%20을%20생성하기%20위한%20요구사항.md)
 4. [구현을 위한 다양한 접근법](https://github.com/dhslrl321/cqrs-journey-guide-korean/blob/master/part01-journey/journey03/04.%20구현을%20위한%20다양한%20접근법.md)
-5. [Implementation Details](https://github.com/dhslrl321/cqrs-journey-guide-korean/blob/master/part01-journey/journey03/05.%20Implementation%20Details.md)
-6. [Write Model](https://github.com/dhslrl321/cqrs-journey-guide-korean/blob/master/part01-journey/journey03/06.%20Write%20Model.md)
-7. [Aggregates And Process Managers](https://github.com/dhslrl321/cqrs-journey-guide-korean/blob/master/part01-journey/journey03/07.%20Aggregates%20and%20Process%20managers.md)
+5. [구현-high level architecture](https://github.com/dhslrl321/cqrs-journey-guide-korean/blob/master/part01-journey/journey03/05.%20Implementation%20Details.mdwn)
+6. [구현-write model](https://github.com/dhslrl321/cqrs-journey-guide-korean/blob/master/part01-journey/journey03/06.%20Write%20Model.mdwn)
 
 ### **Journey 4.** Orders 와 Registrations 에 대한 개념 확장과 성능 향상
 
