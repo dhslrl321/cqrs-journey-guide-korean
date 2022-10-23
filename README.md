@@ -37,7 +37,7 @@
 3. **CQRS References**
 4. **Tale from the Trenches**
 
-자세한 내용은 [목차](https://github.com/dhslrl321/cqrs-journey-korean-ver/blob/master/Table%20of%20Contents.mdwn) 에서 확인할 수 있습니다.
+자세한 내용은 [목차](https://github.com/dhslrl321/cqrs-journey-guide-korean/blob/master/Table%20of%20Contents.md) 에서 확인할 수 있습니다.
 
 # CQRS Journey
 
@@ -47,8 +47,8 @@
 
 <div align="center">
 
-<a href="https://github.com/dhslrl321/cqrs-journey-korean-ver/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=dhslrl321/cqrs-journey-korean-ver" />
+<a href="https://github.com/dhslrl321/cqrs-journey-guide-korean/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=dhslrl321/cqrs-journey-guide-korean" />
 </a>
 
 Made with [contrib.rocks](https://contrib.rocks).
