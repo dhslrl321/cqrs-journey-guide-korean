@@ -1,6 +1,6 @@
 <div align="center">
 
-#### [목차 바로가기](https://github.com/dhslrl321/cqrs-journey-korean-ver/blob/master/Table%20of%20Contents.mdwn)
+#### [목차 바로가기](https://github.com/dhslrl321/cqrs-journey-guide-korean/blob/master/Table%20of%20Contents.md)
 
 </div>
 
@@ -8,14 +8,14 @@
 
 # Part 02. CQRS References
 
-### References 1. [CQRS in Context](https://github.com/dhslrl321/cqrs-journey-korean-ver/tree/master/part02-references/reference01)
+### References 1. [CQRS in Context](https://github.com/dhslrl321/cqrs-journey-guide-korean/tree/master/part02-references/reference01)
 
-### References 2. [CQRS, Command Query Responsibility Segregation Pattern 의 소개](https://github.com/dhslrl321/cqrs-journey-korean-ver/tree/master/part02-references/reference02)
+### References 2. [CQRS, Command Query Responsibility Segregation Pattern 의 소개](https://github.com/dhslrl321/cqrs-journey-guide-korean/tree/master/part02-references/reference02)
 
-### References 3. [Event Sourcing 의 소개](https://github.com/dhslrl321/cqrs-journey-korean-ver/tree/master/part02-references/reference03)
+### References 3. [Event Sourcing 의 소개](https://github.com/dhslrl321/cqrs-journey-guide-korean/tree/master/part02-references/reference03)
 
-### References 4. [CQRS 와 Event Sourcing Deep Dive](https://github.com/dhslrl321/cqrs-journey-korean-ver/tree/master/part02-references/reference04)
+### References 4. [CQRS 와 Event Sourcing Deep Dive](https://github.com/dhslrl321/cqrs-journey-guide-korean/tree/master/part02-references/reference04)
 
-### References 5. [Communicating Between Bounded Context](https://github.com/dhslrl321/cqrs-journey-korean-ver/tree/master/part02-references/reference05)
+### References 5. [Communicating Between Bounded Context](https://github.com/dhslrl321/cqrs-journey-guide-korean/tree/master/part02-references/reference05)
 
-### References 6. [Saga on Sagas](https://github.com/dhslrl321/cqrs-journey-korean-ver/tree/master/part02-references/reference06)
+### References 6. [Saga on Sagas](https://github.com/dhslrl321/cqrs-journey-guide-korean/tree/master/part02-references/reference06)
