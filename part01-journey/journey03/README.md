@@ -16,8 +16,6 @@
 
 #### 4. [구현을 위한 다양한 접근법](https://github.com/dhslrl321/cqrs-journey-korean-ver/blob/master/part01-journey/journey03/04.%20구현을%20위한%20다양한%20접근법.mdwn)
 
-#### 5. [Implementation Details](https://github.com/dhslrl321/cqrs-journey-korean-ver/blob/master/part01-journey/journey03/05.%20Implementation%20Details.mdwn)
+#### 5. [구현-high level architecture](https://github.com/dhslrl321/cqrs-journey-korean-ver/blob/master/part01-journey/journey03/05.%20Implementation%20Details.mdwn)
 
-#### 6. [Write Model](https://github.com/dhslrl321/cqrs-journey-korean-ver/blob/master/part01-journey/journey03/06.%20Write%20Model.mdwn)
-
-#### 7. [Aggregates And Process Managers](https://github.com/dhslrl321/cqrs-journey-korean-ver/blob/master/part01-journey/journey03/07.%20Aggregates%20and%20Process%20managers.mdwn)
+#### 6. [구현-write model](https://github.com/dhslrl321/cqrs-journey-korean-ver/blob/master/part01-journey/journey03/06.%20Write%20Model.mdwn)

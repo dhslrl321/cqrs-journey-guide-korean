@@ -134,4 +134,51 @@ Is the list of Order Items that long? If it is, the modeling may be wrong becaus
 
 —Thanks to Jérémie Chassaing and Craig Wilson
 
+# Aggregates and Process Managers
+
+아래의 그림은 write side 의 엔티티 모델을 보여준다.
+
+<img width="1321" alt="image" src="https://user-images.githubusercontent.com/48385288/185792003-d1eef6c5-b697-4791-bc24-74595449804e.png">
+
+아래에는 **Order** 와 **SeatsAvailability**, 두개의 애그리거트가 존재하는데 각각은 다양한 엔티티 타입을 포함한다.
+
+또한 이 둘 사이와 통신하기 위한 **RegistrationProcessManager** 클래스가 존재한다.
+
+<img width="1342" alt="image" src="https://user-images.githubusercontent.com/48385288/185792023-80327239-1f04-4a0e-8ba8-35211086eb38.png">
+
+위의 표는 ProcessManager 의 현재 상태 (current state of process manager) 에서 Process manager 로 message 가 들어오면 어떻게 동작하지는지 보여준다.
+
+UI 에서 `RegisterToConference` 커맨드를 보낸다면 등록 (registering) 프로세스가 시작된다.
+
+그렇다면 infrastructure 가 **Order** 애그리거트로 해당 command 를 전달하게 된다.
+
+comamnd 에 대한 결과는 시스템이 새로운 **Order** 인스턴스를 만들고 OrderPlaced 라는 이벤트를 일으키는 것이다.
+
+아래의 코드 샘플은 Order 클래스의 생성자에서 위의 과정을 하는 코드를 일부 발췌한 것이다.
+
+> 번역본에서는 GUID 를 식별자로 이용하였지만 해당 코드샘플에서는 외부에서 id 를 주입받는 형태로 구성하였습니다.
+
+```java
+public Order(Long id, Long conferenceId, Long userId, List<OrderItem> lines) {
+        this.id = id;
+        this.userId = userId;
+        this.conferenceId = conferenceId;
+        this.lines = lines;
+
+        OrderPlaced event = OrderPlaced.of(
+                id,
+                conferenceId,
+                userId,
+                lines.stream()
+                        .map(item -> SeatOrderPlaced.of(item.getSeatTypeId(), item.getQuantity()))
+                        .collect(Collectors.toList()));
+
+        this.events.add(event);
+    }
+```
+
+시스템은 새로운 Order 를 관리하기 위해 RegistrationProcessManager 인스턴스를 생성한다.
+
+아래의 코드 샘플은 Process Manager 에서 RegistrationProcessManager 클래스가 어떻게 이벤트를 handling 하는지를 보여준다
+
 ---
