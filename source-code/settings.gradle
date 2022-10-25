@@ -7,4 +7,8 @@ include 'reference:chapter04-command'
 include 'reference:chapter04-aggregate-and-eventsourcing'
 include 'reference:chapter04-event'
 findProject(':reference:chapter04-event')?.name = 'chapter04-event'
+include 'journey:chapter03-write-model'
+findProject(':journey:chapter03-write-model')?.name = 'chapter03-write-model'
+include 'journey:chapter03-high-level-architecture'
+findProject(':journey:chapter03-high-level-architecture')?.name = 'chapter03-high-level-architecture'
 
