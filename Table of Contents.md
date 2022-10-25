@@ -50,6 +50,7 @@ CQRS Journey 의 목차입니다.
 4. [구현을 위한 다양한 접근법](https://github.com/dhslrl321/cqrs-journey-guide-korean/blob/master/part01-journey/journey03/04.%20구현을%20위한%20다양한%20접근법.md)
 5. [구현-high level architecture](https://github.com/dhslrl321/cqrs-journey-guide-korean/blob/master/part01-journey/journey03/05.%20구현%20-%20high%20level%20architecture.md)
 6. [구현-write model](https://github.com/dhslrl321/cqrs-journey-guide-korean/blob/master/part01-journey/journey03/06.%20구현%20-%20write%20model.md)
+7. Using the Windows Azure Service Bus
 
 ### **Journey 4.** Orders 와 Registrations 에 대한 개념 확장과 성능 향상
 
