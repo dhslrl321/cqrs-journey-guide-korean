@@ -18,4 +18,4 @@
 
 #### 5. [언제 CQRS 를 사용해야 할까](https://github.com/dhslrl321/cqrs-journey-guide-korean/blob/master/part02-references/reference02/05.%20언제%20CQRS%20를%20사용해야할까.md)
 
-#### 6. [언제 CQRS 를 사용해야 할까](https://github.com/dhslrl321/cqrs-journey-guide-korean/blob/master/part02-references/reference02/06.%20언제%20CQRS%20를%20사용하지%20말아야%20할까.md)
+#### 6. [언제 CQRS 를 사용하지 말아야 할까](https://github.com/dhslrl321/cqrs-journey-guide-korean/blob/master/part02-references/reference02/06.%20언제%20CQRS%20를%20사용하지%20말아야%20할까.md)
