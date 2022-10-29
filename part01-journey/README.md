@@ -13,3 +13,5 @@
 ### Journey 2. [Decomposing the Domain](https://github.com/dhslrl321/cqrs-journey-guide-korean/tree/master/part01-journey/journey02)
 
 ### Journey 3. [Orders 와 Registration 의 Bounded Context](https://github.com/dhslrl321/cqrs-journey-guide-korean/tree/master/part01-journey/journey03)
+
+### Journey 4. [Orders 와 Registrations Bounded Context 에 대한 고도화](https://github.com/dhslrl321/cqrs-journey-guide-korean/tree/master/part01-journey/journey04)
