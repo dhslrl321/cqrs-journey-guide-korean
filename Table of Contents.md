@@ -53,7 +53,7 @@ CQRS Journey 의 목차입니다.
 7. Using the Windows Azure Service Bus
 8. [테스트에 미치는 영향](https://github.com/dhslrl321/cqrs-journey-guide-korean/blob/master/part01-journey/journey03/08.%20테스트에%20미치는%20영향.md)
 
-### **Journey 4.** Orders 와 Registrations 에 대한 개념 확장과 성능 향상
+### **Journey 4.** Orders 와 Registrations Bounded Context 에 대한 고도화
 
 ### **Journey 5.** V1 릴리즈 준비
 
