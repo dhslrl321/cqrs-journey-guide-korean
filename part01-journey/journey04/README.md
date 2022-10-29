@@ -8,7 +8,7 @@
 
 # Journey 4. Orders 와 Registrations Bounded Context 에 대한 고도화
 
-#### 1. [Bounded Context 의 변화](#)
+#### 1. [Bounded Context 의 변화](https://github.com/dhslrl321/cqrs-journey-guide-korean/blob/master/part01-journey/journey04/01.%20Bounded%20Context%20의%20변화.md)
 
 #### 2. [패턴과 개념](#)
 
