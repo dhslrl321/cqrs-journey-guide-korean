@@ -8,4 +8,12 @@
 
 # Journey 4. Orders 와 Registrations Bounded Context 에 대한 고도화
 
-#### 1. [변경사항](#)
+#### 1. [Bounded Context 의 변화](#)
+
+#### 2. [패턴과 개념](#)
+
+#### 3. [구현 세부사항](#)
+
+#### 4. [Impact on testing](#)
+
+#### 5. [A journey into code comprehension: A tale of pain, relief,and learning](#)
