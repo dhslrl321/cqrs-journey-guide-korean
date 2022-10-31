@@ -10,10 +10,12 @@
 
 #### 1. [Bounded Context 의 변화](https://github.com/dhslrl321/cqrs-journey-guide-korean/blob/master/part01-journey/journey04/01.%20Bounded%20Context%20의%20변화.md)
 
-#### 2. [패턴과 개념](#)
+#### 2. [Patterns and Concepts](https://github.com/dhslrl321/cqrs-journey-guide-korean/blob/master/part01-journey/journey04/02.%20Patterns%20and%20Concepts.md)
 
-#### 3. [구현 세부사항](#)
+#### 3. [Implementation Details - 1. access code & countdown timer](#)
 
-#### 4. [Impact on testing](#)
+#### 4. [Implementation Details - 2. read side & refactoring](#)
 
-#### 5. [A journey into code comprehension: A tale of pain, relief,and learning](#)
+#### 5. [Impact on testing](#)
+
+#### 6. [A journey into code comprehension: A tale of pain, relief,and learning](#)
