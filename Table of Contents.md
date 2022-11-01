@@ -60,7 +60,7 @@ CQRS Journey 의 목차입니다.
 3. [Implementation Details - 1. access code & countdown timer](https://github.com/dhslrl321/cqrs-journey-guide-korean/blob/master/part01-journey/journey04/03.%20Implementation%20details%20-%201.md)
 4. [Implementation Details - 2. read side & refactoring](https://github.com/dhslrl321/cqrs-journey-guide-korean/blob/master/part01-journey/journey04/04.%20Implementation%20details%20-%202.md)
 5. [Impact on testing](https://github.com/dhslrl321/cqrs-journey-guide-korean/blob/master/part01-journey/journey04/05.%20Impact%20on%20Testing.md)
-6. [A journey into code comprehension: A tale of pain, relief,and learning](#)
+6. A journey into code comprehension: A tale of pain, relief,and learning
 
 ### **Journey 5.** V1 릴리즈 준비
 

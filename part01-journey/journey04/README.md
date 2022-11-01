@@ -18,4 +18,4 @@
 
 #### 5. [Impact on testing](https://github.com/dhslrl321/cqrs-journey-guide-korean/blob/master/part01-journey/journey04/05.%20테스트에%20미치는%20영향.md)
 
-#### 6. [A journey into code comprehension: A tale of pain, relief,and learning](#)
+#### 6. A journey into code comprehension: A tale of pain, relief,and learning
