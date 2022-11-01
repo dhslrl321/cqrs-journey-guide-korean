@@ -64,6 +64,13 @@ CQRS Journey 의 목차입니다.
 
 ### **Journey 5.** V1 릴리즈 준비
 
+1. [The Contoso Conference Management System V1 Release](#)
+2. [Patterns and Concepts](#)
+3. [Implemetation Details - 1](#)
+4. [Implemetation Details - 2](#)
+5. [Impact on Testing](#)
+6. [요약 정리](#)
+
 ### **Journey 6.** Versioning 하기
 
 ### **Journey 7.** Resilience한 시스템에 성능을 최적화하기
