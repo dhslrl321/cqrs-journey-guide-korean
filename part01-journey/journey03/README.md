@@ -22,4 +22,4 @@
 
 #### 7. Using the Windows Azure Service Bus
 
-#### 8. [테스트에 미치는 영향](https://github.com/dhslrl321/cqrs-journey-guide-korean/blob/master/part01-journey/journey03/08.%20테스트에%20미치는%20영향.md)
+#### 8. [Impact On Testing](https://github.com/dhslrl321/cqrs-journey-guide-korean/blob/master/part01-journey/journey03/08.%20테스트에%20미치는%20영향.md)
