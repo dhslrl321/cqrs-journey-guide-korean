@@ -12,9 +12,9 @@
 
 </div>
 
-# CQRS Journey (korean version)
+# CQRS Journey Guide (한글 번역본)
 
-#### **이 repository 는 Microsoft 의** [CQRS Journey Guide](https://github.com/microsoftarchive/cqrs-journey) **를 한국어로 번역한 repository 입니다.**
+### **이 repository 는 Microsoft 의** [CQRS Journey Guide](https://github.com/microsoftarchive/cqrs-journey) **를 한국어로 번역한 repository 입니다.**
 
 - **원본에서는 예제 코드가 `C#` 으로 구현되어 있으나, 한글 번역본에서는 예제 코드를 `java` 로 구현하였습니다.**
   - C# 특성으로 인해 변환이 어려운 경우 C# 원문 그대로를 삽입하였습니다.
