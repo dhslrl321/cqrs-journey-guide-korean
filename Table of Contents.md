@@ -51,7 +51,7 @@ CQRS Journey 의 목차입니다.
 5. [Implementation Details - 1. high level architecture](https://github.com/dhslrl321/cqrs-journey-guide-korean/blob/master/part01-journey/journey03/05.%20구현%20-%20high%20level%20architecture.md)
 6. [Implementation Details - 2. write model](https://github.com/dhslrl321/cqrs-journey-guide-korean/blob/master/part01-journey/journey03/06.%20구현%20-%20write%20model.md)
 7. Using the Windows Azure Service Bus
-8. [테스트에 미치는 영향](https://github.com/dhslrl321/cqrs-journey-guide-korean/blob/master/part01-journey/journey03/08.%20테스트에%20미치는%20영향.md)
+8. [Impact On Testing](https://github.com/dhslrl321/cqrs-journey-guide-korean/blob/master/part01-journey/journey03/08.%20테스트에%20미치는%20영향.md)
 
 ### **Journey 4.** [Orders 와 Registrations Bounded Context 에 대한 고도화](https://github.com/dhslrl321/cqrs-journey-guide-korean/tree/master/part01-journey/journey04)
 
