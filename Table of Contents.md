@@ -62,7 +62,7 @@ CQRS Journey 의 목차입니다.
 5. [Impact on testing](https://github.com/dhslrl321/cqrs-journey-guide-korean/blob/master/part01-journey/journey04/05.%20Impact%20on%20Testing.md)
 6. A journey into code comprehension: A tale of pain, relief,and learning
 
-### **Journey 5.** V1 릴리즈 준비
+### **Journey 5.** [V1 릴리즈 준비](https://github.com/dhslrl321/cqrs-journey-guide-korean/tree/master/part01-journey/journey05)
 
 1. [The Contoso Conference Management System V1 Release](#)
 2. [Patterns and Concepts](#)
