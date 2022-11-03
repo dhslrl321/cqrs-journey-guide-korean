@@ -1,3 +1,5 @@
+> CQRS Journey Guide 는 MS 에서 만든 문서로, 가상의 팀이 **Contoso Conference Management System** 을 만드는 과정에서 만난 여러 복잡한 문제들을 CQRS 와 Event Sourcing 그리고 DDD 를 이용해서 해결해나가는 여정을 그린 책입니다.
+
 </div>
 
 <div align="center">
