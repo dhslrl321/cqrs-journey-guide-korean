@@ -8,14 +8,14 @@
 
 # Journey 5. V1 릴리즈 준비
 
-#### 1. [The Contoso Conference Management System V1 Release](#)
+#### 1. [The Contoso Conference Management System V1 Release](https://github.com/dhslrl321/cqrs-journey-guide-korean/blob/master/part01-journey/journey05/01.%20The%20Contoso%20Conference%20Management%20System%20V1%20Release.md)
 
-#### 2. [Patterns and Concepts](#)
+#### 2. [Patterns and Concepts](https://github.com/dhslrl321/cqrs-journey-guide-korean/blob/master/part01-journey/journey05/02.%20Patterns%20and%20Concepts.md)
 
-#### 3. [Implemetation Details - 1](#)
+#### 3. [Implemetation Details - 1](https://github.com/dhslrl321/cqrs-journey-guide-korean/blob/master/part01-journey/journey05/03.%20Implementation%20details%20-%201.md)
 
-#### 4. [Implemetation Details - 2](#)
+#### 4. [Implemetation Details - 2](https://github.com/dhslrl321/cqrs-journey-guide-korean/blob/master/part01-journey/journey05/04.%20Implementation%20details%20-%202.md)
 
-#### 5. [Impact on Testing](#)
+#### 5. [Impact on Testing](https://github.com/dhslrl321/cqrs-journey-guide-korean/blob/master/part01-journey/journey05/05.%20Impact%20on%20Testing.md)
 
-#### 6. [요약 정리](#)
+#### 6. [요약 정리](https://github.com/dhslrl321/cqrs-journey-guide-korean/blob/master/part01-journey/journey05/06.%20Summary.md)
