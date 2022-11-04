@@ -8,7 +8,6 @@ import lombok.Getter;
 
 public class AbstractEventSourced implements EventSourced {
 
-
     @Getter
     private final String id;
     @Getter
