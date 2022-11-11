@@ -10,7 +10,7 @@
 
 #### 1. [The Contoso Conference Management System V1 Release](https://github.com/dhslrl321/cqrs-journey-guide-korean/blob/master/part01-journey/journey05/01.%20The%20Contoso%20Conference%20Management%20System%20V1%20Release.md)
 
-#### 2. [Patterns and Concepts - 1](https://github.com/dhslrl321/cqrs-journey-guide-korean/blob/master/part01-journey/journey05/02.%20Patterns%20and%20Concepts.md)
+#### 2. [Patterns and Concepts - 1](https://github.com/dhslrl321/cqrs-journey-guide-korean/blob/master/part01-journey/journey05/02.%20Patterns%20and%20Concepts%20-%201.md)
 
 #### 3. [Patterns and Concepts - 2](https://github.com/dhslrl321/cqrs-journey-guide-korean/blob/master/part01-journey/journey05/03.%20Patterns%20and%20Concepts%20-%202.md)
 
