@@ -17,3 +17,5 @@
 ### Journey 4. [Orders 와 Registrations Bounded Context 에 대한 고도화](https://github.com/dhslrl321/cqrs-journey-guide-korean/tree/master/part01-journey/journey04)
 
 ### Journey 5. [V1 릴리즈 준비](https://github.com/dhslrl321/cqrs-journey-guide-korean/tree/master/part01-journey/journey05)
+
+### Journey 6. [Versioning Our System](#)

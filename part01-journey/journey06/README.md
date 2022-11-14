@@ -6,6 +6,6 @@
 
 ---
 
-# 요약 정리
+# Journey 6. Versioning Our System
 
----
+#### 1. [Introuction](#)
