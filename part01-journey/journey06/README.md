@@ -8,4 +8,4 @@
 
 # Journey 6. Versioning Our System
 
-#### 1. [Introuction](#)
+#### 1. [Introuction](https://github.com/dhslrl321/cqrs-journey-guide-korean/blob/master/part01-journey/journey06/01.%20Introduction.md)
