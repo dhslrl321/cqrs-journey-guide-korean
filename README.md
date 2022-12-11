@@ -58,14 +58,3 @@
 - This Repository a repository that translates
   Microsoft's [CQRS Journey Guide](https://github.com/microsoftarchive/cqrs-journey) into Korean.
 
-# Contributors
-
-<div align="center">
-
-<a href="https://github.com/dhslrl321/cqrs-journey-guide-korean/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=dhslrl321/cqrs-journey-guide-korean" />
-</a>
-
-</div>
-
-Made with [contrib.rocks](https://contrib.rocks).
