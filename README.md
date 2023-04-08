@@ -1,4 +1,3 @@
-해당 repository 의 [github discussions](https://github.com/dhslrl321/cqrs-journey-guide-korean/discussions) 에서 CQRS  재미있는 이야기가 오가고 있습니다. 어서 이 건강한 토론에 참여해주세요!
 
 ---
 
