@@ -18,4 +18,4 @@
 
 ### Journey 5. [V1 릴리즈 준비](https://github.com/dhslrl321/cqrs-journey-guide-korean/tree/master/part01-journey/journey05)
 
-### Journey 6. [Versioning Our System](#)
+### Journey 6. [Versioning Our System](https://github.com/dhslrl321/cqrs-journey-guide-korean/tree/master/part01-journey/journey06)
